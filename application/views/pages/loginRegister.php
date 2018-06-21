@@ -35,7 +35,7 @@
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
                         <a href="mp-index.html" class="logo">
-                            <img src="images/logo-dark.png" alt="" />
+                            <img src="<?php echo base_url('assets/images/logo-dark.png'); ?>" alt="" />
                         </a>
                     </div>
                     <div class="mobile-nav">
@@ -947,7 +947,7 @@
                     
                     <!-- Footer Logo -->
                     <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="1.5s">
-                        <a href="#top"><img src="images/logo-footer.png" width="78" height="36" alt="" /></a>
+                        <a href="#top"><img src="<?php echo base_url('assets/images/logo-footer.png'); ?>" width="78" height="36" alt="" /></a>
                     </div>
                     <!-- End Footer Logo -->
                     

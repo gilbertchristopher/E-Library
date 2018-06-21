@@ -12,7 +12,9 @@ class MainController extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('pages/Homepage');
+		$data['js'] = $this->load->view('include/jsLandingPage.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssLandingPage.php', NULL, TRUE);
+		$this->load->view('pages/Homepage',$data);
 	}
 
 	public function index2()

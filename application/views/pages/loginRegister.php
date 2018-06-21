@@ -845,17 +845,43 @@
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-4">
                                     
-                                    <form class="form contact-form" id="contact_form">
+                                    <?php
+                                        $attributes = array(
+                                            'class' => 'form contact-form',
+                                            'id' => 'contact_form'
+                                        );
+                                        echo form_open('WEBFP/actionLogin', $attributes);
+                                    ?>
                                         <div class="clearfix">
                                             
                                             <!-- Username -->
                                             <div class="form-group">
-                                                <input type="text" name="username" id="username" class="input-md round form-control" placeholder="Username" pattern=".{3,100}" required>
+                                            <?php
+                                                $data = array(
+                                                    'name'          => 'username',
+                                                    'id'            => 'username',
+                                                    'class'         => 'input-md round form-control',
+                                                    'placeholder'   => 'Username',
+                                                    'pattern'       => '.{3,100}',
+                                                    'required'
+                                                );
+                                                echo form_input($data);
+                                            ?>
                                             </div>
                                             
                                             <!-- Password -->
                                             <div class="form-group">
-                                                <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password" pattern=".{5,100}" required>
+                                            <?php
+                                                $data = array(
+                                                    'name'          => 'password',
+                                                    'id'            => 'password',
+                                                    'class'         => 'input-md round form-control',
+                                                    'placeholder'   => 'Password',
+                                                    'pattern'       => '.{5,100}',
+                                                    'required'
+                                                );
+                                                echo form_password($data);
+                                            ?>
                                             </div>
                                                 
                                         </div>
@@ -875,14 +901,23 @@
                                                 
                                                 <!-- Send Button -->
                                                 <div class="align-right pt-10">
-                                                    <button class="submit_btn btn btn-mod btn-medium btn-round" id="login-btn">Login</button>
+                                                <?php
+                                                    $data = array(
+                                                        'id'            => 'login-btn',
+                                                        'class'         => 'submit_btn btn btn-mod btn-medium btn-round',
+                                                        'content'       => 'Login'
+                                                    );
+                                                    echo form_button($data);
+                                                ?>
                                                 </div>
                                                 
                                             </div>
                                             
                                         </div>
                                         
-                                    </form>
+                                    <?php
+                                        echo form_close();
+                                    ?>
                                     
                                 </div>
                             </div>
@@ -896,38 +931,91 @@
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-4">
                                     
-                                    <form class="form contact-form" id="contact_form">
+                                    <?php
+                                        $attributes = array(
+                                            'class' => 'form contact-form',
+                                            'id' => 'contact_form'
+                                        );
+                                        echo form_open('WEBFP/actionRegister', $attributes);
+                                    ?>
                                         <div class="clearfix">
                                             
                                             <!-- Email -->
                                             <div class="form-group">
-                                                <input type="text" name="Email" id="Email" class="input-md round form-control" placeholder="Email" pattern=".{3,100}" required>
+                                            <?php
+                                                $data = array(
+                                                    'name'          => 'Email',
+                                                    'id'            => 'Email',
+                                                    'class'         => 'input-md round form-control',
+                                                    'placeholder'   => 'Email',
+                                                    'pattern'       => '.{3,100}',
+                                                    'required'
+                                                );
+                                                echo form_input($data);
+                                            ?>
                                             </div>
                                             
                                             <!-- Username -->
                                             <div class="form-group">
-                                                <input type="text" name="username" id="username" class="input-md round form-control" placeholder="Username" pattern=".{3,100}" required>
+                                            <?php
+                                                $data = array(
+                                                    'name'          => 'username',
+                                                    'id'            => 'username',
+                                                    'class'         => 'input-md round form-control',
+                                                    'placeholder'   => 'Username',
+                                                    'pattern'       => '.{3,100}',
+                                                    'required'
+                                                );
+                                                echo form_input($data);
+                                            ?>
                                             </div>
                                             
                                             <!-- Password -->
                                             <div class="form-group">
-                                                <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password" pattern=".{5,100}" required>
+                                            <?php
+                                                $data = array(
+                                                    'name'          => 'password',
+                                                    'id'            => 'password',
+                                                    'class'         => 'input-md round form-control',
+                                                    'placeholder'   => 'Password',
+                                                    'pattern'       => '.{5,100}',
+                                                    'required'
+                                                );
+                                                echo form_password($data);
+                                            ?>
                                             </div>
                                             
                                             <!-- Re-enter Password -->
                                             <div class="form-group">
-                                                <input type="password" name="re-password" id="re-password" class="input-md round form-control" placeholder="Re-enter Password" pattern=".{5,100}" required>
+                                            <?php
+                                                $data = array(
+                                                    'name'          => 're-password',
+                                                    'id'            => 're-password',
+                                                    'class'         => 'input-md round form-control',
+                                                    'placeholder'   => 'Re-enter Password',
+                                                    'pattern'       => '.{5,100}',
+                                                    'required'
+                                                );
+                                                echo form_password($data);
+                                            ?>
                                             </div>
                                                 
                                         </div>
                                         
                                         <!-- Send Button -->
                                         <div class="pt-10">
-                                            <button class="submit_btn btn btn-mod btn-medium btn-round btn-full" id="reg-btn">Register</button>
+                                        <?php
+                                            $data = array(
+                                                'id'            => 'reg-btn',
+                                                'class'         => 'submit_btn btn btn-mod btn-medium btn-round btn-full',
+                                                'content'       => 'Register'
+                                            );
+                                            echo form_button($data);
+                                        ?>
                                         </div>
-                                        
-                                    </form>
-                                    
+                                    <?php
+                                        echo form_close();
+                                    ?>    
                                 </div>
                             </div>
                             <!-- End Registry Form -->

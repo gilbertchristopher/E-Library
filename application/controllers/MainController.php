@@ -2,8 +2,31 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MainController extends CI_Controller {
+
+	public function __construct(){
+        parent::__construct();
+        // LOAD MODEL
+        // $this->load->model('SignInUpModel');
+		// $this->load->model('SearchModel');
+    }
+
 	public function index()
 	{
 		$this->load->view('pages/Homepage');
 	}
+
+	public function index2()
+	{
+        $data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
+		$this->load->view('pages/loginRegister.php', $data);
+    }
+
+	public function actionLogin(){
+
+    }
+
+    public function actionRegister(){
+        
+    }
 }

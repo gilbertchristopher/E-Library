@@ -44,10 +44,10 @@ class MainController extends CI_Controller {
 			$keyword_clean = $this->security->xss_clean($keyword);
 
 			$data['keywords'] = $keyword_clean;
-
+			$data['keywords'] = strip_tags($data['keywords']);
 			$this->load->view('pages/display_search_result', $data);
 		}
-	}
+	}	
 
 	public function actionLogin(){
 

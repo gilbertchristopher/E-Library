@@ -59,7 +59,7 @@
                             
                             <!-- Item -->
                             <li>
-                                <a href="#" class="mn">Login / Register</a>
+                                <a href="<?php echo base_url('index.php/MainController/loginRegisterPage'); ?>" class="mn">Login / Register</a>
                             </li>
                             <!-- End Item -->
                             

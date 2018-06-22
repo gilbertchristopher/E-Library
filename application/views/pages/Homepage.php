@@ -41,37 +41,19 @@
                             
                             <!-- Item With Sub -->
                             <li>
-                                <a href="#" class="mn-has-sub">Home</a>    
+                                <a href="#" class="mn">Home</a>    
                             </li>
                             <!-- End Item With Sub -->
                             
                             <!-- Item With Sub -->
                             <li>
-                                <a href="#" class="mn-has-sub active">Pages</a>
+                                <a href="#" class="mn">Catalog</a>
                             </li>
                             <!-- End Item With Sub -->
                             
                             <!-- Item With Sub -->
                             <li>
-                                <a href="#" class="mn-has-sub">Elements</a>
-                            </li>
-                            <!-- End Item With Sub -->
-                            
-                            <!-- Item With Sub -->
-                            <li>
-                                <a href="#" class="mn-has-sub">Portfolio</a>
-                            </li>
-                            <!-- End Item With Sub -->
-                            
-                            <!-- Item With Sub -->
-                            <li>
-                                <a href="#" class="mn-has-sub">Blog</a>
-                            </li>
-                            <!-- End Item With Sub -->
-                            
-                            <!-- Item With Sub -->
-                            <li>
-                                <a href="#" class="mn-has-sub">Shop</a>
+                                <a href="#" class="mn">Account</a>
                             </li>
                             <!-- End Item With Sub -->
                             
@@ -119,58 +101,102 @@
             
             
             <!-- Head Section -->
-            <section class="page-section bg-dark-alfa-30 parallax-3" data-background="assets/images/full-width-images/section-bg-23.jpg">
+            <!-- <section class="page-section bg-dark-alfa-30 parallax-3" data-background="assets/images/full-width-images/section-bg-23.jpg">
                 <div class="relative container align-left">
                     
                     <div class="row">
                         <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Landing Page</h1>
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">E-Library</h1>
                             <div class="hs-line-4 font-alt">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                Search, Book, and get notified
                             </div>
                         </div>
-                        
-                        <div class="col-md-4 mt-30">
-                            <div class="mod-breadcrumbs font-alt align-right">
-                                <a href="#">Home</a>&nbsp;/&nbsp;<a href="#">Pages</a>&nbsp;/&nbsp;<span>Landing Page</span>
+                    </div>
+                    
+                </div>
+            </section> -->
+            <!-- End Head Section -->
+
+            <!-- Head Section -->
+            <section class="small-section bg-gray-lighter">
+                <div class="relative container align-left">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">E-Library</h1>
+                            <div class="hs-line-4 font-alt black">
+                                Search, Book, and Notified
                             </div>
-                            
                         </div>
                     </div>
                     
                 </div>
             </section>
             <!-- End Head Section -->
-            
-            
-            <!-- Text Section -->
-            <section class="page-section" id="about">
+
+            <!-- Search box -->
+
+            <!-- Section -->
+            <section class="page-section">
                 <div class="container relative">
                     
+                    <h2 class="section-title font-alt mb-70 mb-sm-40">
+                        Search
+                    </h2>
+                    
+                    <!-- Row -->
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="section-text align-center">
-                                <blockquote>
-                                    <p>
-                                        Curabitur eu adipiscing lacus, a iaculis diam. Nullam placerat blandit auctor. 
-                                        Nulla accumsan ipsum et nibh rhoncus, eget tempus sapien ultricies. Donec mollis 
-                                        lorem vehicula.
-                                    </p>
-                                </blockquote>
+                        
+                        <!-- Col -->
+                        
+                        <div class="col-sm-2 mb-40">
+                            
+                            <!-- Kosongin aja -->
+                            
+                        </div>
+                        
+                        <!-- End Col -->
+                        
+                        <!-- Col -->
+                        
+                        <div class="col-sm-8 mb-40">
+                            
+                            <!-- Form -->
+                            <form method="post" action="#" id="form" role="form" class="form">
                                 
-                                <div class="local-scroll">
-                                    <a href="#start" class="btn btn-mod btn-border btn-medium btn-round mb-10">See More</a>
-                                    <span class="hidden-xs">&nbsp;</span>
-                                    <a href="http://themeforest.net/user/theme-guru/portfolio" class="btn btn-mod btn-medium btn-round mb-10">Buy Now</a>
+                                <div class="mb-20 mb-md-10">
+                                    <!-- Search box -->
+                                    <input type="text" name="name" id="name" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
                                 </div>
                                 
-                            </div>
+                                
+                                <div class="mb-20 mb-md-10 align-center">
+                                    <input type="button" name="search_submit" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Search">
+                                </div>
+                                                            
+                            </form>
+							<!-- End Form -->
+                            
                         </div>
+                        
+                        <!-- End Col -->
+                        
+                        <!-- Col -->
+                        
+                        <div class="col-sm-2 mb-40">
+                            
+                            <!-- Kosongin aja -->
+                            
+                        </div>
+                        
+                        <!-- End Col -->
+                        
                     </div>
+                    <!-- End Row -->
                     
                 </div>
             </section>
-            <!-- End Text Section -->
+            <!-- End Section -->
+            
             
             <!-- Divider -->
             <hr class="mt-0 mb-0 "/>

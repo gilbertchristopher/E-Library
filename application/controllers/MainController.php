@@ -28,6 +28,13 @@ class MainController extends CI_Controller {
 		$this->load->view('pages/userPage.php', $data);
 	}
 
+	public function adminPage()
+	{
+		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
+		$this->load->view('pages/adminPage.php', $data);
+	}
+
 	public function searchMainpage(){
 		$data['js'] = $this->load->view('include/jsLandingPage.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLandingPage.php', NULL, TRUE);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>E-Library - User Page</title>
+        <title>E-Library - User</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta charset="utf-8">
@@ -106,7 +106,7 @@
                     <div class="row">
                         
                         <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Shop</h1>
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">User Page</h1>
                             <div class="hs-line-4 font-alt">
                                 Choose the best products in our shop
                             </div>

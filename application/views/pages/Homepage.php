@@ -39,23 +39,29 @@
                     <div class="inner-nav desktop-nav">
                         <ul class="clearlist">
                             
-                            <!-- Item With Sub -->
+                            <!-- Item -->
                             <li>
                                 <a href="#" class="mn">Home</a>    
                             </li>
-                            <!-- End Item With Sub -->
+                            <!-- End Item -->
                             
-                            <!-- Item With Sub -->
+                            <!-- Item -->
                             <li>
                                 <a href="#" class="mn">Catalog</a>
                             </li>
-                            <!-- End Item With Sub -->
-                            
-                            <!-- Item With Sub -->
+                            <!-- End Item -->
+
+                            <!-- Item -->
                             <li>
-                                <a href="#" class="mn">Account</a>
+                                <a href="#" class="mn">About us</a>
                             </li>
-                            <!-- End Item With Sub -->
+                            <!-- End Item -->
+                            
+                            <!-- Item -->
+                            <li>
+                                <a href="#" class="mn">Login / Register</a>
+                            </li>
+                            <!-- End Item -->
                             
                             <!-- Divider -->
                             <li><a>&nbsp;</a></li>

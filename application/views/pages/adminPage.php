@@ -17,6 +17,17 @@
             echo $css;
         ?>       
         
+        <script type="text/javascript">
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
     </head>
     <body class="appear-animate">
         
@@ -505,31 +516,10 @@
                         <!-- Service Item -->
                         <div class="tab-pane fade" id="add">
                             
-                            <div class="section-text">
-                                <div class="row">
-                                    <div class="col-md-4 mb-md-40 mb-xs-30">
-                                        <blockquote class="mb-0">
-                                            <p>
-                                                It&nbsp;doesn&rsquo;t matter how many times&nbsp;I have to&nbsp;click, as&nbsp;long 
-                                                as&nbsp;each click is&nbsp;a&nbsp;mindless, unambiguous choice.
-                                            </p>
-                                            <footer>
-                                                Steve Krug
-                                            </footer>
-                                        </blockquote>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                        Cras mi tortor, laoreet id ornare et, accumsan non magna. Maecenas vulputate accumsan velit. 
-                                        Curabitur a nulla ex. Nam a tincidunt ante. Vitae gravida turpis. Vestibulum varius
-                                        nulla non nulla scelerisque tristique.
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                        Mauris id viverra augue, eu porttitor diam. Praesent faucibus est a interdum elementum. 
-                                        Nam varius at ipsum id dignissim. Nam a tincidunt ante lorem. Pellentesque suscipit ante
-                                        at ullamcorper pulvinar neque porttitor. 
-                                    </div>
-                                </div>
-                            </div>
+                        <form id="form1" runat="server">
+                            <img id="blah" src="#" alt="your image" />
+                            <input type='file' onchange="readURL(this);" />   
+                        </form>
                             
                         </div>
                         <!-- End Service Item -->

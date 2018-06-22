@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
         
         <!-- Favicons -->
-        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.png'); ?>">
 
         <!-- CSS -->
         <?php

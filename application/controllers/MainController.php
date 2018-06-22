@@ -17,12 +17,19 @@ class MainController extends CI_Controller {
 		$this->load->view('pages/Homepage',$data);
 	}
 
-	public function index2()
+	public function loginRegisterPage()
 	{
         $data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
 		$this->load->view('pages/loginRegister.php', $data);
-    }
+	}
+	
+	public function userPage()
+	{
+		$data['js'] = $this->load->view('include/jsUserPage.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssUserPage.php', NULL, TRUE);
+		$this->load->view('pages/userPage.php', $data);
+	}
 
 	public function actionLogin(){
 

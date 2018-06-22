@@ -176,7 +176,7 @@
                                 
                                 
                                 <div class="mb-20 mb-md-10 align-center">
-                                    <input type="button" name="search_submit" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Search">
+                                    <input type="submit" name="search_submit" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Search">
                                 </div>
                                                             
                             </form>

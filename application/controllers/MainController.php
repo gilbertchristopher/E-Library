@@ -34,9 +34,9 @@ class MainController extends CI_Controller {
 		
 		if($this->input->post('search_submit')){
 			$keyword = $this->input->post('search_keywords');
-			//$keyword_clean = $this->security->xss_clean($keyword);
+			$keyword_clean = $this->security->xss_clean($keyword);
 
-			$data['keywords'] = $keyword;
+			$data['keywords'] = $keyword_clean;
 
 			$this->load->view('pages/display_search_result', $data);
 		}

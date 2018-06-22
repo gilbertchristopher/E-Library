@@ -5,9 +5,6 @@ class MainController extends CI_Controller {
 
 	public function __construct(){
         parent::__construct();
-        // LOAD MODEL
-        // $this->load->model('SignInUpModel');
-		// $this->load->model('SearchModel');
     }
 
 	public function index()
@@ -29,6 +26,20 @@ class MainController extends CI_Controller {
 		$data['js'] = $this->load->view('include/jsUserPage.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssUserPage.php', NULL, TRUE);
 		$this->load->view('pages/userPage.php', $data);
+	}
+
+	public function searchMainpage(){
+		$data['js'] = $this->load->view('include/jsLandingPage.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssLandingPage.php', NULL, TRUE);
+		
+		if($this->input->post('search_submit')){
+			$keyword = $this->input->post('search_keywords');
+			//$keyword_clean = $this->security->xss_clean($keyword);
+
+			$data['keywords'] = $keyword;
+
+			$this->load->view('pages/display_search_result', $data);
+		}
 	}
 
 	public function actionLogin(){

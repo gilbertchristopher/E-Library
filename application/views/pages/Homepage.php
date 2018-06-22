@@ -167,11 +167,11 @@
                         <div class="col-sm-8 mb-40">
                             
                             <!-- Form -->
-                            <form method="post" action="#" id="form" role="form" class="form">
+                            <form method="post" action="<?php echo base_url('index.php/MainController/searchMainpage'); ?>" id="form" role="form" class="form">
                                 
                                 <div class="mb-20 mb-md-10">
                                     <!-- Search box -->
-                                    <input type="text" name="name" id="name" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
+                                    <input type="text" name="search_keywords" id="search_keywords" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
                                 </div>
                                 
                                 

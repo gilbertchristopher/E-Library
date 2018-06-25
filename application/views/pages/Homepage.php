@@ -9,6 +9,13 @@
 
     <?php
         echo $css;
+
+        if(isset($this->session->userdata['logged_user'])){
+            $nim = ($this->session->userdata['logged_user']['nim']);
+            $pw = ($this->session->userdata['logged_user']['password']);
+            $email = ($this->session->userdata['logged_user']['email']);
+            $salt = ($this->session->userdata['logged_user']['nim']);
+        }
     ?>
 
 </head>
@@ -54,6 +61,24 @@
                             <!-- Item -->
                             <li>
                                 <a href="#" class="mn">About us</a>
+                            </li>
+                            <!-- End Item -->
+
+                            <!-- Item -->
+                            <li>
+                                <?php
+                                    if($this->session->has_userdata('logged_user')){
+                                        if($nim == '00000011461' || $nim == '00000011634' || $nim == '00000012175' || $nim == '00000012373'){
+                                            echo "<a href='".base_url('index.php/MainController/adminPage')."' class='mn'>Admin Page</a>";
+                                        }
+                                        else{
+                                            echo "<a href='".base_url('index.php/MainController/userPage')."' class='mn'>User Page</a>";
+                                        }
+                                    }
+                                    else{
+                                        
+                                    }
+                                ?>
                             </li>
                             <!-- End Item -->
                             

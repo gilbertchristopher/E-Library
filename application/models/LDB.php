@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class LDB extends CI_Model{
+    //Function ini digunakan untuk mengambil data dari tabel buku sesuai dengan kata kunci yang diberikan
     public function searchByKey($keys){
         $condition = "title LIKE '%" .$keys ."%' OR author LIKE '%" .$keys ."%' OR genre LIKE '%" .$keys ."%' OR ASIN LIKE '%" .$keys ."%'";
         $this->db->select('ASIN, title, author, genreid, genre, imgUrl');
@@ -11,6 +12,9 @@ class LDB extends CI_Model{
         return $query->result();
     }
 
+    //Function ini digunakan untuk login ke dalam sistem
+    //Apabila berhasil, maka function akan mengembalikkan data-data berdasarkan email dan password pengguna
+    //Apabila gagal, maka function akan mengembalikkan nilai false yang menandakan data tidak ditemukan atau pengguna tidak terdaftar
     public function login($email, $password){
         $this->db->select('*');
         $this->db->from('user');
@@ -24,6 +28,30 @@ class LDB extends CI_Model{
         } else {
             return false;
         }
+    }
+
+    //Function ini digunakan untuk mendaftarkan pengguna baru
+    //Apabila berhasil, maka function akan mengembalikkan nilai TRUE
+    //bila gagal, maka function akan mengembalikkan nilai FALSE
+    public function registerNewUser($email, $password, $nim){
+        $salt = $this->randomStringGenerator();
+        $saltedPass = $password .$salt;
+        $hashedPass = 
+
+        $this->db->insert('');
+    }
+
+
+    //Function ini digunakan untuk menghasilkan string secara random yang digunakan sebagai salt
+    public function randomStringGenerator(){
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomstring = '';
+        for($i = 0; $i < 5; $i++){
+            $randomstring .= $characters[rand(0, $charactersLength - 1)];
+        }
+
+        return $randomstring;
     }
 }
 

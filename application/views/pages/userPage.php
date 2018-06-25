@@ -15,6 +15,13 @@
         <!-- CSS -->
         <?php
             echo $css;
+
+            if(isset($this->session->userdata['logged_user'])){
+                $nim = ($this->session->userdata['logged_user']['nim']);
+                $pw = ($this->session->userdata['logged_user']['password']);
+                $email = ($this->session->userdata['logged_user']['email']);
+                $salt = ($this->session->userdata['logged_user']['nim']);
+            }
         ?>      
         
     </head>
@@ -104,19 +111,11 @@
                 <div class="relative container align-left">
                     
                     <div class="row">
-                        
                         <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">User Page</h1>
-                            <div class="hs-line-4 font-alt">
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Hello, <?php echo $nim; ?></h1>
+                            <!-- <div class="hs-line-4 font-alt">
                                 Choose the best products in our shop
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4 mt-30">
-                            <div class="mod-breadcrumbs font-alt align-right">
-                                <a href="#">Home</a>&nbsp;/&nbsp;<a href="#">Shop</a>&nbsp;/&nbsp;<span>Columns</span>
-                            </div>
-                            
+                            </div> -->
                         </div>
                     </div>
                     

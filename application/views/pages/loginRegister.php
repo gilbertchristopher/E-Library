@@ -201,7 +201,9 @@
                                             'class' => 'form contact-form',
                                             'id' => 'contact_form'
                                         );
-                                        echo form_open('WEBFP/actionLogin', $attributes);
+
+                                        echo validation_errors();
+                                        echo form_open('MainController/actionLogin', $attributes);
                                     ?>
                                         <div class="clearfix">
                                             
@@ -209,10 +211,10 @@
                                             <div class="form-group">
                                             <?php
                                                 $data = array(
-                                                    'name'          => 'username',
-                                                    'id'            => 'username',
+                                                    'name'          => 'email',
+                                                    'id'            => 'email',
                                                     'class'         => 'input-md round form-control',
-                                                    'placeholder'   => 'Username',
+                                                    'placeholder'   => 'Email',
                                                     'pattern'       => '.{3,100}',
                                                     'required'
                                                 );
@@ -256,9 +258,9 @@
                                                     $data = array(
                                                         'id'            => 'login-btn',
                                                         'class'         => 'submit_btn btn btn-mod btn-medium btn-round',
-                                                        'content'       => 'Login'
+                                                        'value'       => 'Login'
                                                     );
-                                                    echo form_button($data);
+                                                    echo form_submit($data);
                                                 ?>
                                                 </div>
                                                 
@@ -287,7 +289,10 @@
                                             'class' => 'form contact-form',
                                             'id' => 'contact_form'
                                         );
-                                        echo form_open('WEBFP/actionRegister', $attributes);
+
+                                        echo validation_errors();
+
+                                        echo form_open('MainController/actionRegister', $attributes);
                                     ?>
                                         <div class="clearfix">
                                             
@@ -310,10 +315,10 @@
                                             <div class="form-group">
                                             <?php
                                                 $data = array(
-                                                    'name'          => 'username',
-                                                    'id'            => 'username',
+                                                    'name'          => 'nim',
+                                                    'id'            => 'nim',
                                                     'class'         => 'input-md round form-control',
-                                                    'placeholder'   => 'Username',
+                                                    'placeholder'   => 'NIM',
                                                     'pattern'       => '.{3,100}',
                                                     'required'
                                                 );
@@ -359,9 +364,9 @@
                                             $data = array(
                                                 'id'            => 'reg-btn',
                                                 'class'         => 'submit_btn btn btn-mod btn-medium btn-round btn-full',
-                                                'content'       => 'Register'
+                                                'value'       => 'Register'
                                             );
-                                            echo form_button($data);
+                                            echo form_submit($data);
                                         ?>
                                         </div>
                                     <?php

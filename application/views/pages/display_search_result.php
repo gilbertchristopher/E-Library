@@ -7,7 +7,11 @@
     </head>
     <body>
         <?php
-            echo $keywords;
+            //echo var_dump($searchres);
+            for($i = 0;$i < count($searchres);$i++){
+                echo $searchres[$i]->title;
+                echo br();
+            }
         ?>
     </body>
 </html>

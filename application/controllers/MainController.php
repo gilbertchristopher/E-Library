@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MainController extends CI_Controller {
 
 	public function __construct(){
-        parent::__construct();
+		parent::__construct();
+		$this->load->model('LDB');
     }
 
 	public function index()
@@ -43,8 +44,10 @@ class MainController extends CI_Controller {
 			$keyword = $this->input->post('search_keywords');
 			$keyword_clean = $this->security->xss_clean($keyword);
 
-			$data['keywords'] = $keyword_clean;
-			$data['keywords'] = strip_tags($data['keywords']);
+			$keyword_clean = strip_tags($keyword_clean);
+
+			$data['searchres'] = $this->LDB->searchByKey($keyword_clean);
+			
 			$this->load->view('pages/display_search_result', $data);
 		}
 	}	

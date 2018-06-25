@@ -233,7 +233,7 @@
                         
                             <!-- Shop Item -->
                             <?php
-                            for($i = 0;$i < 20;$i++){
+                            for($i = 0;$i < count($searchres);$i++){
                                 echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
                                     echo '<div class="post-prev-img">';
                                         echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";

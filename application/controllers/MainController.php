@@ -93,7 +93,16 @@ class MainController extends CI_Controller {
 				$this->load->view('pages/Homepage', $data);
 			}
 		}
-    }
+	}
+	
+	public function actionLogout(){
+		$data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
+
+		$this->session->unset_userdata('logged_user');
+
+		$this->load->view('pages/Homepage', $data);
+	}
 
     public function actionRegister(){
         $data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);

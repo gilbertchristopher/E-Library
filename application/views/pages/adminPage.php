@@ -57,41 +57,29 @@
                     <div class="inner-nav desktop-nav">
                         <ul class="clearlist">
                             
-                            <!-- Item With Sub -->
+                            <!-- Item -->
                             <li>
-                                <a href="#" class="mn-has-sub">Home</a>
+                                <a href="#" class="mn">Home</a>    
                             </li>
-                            <!-- End Item With Sub -->
+                            <!-- End Item -->
                             
-                            <!-- Item With Sub -->
+                            <!-- Item -->
                             <li>
-                                <a href="#" class="mn-has-sub active">Pages</a>
+                                <a href="#" class="mn">Catalog</a>
                             </li>
-                            <!-- End Item With Sub -->
+                            <!-- End Item -->
+
+                            <!-- Item -->
+                            <li>
+                                <a href="#" class="mn">About us</a>
+                            </li>
+                            <!-- End Item -->
                             
-                            <!-- Item With Sub -->
+                            <!-- Item -->
                             <li>
-                                <a href="#" class="mn-has-sub">Elements</a>
+                                <a href="<?php echo base_url('index.php/MainController/loginRegisterPage'); ?>" class="mn">Login / Register</a>
                             </li>
-                            <!-- End Item With Sub -->
-                            
-                            <!-- Item With Sub -->
-                            <li>
-                                <a href="#" class="mn-has-sub">Portfolio</a>
-                            </li>
-                            <!-- End Item With Sub -->
-                            
-                            <!-- Item With Sub -->
-                            <li>
-                                <a href="#" class="mn-has-sub">Blog</a>
-                            </li>
-                            <!-- End Item With Sub -->
-                            
-                            <!-- Item With Sub -->
-                            <li>
-                                <a href="#" class="mn-has-sub">Shop</a>
-                            </li>
-                            <!-- End Item With Sub -->
+                            <!-- End Item -->
                             
                             <!-- Divider -->
                             <li><a>&nbsp;</a></li>

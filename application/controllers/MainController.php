@@ -83,7 +83,12 @@ class MainController extends CI_Controller {
 				);
 
 				$this->session->set_userdata('logged_user', $sessiondata);
-				$this->load->view('pages/userPage', $data);
+
+				if($sessiondata['nim'] == '00000011461' || $sessiondata['nim'] == '00000011634' || $sessiondata['nim'] == '00000012175' || $sessiondata['nim'] == '00000012373'){
+					$this->load->view('pages/adminPage', $data);
+				} else {
+					$this->load->view('pages/userPage', $data);
+				}
 			} else {
 				$this->load->view('pages/Homepage', $data);
 			}

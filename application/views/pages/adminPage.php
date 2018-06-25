@@ -77,7 +77,15 @@
                             
                             <!-- Item -->
                             <li>
-                                <a href="<?php echo base_url('index.php/MainController/loginRegisterPage'); ?>" class="mn">Login / Register</a>
+                                <?php 
+                                    if($this->session->has_userdata('logged_user')){
+                                        echo "<a href='".base_url('index.php/MainController/actionLogout')."' class='mn'>Logout</a>";
+                                    }
+                                    else{
+                                        echo "<a href='".base_url('index.php/MainController/loginRegisterPage')."' class='mn'>Login / Register</a>";
+                                    }
+                                ?>
+                                
                             </li>
                             <!-- End Item -->
                             

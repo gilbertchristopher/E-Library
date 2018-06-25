@@ -55,8 +55,7 @@
                             
                             <!-- Item -->
                             <li>
-                                <a href="#" class="mn">Home</a>    
-                            </li>
+                                <a href="<?php echo base_url('index.php/MainController/Homepage') ?>" class="mn">Home</a>
                             <!-- End Item -->
                             
                             <!-- Item -->

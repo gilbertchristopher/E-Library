@@ -362,49 +362,50 @@
                                 
                                 <!-- Logo Item -->
                                 <div class="logo-item">
-                                    <img src="images/clients-logos/client-1.png" width="67" height="67" alt="" />
+                                
+                                    <img src="<?php echo base_url('assets/images/clients-logos/client-1.png'); ?>" width="67" height="67" alt="" />
                                 </div>
                                 <!-- End Logo Item -->
                                 
                                 <!-- Logo Item -->
                                 <div class="logo-item">
-                                    <img src="images/clients-logos/client-2.png" width="67" height="67" alt="" />
+                                    <img src="<?php echo base_url('assets/images/clients-logos/client-2.png'); ?>" width="67" height="67" alt="" />
                                 </div>
                                 <!-- End Logo Item -->
                                 
                                 <!-- Logo Item -->
                                 <div class="logo-item">
-                                    <img src="images/clients-logos/client-3.png" width="67" height="67" alt="" />
+                                    <img src="<?php echo base_url('assets/images/clients-logos/client-3.png'); ?>" width="67" height="67" alt="" />
                                 </div>
                                 <!-- End Logo Item -->
                                 
                                 <!-- Logo Item -->
                                 <div class="logo-item">
-                                    <img src="images/clients-logos/client-4.png" width="67" height="67" alt="" />
+                                    <img src="<?php echo base_url('assets/images/clients-logos/client-4.png'); ?>" width="67" height="67" alt="" />
                                 </div>
                                 <!-- End Logo Item -->
                                 
                                 <!-- Logo Item -->
                                 <div class="logo-item">
-                                    <img src="images/clients-logos/client-5.png" width="67" height="67" alt="" />
+                                    <img src="<?php echo base_url('assets/images/clients-logos/client-5.png'); ?>" width="67" height="67" alt="" />
                                 </div>
                                 <!-- End Logo Item -->
                                 
                                 <!-- Logo Item -->
                                 <div class="logo-item">
-                                    <img src="images/clients-logos/client-6.png" width="67" height="67" alt="" />
+                                    <img src="<?php echo base_url('assets/images/clients-logos/client-6.png'); ?>" width="67" height="67" alt="" />
                                 </div>
                                 <!-- End Logo Item -->
                                 
                                 <!-- Logo Item -->
                                 <div class="logo-item">
-                                    <img src="images/clients-logos/client-1.png" width="67" height="67" alt="" />
+                                    <img src="<?php echo base_url('assets/images/clients-logos/client-1.png'); ?>" width="67" height="67" alt="" />
                                 </div>
                                 <!-- End Logo Item -->
                                 
                                 <!-- Logo Item -->
                                 <div class="logo-item">
-                                    <img src="images/clients-logos/client-2.png" width="67" height="67" alt="" />
+                                    <img src="<?php echo base_url('assets/images/clients-logos/client-2.png'); ?>" width="67" height="67" alt="" />
                                 </div>
                                 <!-- End Logo Item -->
                                 
@@ -450,7 +451,7 @@
                                 
                                 <div class="team-item-image">
                                     
-                                    <img src="images/team/team-1.jpg" alt="" />
+                                    <img src="<?php echo base_url('assets/images/team/team-1.jpg'); ?>" alt="" />
                                     
                                     <div class="team-item-detail">
                                         
@@ -491,7 +492,7 @@
                                 
                                 <div class="team-item-image">
                                     
-                                    <img src="images/team/team-2.jpg" alt="" />
+                                    <img src="<?php echo base_url('assets/images/team/team-2.jpg'); ?>" alt="" />
                                     
                                     <div class="team-item-detail">
                                         
@@ -532,7 +533,7 @@
                                 
                                 <div class="team-item-image">
                                     
-                                    <img src="images/team/team-3.jpg" alt="" />
+                                    <img src="<?php echo base_url('assets/images/team/team-3.jpg'); ?>" alt="" />
                                     
                                     <div class="team-item-detail">
                                         
@@ -573,7 +574,7 @@
                                 
                                 <div class="team-item-image">
                                     
-                                    <img src="images/team/team-4.jpg" alt="" />
+                                    <img src="<?php echo base_url('assets/images/team/team-4.jpg'); ?>" alt="" />
                                     
                                     <div class="team-item-detail">
                                         

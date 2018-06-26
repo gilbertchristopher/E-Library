@@ -9,6 +9,13 @@
 
     <?php
         echo $css;
+
+        if(isset($this->session->userdata['logged_user'])){
+            $nim = ($this->session->userdata['logged_user']['nim']);
+            $pw = ($this->session->userdata['logged_user']['password']);
+            $email = ($this->session->userdata['logged_user']['email']);
+            $salt = ($this->session->userdata['logged_user']['nim']);
+        }
     ?>
 
 </head>
@@ -41,7 +48,7 @@
                             
                             <!-- Item -->
                             <li>
-                                <a href="#" class="mn">Home</a>    
+                                <a href="<?php echo base_url('index.php/MainController/index'); ?>" class="mn">Home</a> 
                             </li>
                             <!-- End Item -->
                             
@@ -56,10 +63,35 @@
                                 <a href="#" class="mn">About us</a>
                             </li>
                             <!-- End Item -->
+
+                            <!-- Item -->
+                            <li>
+                                <?php
+                                    if($this->session->has_userdata('logged_user')){
+                                        if($nim == '00000011461' || $nim == '00000011634' || $nim == '00000012175' || $nim == '00000012373'){
+                                            echo "<a href='".base_url('index.php/MainController/adminPage')."' class='mn'>Admin Page</a>";
+                                        }
+                                        else{
+                                            echo "<a href='".base_url('index.php/MainController/userPage')."' class='mn'>User Page</a>";
+                                        }
+                                    }
+                                    else{
+                                        
+                                    }
+                                ?>
+                            </li>
+                            <!-- End Item -->
                             
                             <!-- Item -->
                             <li>
-                                <a href="<?php echo base_url('index.php/MainController/loginRegisterPage'); ?>" class="mn">Login / Register</a>
+                                <?php 
+                                    if($this->session->has_userdata('logged_user')){
+                                        echo "<a href='".base_url('index.php/MainController/actionLogout')."' class='mn'>Logout</a>";
+                                    }
+                                    else{
+                                        echo "<a href='".base_url('index.php/MainController/loginRegisterPage')."' class='mn'>Login / Register</a>";
+                                    }
+                                ?>
                             </li>
                             <!-- End Item -->
                             

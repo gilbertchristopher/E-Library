@@ -6333,6 +6333,12 @@ section:hover .small-item-carousel .owl-next{
     position: relative;
     z-index: 2;
 }
+.image-banner {
+
+    background : no-repeat center url(../images/Library-Banner.jpg);
+    background-size: cover;
+    
+}
 .countdown-number > b{
     display: block;
     width: 100%;

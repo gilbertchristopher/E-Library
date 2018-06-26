@@ -41,6 +41,13 @@ class MainController extends CI_Controller {
 		$this->load->view('pages/adminPage.php', $data);
 	}
 
+	//Halaman about us
+	public function aboutUsPage(){
+		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
+		$this->load->view('pages/aboutUsPage.php', $data);
+	}
+
 	//Function untuk mencari sesuai keyword
 	public function searchMainpage()
 	{

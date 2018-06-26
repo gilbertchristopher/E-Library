@@ -60,7 +60,7 @@
 
                             <!-- Item -->
                             <li>
-                                <a href="#" class="mn">About us</a>
+                                <a href="<?php echo base_url('index.php/MainController/aboutUsPage'); ?>" class="mn">About us</a>
                             </li>
                             <!-- End Item -->
 

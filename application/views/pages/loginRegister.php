@@ -42,7 +42,7 @@
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
                         <a href="mp-index.html" class="logo">
-                            <img src="<?php echo base_url('assets/images/logo-dark.png'); ?>" alt="" />
+                            <img src="<?php echo base_url('assets/images/logo-footer.png'); ?>" alt="" />
                         </a>
                     </div>
                     <div class="mobile-nav">

@@ -30,12 +30,12 @@
     <div class="page" id="top">
             
             <!-- Navigation panel -->
-            <nav class="main-nav js-stick">
+             <nav class="main-nav js-stick">
                 <div class="full-wrapper relative clearfix">
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
-                        <a href="#" class="image-logo">
-                            <img src="images/footer-logo.png" alt="" />
+                        <a href="mp-index.html" class="logo">
+                            <img src="<?php echo base_url('assets/images/logo-footer.png'); ?>" alt="" />
                         </a>
                     </div>
                     <div class="mobile-nav">

@@ -6334,10 +6334,13 @@ section:hover .small-item-carousel .owl-next{
     z-index: 2;
 }
 .image-banner {
-
     background : no-repeat center url(../images/Library-Banner.jpg);
     background-size: cover;
-    
+}
+.image-footer {
+    background: no-repeat center url(../images/logo-footer.png);
+    background-size: 200px 200px;
+    height: 150px;
 }
 .countdown-number > b{
     display: block;

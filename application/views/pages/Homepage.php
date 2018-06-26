@@ -243,7 +243,12 @@
 
                     <!-- Footer Logo -->
                     <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="1.5s">
-                        <a href="#top"><img src="<?php echo base_url('assets/images/logo-footer.png'); ?>" width="78" height="36" alt="" /></a>
+                        
+                            <a href="#top">
+                                <div class="image-footer">
+                                </div>
+                            </a>
+                        
                     </div>
                     <!-- End Footer Logo -->
                     

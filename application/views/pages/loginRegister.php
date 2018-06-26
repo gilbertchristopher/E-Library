@@ -327,7 +327,7 @@
                                                 echo br();
                                             }
                                             echo "</p>";
-                                            var_dump($error_message_register);
+                                            //var_dump($error_message_register);
                                         }
                                         echo form_open('MainController/actionRegister', $attributes);
                                     ?>

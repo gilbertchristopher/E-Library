@@ -9,6 +9,7 @@ class MainController extends CI_Controller {
 		$this->load->model('LDB');
     }
 
+	//Halaman homepage
 	public function index()
 	{
 		$data['js'] = $this->load->view('include/jsLandingPage.php', NULL, TRUE);
@@ -16,6 +17,7 @@ class MainController extends CI_Controller {
 		$this->load->view('pages/Homepage',$data);
 	}
 
+	//Halaman login dan register
 	public function loginRegisterPage()
 	{
         $data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
@@ -23,6 +25,7 @@ class MainController extends CI_Controller {
 		$this->load->view('pages/loginRegister.php', $data);
 	}
 	
+	//Halaman user
 	public function userPage()
 	{
 		$data['js'] = $this->load->view('include/jsUserPage.php', NULL, TRUE);
@@ -30,6 +33,7 @@ class MainController extends CI_Controller {
 		$this->load->view('pages/userPage.php', $data);
 	}
 
+	//Halaman admin
 	public function adminPage()
 	{
 		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
@@ -37,6 +41,7 @@ class MainController extends CI_Controller {
 		$this->load->view('pages/adminPage.php', $data);
 	}
 
+	//Function untuk mencari sesuai keyword
 	public function searchMainpage()
 	{
 		$data['js'] = $this->load->view('include/jsLandingPage.php', NULL, TRUE);
@@ -54,6 +59,7 @@ class MainController extends CI_Controller {
 		}
 	}	
 
+	//Script php untuk login
 	public function actionLogin()
 	{
 		$data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
@@ -95,6 +101,7 @@ class MainController extends CI_Controller {
 		}
 	}
 	
+	//Script untuk logout
 	public function actionLogout(){
 		$data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
@@ -104,6 +111,7 @@ class MainController extends CI_Controller {
 		$this->load->view('pages/Homepage', $data);
 	}
 
+	//Script untuk register
     public function actionRegister(){
         $data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);

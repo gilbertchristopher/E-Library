@@ -22,6 +22,8 @@ class MainController extends CI_Controller {
 	{
         $data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
+		$data['activeLogin'] = "active";
+		$data['activeRegister'] = "";
 		$this->load->view('pages/loginRegister.php', $data);
 	}
 	
@@ -72,13 +74,16 @@ class MainController extends CI_Controller {
 		$data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
 
-		$this->form_validation->set_rules('email','Email','trim|required|xss_clean',
-					array('required' => 'You must provide a %s'));
+		$this->form_validation->set_rules('email','Email','trim|required|valid_email|xss_clean',
+					array('required' => 'You must provide a %s', 'valid_email' => 'You must provide a valid email.'));
 		$this->form_validation->set_rules('password','Password','trim|required|xss_clean', 
 					array('required' => 'You must provide a %s'));
 		
 		if($this->form_validation->run() == FALSE)
 		{
+			$data['activeLogin'] = "active";
+			$data['activeRegister'] = "";
+			$data['error_message_login'] = $this->form_validation->error_array();
 			$this->load->view('pages/loginRegister', $data);
 		} 
 		else 
@@ -103,7 +108,10 @@ class MainController extends CI_Controller {
 					$this->load->view('pages/userPage', $data);
 				}
 			} else {
-				$this->load->view('pages/Homepage', $data);
+				$data['activeLogin'] = "active";
+				$data['activeRegister'] = "";
+				$data['error_message_login2'] = "Email or/and password didn't match or account doesn't exist";
+				$this->load->view('pages/loginRegister', $data);
 			}
 		}
 	}
@@ -123,17 +131,20 @@ class MainController extends CI_Controller {
         $data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
 
-		$this->form_validation->set_rules('email','Email','trim|required|xss_clean',
-					array('required' => 'You must provide a %s'));
+		$this->form_validation->set_rules('email','Email','trim|required|valid_email|xss_clean',
+					array('required' => 'You must provide an %s', 'valid_email' => 'You must provide a valid email.'));
 		$this->form_validation->set_rules('password','Password','trim|required|xss_clean', 
 					array('required' => 'You must provide a %s'));
-		$this->form_validation->set_rules('re-password','Retype Password','trim|required|xss_clean',
+		$this->form_validation->set_rules('re-password','Retype Password','trim|required|xss_clean|matches[password]',
 					array('required' => "You must provide a %s"));
 		$this->form_validation->set_rules('nim','NIM','trim|required|xss_clean',
 					array('required' => "You must provide a %s"));
 					
 		if($this->form_validation->run() == FALSE)
 		{
+			$data['activeLogin'] = "";
+			$data['activeRegister'] = "active";
+			$data['error_message_register'] = $this->form_validation->error_array();
 			$this->load->view('pages/loginRegister', $data);
 		} 
 		else 

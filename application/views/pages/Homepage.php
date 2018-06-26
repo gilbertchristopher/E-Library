@@ -34,8 +34,8 @@
                 <div class="full-wrapper relative clearfix">
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
-                        <a href="mp-index.html" class="logo">
-                            <img src="images/logo-dark.png" alt="" />
+                        <a href="mp-index.html" class="image-logo">
+                            <img src="images/footer-logo.png" alt="" />
                         </a>
                     </div>
                     <div class="mobile-nav">

@@ -321,8 +321,8 @@
                                             <div class="form-group">
                                             <?php
                                                 $data = array(
-                                                    'name'          => 'Email',
-                                                    'id'            => 'Email',
+                                                    'name'          => 'email',
+                                                    'id'            => 'email',
                                                     'class'         => 'input-md round form-control',
                                                     'placeholder'   => 'Email',
                                                     'pattern'       => '.{3,100}',

@@ -221,18 +221,9 @@
                                             'class' => 'form contact-form',
                                             'id' => 'contact_form'
                                         );
-
-                                        if(isset($error_message_login)){
-                                            echo "<p>";
-                                            foreach($error_message_login as $error){
-                                                echo $error;
-                                                echo br();
-                                            }
-                                            echo "</p>";
-                                            // echo "<p> $error_message[1] </p>";
-                                            //var_dump($error_message_login);
-                                        } else if(isset($error_message_login2)){
-                                            echo "<p> $error_message_login2 </p>";
+                                        
+                                        if(isset($error_message_login2)){
+                                            echo "<p><strong style='color:red'> $error_message_login2 </strong></p>";
                                         }
                                         echo form_open('MainController/actionLogin', $attributes);
                                     ?>
@@ -242,14 +233,15 @@
                                             <div class="form-group">
                                             <?php
                                                 $data = array(
-                                                    'name'          => 'email',
-                                                    'id'            => 'email',
+                                                    'name'          => 'email_login',
+                                                    'id'            => 'email_login',
                                                     'class'         => 'input-md round form-control',
                                                     'placeholder'   => 'Email',
                                                     'pattern'       => '.{3,100}',
                                                     'required'
                                                 );
                                                 echo form_input($data);
+                                                echo form_error('email_login');
                                             ?>
                                             </div>
                                             
@@ -257,14 +249,15 @@
                                             <div class="form-group">
                                             <?php
                                                 $data = array(
-                                                    'name'          => 'password',
-                                                    'id'            => 'password',
+                                                    'name'          => 'password_login',
+                                                    'id'            => 'password_login',
                                                     'class'         => 'input-md round form-control',
                                                     'placeholder'   => 'Password',
                                                     'pattern'       => '.{5,100}',
                                                     'required'
                                                 );
                                                 echo form_password($data);
+                                                echo form_error('password_login');
                                             ?>
                                             </div>
                                                 
@@ -320,15 +313,6 @@
                                             'class' => 'form contact-form',
                                             'id' => 'contact_form'
                                         );
-                                        if(isset($error_message_register)){
-                                            echo "<p>";
-                                            foreach($error_message_register as $error){
-                                                echo $error;
-                                                echo br();
-                                            }
-                                            echo "</p>";
-                                            //var_dump($error_message_register);
-                                        }
                                         echo form_open('MainController/actionRegister', $attributes);
                                     ?>
                                         <div class="clearfix">
@@ -345,6 +329,7 @@
                                                     'required'
                                                 );
                                                 echo form_input($data);
+                                                echo form_error('email');
                                             ?>
                                             </div>
                                             
@@ -360,6 +345,7 @@
                                                     'required'
                                                 );
                                                 echo form_input($data);
+                                                echo form_error('nim');
                                             ?>
                                             </div>
                                             
@@ -375,6 +361,7 @@
                                                     'required'
                                                 );
                                                 echo form_password($data);
+                                                echo form_error('password');
                                             ?>
                                             </div>
                                             
@@ -390,6 +377,7 @@
                                                     'required'
                                                 );
                                                 echo form_password($data);
+                                                echo form_error('re-password');
                                             ?>
                                             </div>
                                                 

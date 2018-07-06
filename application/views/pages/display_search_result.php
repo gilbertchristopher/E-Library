@@ -242,7 +242,13 @@
 
                                     //NAMA BUKU
                                     echo '<div class="post-prev-title font-alt align-center">';
-                                        echo '<a href="shop-single.html">'.$searchres[$i]->title.'</a>';
+                                    $teks = "...";
+                                    if (strlen($searchres[$i]->title) > 40) {
+                                        echo '<a href="shop-single.html">'.substr($searchres[$i]->title,1,40).$teks.'</a>';
+                                    }
+                                    else {
+                                        echo '<a href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
+                                    }
                                     echo '</div>';
                                 echo '</div>';
                             }

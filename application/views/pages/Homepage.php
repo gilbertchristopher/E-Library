@@ -238,7 +238,7 @@
             <!-- End Divider -->
             
             <!-- Footer -->
-            <footer class="page-section bg-gray-lighter footer pb-60">
+            <footer class="page-section bg-gray-darker footer pb-60">
                 <div class="container">
 
                     <!-- Footer Logo -->

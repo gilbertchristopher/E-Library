@@ -181,348 +181,65 @@
                                     <!-- Works Filter -->                    
                                     <div class="works-filter font-alt align-center">
                                         <a href="#" class="filter active" data-filter="*">All Books</a>
-                                        <a href="#genre1" class="filter" data-filter=".genre1">Genre 1</a>
+                                        <!-- <a href="#genre1" class="filter" data-filter=".genre1">Genre 1</a>
                                         <a href="#genre2" class="filter" data-filter=".genre2">Genre 2</a>
                                         <a href="#genre3" class="filter" data-filter=".genre3">Genre 3</a>
                                         <a href="#genre4" class="filter" data-filter=".genre4">Genre 4</a>
-                                        <a href="#genre5" class="filter" data-filter=".genre5">Genre 5</a>
+                                        <a href="#genre5" class="filter" data-filter=".genre5">Genre 5</a> -->
                                     </div>                    
                                     <!-- End Works Filter -->
+
+                                    <div class="row">
+  
+                                        <!-- Content Book List -->
+                                        <div class="col-sm-12">
                                     
-                                    <!-- Works Grid -->
-                                    <ul class="works-grid work-grid-gut clearfix font-alt hover-white" id="work-grid">
-                                        
-                                        <!-- Work Item (Lightbox) -->
-                                        <li class="work-item mix genre1">
-                                            <a href="images/portfolio/full-project-1.jpg" class="work-lightbox-link mfp-image">
-                                                <div class="work-img">
-                                                    <img src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Portrait</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre3">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Vase 3D</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre5">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Boy in T-shirt</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre3">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
+                                            <!-- Works Grid -->
+                                            <ul class="works-grid work-grid-gut clearfix font-alt hover-white" id="work-grid">
+                                                
+                                                <!-- Work Item (Lightbox) -->
+                                                <?php
+                                                //count($searchres) --> sementara di komen
+                                                for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
+                                                    echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
+                                                        echo '<div class="post-prev-img">';
+                                                            echo "<a href='shop-single.html'><img style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
+                                                        echo '</div>';
 
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre3">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre5">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre1">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre2">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre1">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre2">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre3">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre4">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre3">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre1">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Model</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre4">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Space</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre1">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Model</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre4">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Vase 3D</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre2">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Boy in T-shirt</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre4">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Creative project</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre5">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Website</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre4">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Mokup</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre5">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Book</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre5">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Print Mockup</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (External Page) -->
-                                        <li class="work-item mix genre2">
-                                            <a href="portfolio-single-1.html" class="work-ext-link">
-                                                <div class="work-img">
-                                                    <img class="work-img" src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Cowboy</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                        <!-- Work Item (Lightbox) -->
-                                        <li class="work-item mix genre2">
-                                            <a href="images/portfolio/full-project-3.jpg" class="work-lightbox-link mfp-image">
-                                                <div class="work-img">
-                                                    <img src="<?php echo base_url('assets/images/portfolio/projects-1.jpg'); ?>" alt="Work" />
-                                                </div>
-                                                <div class="work-intro">
-                                                    <h3 class="work-title">Young Man</h3>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <!-- End Work Item -->
-                                        
-                                    </ul>
-                                    <!-- End Works Grid -->
-                                    
+                                                        //NAMA BUKU
+                                                        echo '<div class="post-prev-title font-alt align-center">';
+                                                            $teks = "...";
+                                                            if (strlen($searchres[$i]->title) > 40) {
+                                                                echo '<a href="shop-single.html">'.substr($searchres[$i]->title,1,40).$teks.'</a>';
+                                                            }
+                                                            else {
+                                                                echo '<a href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
+                                                            }
+                                                        echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                ?>
+                                                <!-- End Work Item -->
+                                                
+                                            </ul>
+                                            <!-- End Works Grid -->
+                                        </div>
+                                    </div>
                                 </div>
                             </section>
                             <!-- End Portfolio Section -->
+
+                             <!-- Pagination -->
+                             <div class="pagination">
+                                <a href=""><i class="fa fa-angle-left"></i></a>
+                                <a href="" class="active">1</a>
+                                <a href="">2</a>
+                                <a href="">3</a>
+                                <a class="no-active">...</a>
+                                <a href="">9</a>
+                                <a href=""><i class="fa fa-angle-right"></i></a>
+                            </div>
+                            <!-- End Pagination -->
                             
                         </div>
                         <!-- End Service Item -->

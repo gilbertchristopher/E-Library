@@ -180,8 +180,23 @@
                                     
                                     <!-- Works Filter -->                    
                                     <div class="works-filter font-alt align-center">
-                                        <a href="#" class="filter active" data-filter="*">All Books</a>
-                                        <!-- <a href="#genre1" class="filter" data-filter=".genre1">Genre 1</a>
+                                        <!-- Form -->
+                                        <form method="post" action="<?php echo base_url('index.php/MainController/adminPageFilter'); ?>" id="form" role="form" class="form">
+                                                
+                                        <select class="input-md form-control">
+                                            <?php
+                                                for($i = 0; $i < count($genress); $i++){
+                                                    echo "<option>".$genress[$i]->genre."</option>";
+                                                }
+                                            ?>
+                                        </select>
+                                                     
+                                            <input type="submit" name="search_submit" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Search">
+                                                                        
+                                        </form>
+                                        <!-- End Form -->
+                                        <!-- <a href="#" class="filter active" data-filter="*">All Books</a>
+                                        <a href="#genre1" class="filter" data-filter=".genre1">Genre 1</a>
                                         <a href="#genre2" class="filter" data-filter=".genre2">Genre 2</a>
                                         <a href="#genre3" class="filter" data-filter=".genre3">Genre 3</a>
                                         <a href="#genre4" class="filter" data-filter=".genre4">Genre 4</a>

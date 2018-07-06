@@ -147,7 +147,7 @@ class MainController extends CI_Controller {
         $data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
 
-		$this->form_validation->set_rules('email','Email','trim|required|xss_clean',
+		$this->form_validation->set_rules('email','Email','trim|required|valid_email|xss_clean',
 					array(
 						'required' => 'You must provide a valid %s'
 						)

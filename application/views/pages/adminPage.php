@@ -215,8 +215,6 @@
                                                             else {
                                                                 echo '<a href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
                                                             }
-                                                            
-                                                            
                                                         echo '</div>';
                                                     echo '</div>';
                                                 }

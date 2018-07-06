@@ -42,7 +42,7 @@
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
                         <a href="mp-index.html" class="logo">
-                            <img src="<?php echo base_url('assets/images/logo-dark.png'); ?>" alt="" />
+                            <img src="<?php echo base_url('assets/images/logo-footer.png'); ?>" alt="" />
                         </a>
                     </div>
                     <div class="mobile-nav">
@@ -169,17 +169,17 @@
                         
                         <div class="col-md-8">
                             <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">My Account</h1>
-                            <div class="hs-line-4 font-alt">
+                            <!-- <div class="hs-line-4 font-alt">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing
-                            </div>
+                            </div> -->
                         </div>
                         
-                        <div class="col-md-4 mt-30">
+                        <!-- <div class="col-md-4 mt-30">
                             <div class="mod-breadcrumbs font-alt align-right">
                                 <a href="#">Home</a>&nbsp;/&nbsp;<a href="#">Pages</a>&nbsp;/&nbsp;<span>My Account</span>
                             </div>
                             
-                        </div>
+                        </div> -->
                     </div>
                     
                 </div>
@@ -195,11 +195,11 @@
                     <div class="align-center mb-40 mb-xxs-30">
                         <ul class="nav nav-tabs tpl-minimal-tabs">
                             
-                            <li class="active">
+                            <li class="<?php echo $activeLogin; ?>">
                                 <a href="#mini-one" data-toggle="tab">Login</a>
                             </li>
                             
-                            <li>
+                            <li class="<?php echo $activeRegister; ?>">
                                 <a href="#mini-two" data-toggle="tab">Registration</a>
                             </li>
                             
@@ -210,7 +210,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content tpl-minimal-tabs-cont section-text">
                         
-                        <div class="tab-pane fade in active" id="mini-one">
+                        <div class="tab-pane fade in <?php echo $activeLogin; ?>" id="mini-one">
                             
                             <!-- Login Form -->                            
                             <div class="row">
@@ -222,7 +222,18 @@
                                             'id' => 'contact_form'
                                         );
 
-                                        echo validation_errors();
+                                        if(isset($error_message_login)){
+                                            echo "<p>";
+                                            foreach($error_message_login as $error){
+                                                echo $error;
+                                                echo br();
+                                            }
+                                            echo "</p>";
+                                            // echo "<p> $error_message[1] </p>";
+                                            //var_dump($error_message_login);
+                                        } else if(isset($error_message_login2)){
+                                            echo "<p> $error_message_login2 </p>";
+                                        }
                                         echo form_open('MainController/actionLogin', $attributes);
                                     ?>
                                         <div class="clearfix">
@@ -298,7 +309,7 @@
                             
                         </div>
                         
-                        <div class="tab-pane fade" id="mini-two">
+                        <div class="tab-pane fade in <?php echo $activeRegister; ?>" id="mini-two">
                             
                             <!-- Registry Form -->                            
                             <div class="row">
@@ -309,9 +320,15 @@
                                             'class' => 'form contact-form',
                                             'id' => 'contact_form'
                                         );
-
-                                        echo validation_errors();
-
+                                        if(isset($error_message_register)){
+                                            echo "<p>";
+                                            foreach($error_message_register as $error){
+                                                echo $error;
+                                                echo br();
+                                            }
+                                            echo "</p>";
+                                            //var_dump($error_message_register);
+                                        }
                                         echo form_open('MainController/actionRegister', $attributes);
                                     ?>
                                         <div class="clearfix">

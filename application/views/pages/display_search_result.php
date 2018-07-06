@@ -282,6 +282,7 @@
                             
                             <!-- Pagination -->
                             <div class="pagination">
+                            <!--
                                 <a href=""><i class="fa fa-angle-left"></i></a>
                                 <a href="" class="active">1</a>
                                 <a href="">2</a>
@@ -289,6 +290,10 @@
                                 <a class="no-active">...</a>
                                 <a href="">9</a>
                                 <a href=""><i class="fa fa-angle-right"></i></a>
+                            -->
+                            <?php 
+                                echo $this->pagination->create_links();
+                            ?>
                             </div>
                             <!-- End Pagination -->
                             

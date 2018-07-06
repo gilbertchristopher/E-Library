@@ -12,6 +12,16 @@ class LDB extends CI_Model{
         return $query->result();
     }
 
+    //Function ini digunakan untuk mengambil semua data dari tabel buku
+    public function displayAllBooks(){
+        //$condition = "title LIKE '%" .$keys ."%' OR author LIKE '%" .$keys ."%' OR genre LIKE '%" .$keys ."%' OR ASIN LIKE '%" .$keys ."%'";
+        $this->db->select('ASIN, title, author, genreid, genre, imgUrl');
+        $this->db->from('buku');
+        //$this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     //Function ini digunakan untuk login ke dalam sistem
     //Apabila berhasil, maka function akan mengembalikkan data-data berdasarkan email dan password pengguna
     //Apabila gagal, maka function akan mengembalikkan nilai false yang menandakan data tidak ditemukan atau pengguna tidak terdaftar

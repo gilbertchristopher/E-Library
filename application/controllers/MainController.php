@@ -40,8 +40,20 @@ class MainController extends CI_Controller {
 	{
 		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
+
+		$data['searchres'] = $this->LDB->displayAllBooks();
+
 		$this->load->view('pages/adminPage.php', $data);
 	}
+
+	//Halaman admin dengan apply filter
+	// public function adminPageFilter()
+	// {
+	// 	$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
+	// 	$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
+
+	// 	$this->load->view('pages/adminPage.php', $data);
+	// }
 
 	//Halaman about us
 	public function aboutUsPage(){

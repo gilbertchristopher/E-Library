@@ -53,6 +53,8 @@ class LDB extends CI_Model{
 
         return $randomstring;
     }
+
+    
 }
 
 ?>

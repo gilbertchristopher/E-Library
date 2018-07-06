@@ -14,6 +14,7 @@ class MainController extends CI_Controller {
 	{
 		$data['js'] = $this->load->view('include/jsLandingPage.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLandingPage.php', NULL, TRUE);
+		
 		$this->load->view('pages/Homepage',$data);
 	}
 
@@ -57,13 +58,21 @@ class MainController extends CI_Controller {
 		$data['css'] = $this->load->view('include/cssLandingPage.php', NULL, TRUE);
 		
 		if($this->input->post('search_submit')){
+			
 			$keyword = $this->input->post('search_keywords');
 			$keyword_clean = $this->security->xss_clean($keyword);
 
 			$keyword_clean = strip_tags($keyword_clean);
 
 			$data['searchres'] = $this->LDB->searchByKey($keyword_clean);
-			
+			$this->load->library('pagination');
+			$jumlah_data = count($data['searchres']);
+			//$config['base_url']=base_url().'index.php/MainController/searchMainpage'
+			$config['total_rows'] = $jumlah_data;
+			$config['per_page']= 10;
+			$from = $this->uri->segment(3);
+			$this->pagination->initialize($config);
+			//$data['user'] = $this->LDB->data($config['per_page'],$from);
 			$this->load->view('pages/display_search_result', $data);
 		}
 	}	

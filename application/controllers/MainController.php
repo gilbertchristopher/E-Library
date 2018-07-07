@@ -87,10 +87,11 @@ class MainController extends CI_Controller {
 			$jumlah_data = count($data['searchres']);
 			$config['base_url']=base_url().'index.php/MainController/searchMainpage';
 			$config['total_rows'] = $jumlah_data;
-			$config['per_page']= 10;
-			$from = $this->uri->segment(3);
+			$config['per_page']= 20;
+			//$config['use_page_numbers'] = TRUE;
+			$from = $this->uri->segment(2);
 			$this->pagination->initialize($config);
-			//$data['user'] = $this->LDB->data($config['per_page'],$from);
+			$data['user'] = $this->LDB->data($config['per_page'],$from);
 			$this->load->view('pages/display_search_result', $data);
 		}
 	}	
@@ -196,7 +197,7 @@ class MainController extends CI_Controller {
 		$data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
 
-		$this->form_validation->set_rules('email_login','Email','trim|required|xss_clean',
+		$this->form_validation->set_rules('title','Title','trim|required|xss_clean',
 					array(
 						'required' => 'You must provide a %s'
 						)
@@ -204,5 +205,7 @@ class MainController extends CI_Controller {
 		$this->form_validation->set_rules('password_login','Password','trim|required|xss_clean', 
 					array('required' => 'You must provide a %s'));
 		$this->form_validation->set_error_delimiters('<strong style="color:red">','</strong>');
+
+		$this->load->view('pages/adminPage', $data);
 	}
 }

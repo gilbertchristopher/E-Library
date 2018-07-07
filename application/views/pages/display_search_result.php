@@ -234,47 +234,67 @@
                             <!-- Shop Item -->
                             <?php
                             //if sementara sblm ada pagination buat cek kalau data yg d search kurang dari 20
-                            if (count($searchres) < 20) {
-                                for($i = 0;$i < count($searchres);$i++){ //sementara maks tampil 20, pagination blm jalan soale
-                                    echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
-                                        echo '<div class="post-prev-img">';
-                                            echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
-                                        echo '</div>';
+                            // if (count($searchres) < 20) {
+                            //     for($i = 0;$i < count($searchres);$i++){ //sementara maks tampil 20, pagination blm jalan soale
+                            //         echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
+                            //             echo '<div class="post-prev-img">';
+                            //                 echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
+                            //             echo '</div>';
     
-                                        //NAMA BUKU
-                                        echo '<div class="post-prev-title font-alt align-center">';
-                                            $teks = "...";
-                                            if (strlen($searchres[$i]->title) > 30) {
-                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,1,30).$teks.'</a>';
-                                            }
-                                            else {
-                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
-                                            }
-                                        echo '</div>';
-                                    echo '</div>';
-                                }
-                            }
-                            else {
-                                for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
-                                    echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
-                                        echo '<div class="post-prev-img">';
-                                            echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
-                                        echo '</div>';
+                            //             //NAMA BUKU
+                            //             echo '<div class="post-prev-title font-alt align-center">';
+                            //                 $teks = "...";
+                            //                 if (strlen($searchres[$i]->title) > 30) {
+                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,1,30).$teks.'</a>';
+                            //                 }
+                            //                 else {
+                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
+                            //                 }
+                            //             echo '</div>';
+                            //         echo '</div>';
+                            //     }
+                            // }
+                            // else {
+                            //     for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
+                            //         echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
+                            //             echo '<div class="post-prev-img">';
+                            //                 echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
+                            //             echo '</div>';
     
-                                        //NAMA BUKU
-                                        echo '<div class="post-prev-title font-alt align-center">';
-                                            $teks = "...";
-                                            if (strlen($searchres[$i]->title) > 40) {
-                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,1,40).$teks.'</a>';
-                                            }
-                                            else {
-                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
-                                            }
-                                        echo '</div>';
+                            //             //NAMA BUKU
+                            //             echo '<div class="post-prev-title font-alt align-center">';
+                            //                 $teks = "...";
+                            //                 if (strlen($searchres[$i]->title) > 40) {
+                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,1,40).$teks.'</a>';
+                            //                 }
+                            //                 else {
+                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
+                            //                 }
+                            //             echo '</div>';
+                            //         echo '</div>';
+                            //     }
+                            // }
+                            $no = $this->uri->segment('3') + 1;
+                            foreach($user as $u){ 
+                                echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
+                                    echo '<div class="post-prev-img">';
+                                        echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$no]->imgUrl."' alt='' /></a>";
                                     echo '</div>';
-                                }
+
+                                    //NAMA BUKU
+                                    echo '<div class="post-prev-title font-alt align-center">';
+                                        $teks = "...";
+                                        if (strlen($searchres[$no]->title) > 40) {
+                                            echo '<a title="'.$searchres[$no]->title.'" href="shop-single.html">'.substr($searchres[$no]->title,1,40).$teks.'</a>';
+                                        }
+                                        else {
+                                            echo '<a title="'.$searchres[$no]->title.'" href="shop-single.html">'.$searchres[$no]->title.$teks.'</a>';
+                                        }
+                                    echo '</div>';
+                                echo '</div>';
+                                $no++;
                             }
-                            
+                            echo $this->pagination->create_links();
                             ?>
                             <!-- End Shop Item -->  
 

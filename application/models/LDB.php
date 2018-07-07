@@ -87,7 +87,19 @@ class LDB extends CI_Model{
         return $randomstring;
     }
 
-    
+    //Function for  adding books
+    public function addBooks($ASIN, $img, $title, $author, $genre){
+       // $this->db->insert('book',)
+    }
+
+
+    function data($number,$offset){
+		return $query = $this->db->get('buku',$number,$offset)->result();		
+	}
+ 
+	function jumlah_data(){
+		return $this->db->get('buku')->num_rows();
+	}
 }
 
 ?>

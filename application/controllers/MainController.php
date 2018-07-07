@@ -79,7 +79,7 @@ class MainController extends CI_Controller {
 			$data['searchres'] = $this->LDB->searchByKey($keyword_clean);
 			$this->load->library('pagination');
 			$jumlah_data = count($data['searchres']);
-			//$config['base_url']=base_url().'index.php/MainController/searchMainpage'
+			$config['base_url']=base_url().'index.php/MainController/searchMainpage';
 			$config['total_rows'] = $jumlah_data;
 			$config['per_page']= 10;
 			$from = $this->uri->segment(3);

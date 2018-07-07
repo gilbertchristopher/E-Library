@@ -43,24 +43,18 @@ class MainController extends CI_Controller {
 		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
 
 		$data['searchres'] = $this->LDB->displayAllBooks();
-		$data['genress'] = $this->LDB->generateGenre();
 
 		$this->load->view('pages/adminPage.php', $data);
 	}
 
 	//Halaman admin dengan apply filter
-	public function adminPageFilter()
-	{
-		$keyword = $this->input->post('search_bos');
+	// public function adminPageFilter()
+	// {
+	// 	$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
+	// 	$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
 
-		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
-		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
-
-		$data['searchres'] = $this->LDB->displayFilteredBooks($keyword);
-		$data['genress'] = $this->LDB->generateGenre();
-
-		$this->load->view('pages/adminPage.php', $data);
-	}
+	// 	$this->load->view('pages/adminPage.php', $data);
+	// }
 
 	//Halaman about us
 	public function aboutUsPage(){
@@ -87,7 +81,7 @@ class MainController extends CI_Controller {
 			$jumlah_data = count($data['searchres']);
 			$config['base_url']=base_url().'index.php/MainController/searchMainpage';
 			$config['total_rows'] = $jumlah_data;
-			$config['per_page']= 10;
+			$config['per_page']= 20;
 			$from = $this->uri->segment(3);
 			$this->pagination->initialize($config);
 			//$data['user'] = $this->LDB->data($config['per_page'],$from);
@@ -134,8 +128,6 @@ class MainController extends CI_Controller {
 				$this->session->set_userdata('logged_user', $sessiondata);
 
 				if($sessiondata['nim'] == '00000011461' || $sessiondata['nim'] == '00000011634' || $sessiondata['nim'] == '00000012175' || $sessiondata['nim'] == '00000012373'){
-					$data['genress'] = $this->LDB->generateGenre();
-					$data['searchres'] = $this->LDB->displayAllBooks();
 					$this->load->view('pages/adminPage', $data);
 				} else {
 					$this->load->view('pages/userPage', $data);

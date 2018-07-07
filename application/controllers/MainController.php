@@ -188,5 +188,21 @@ class MainController extends CI_Controller {
 		{
 			$this->load->view('pages/userPage', $data);
 		}
-    }
+	}
+	
+	//Script buat add
+	public function actionAdd()
+	{
+		$data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
+
+		$this->form_validation->set_rules('email_login','Email','trim|required|xss_clean',
+					array(
+						'required' => 'You must provide a %s'
+						)
+					);
+		$this->form_validation->set_rules('password_login','Password','trim|required|xss_clean', 
+					array('required' => 'You must provide a %s'));
+		$this->form_validation->set_error_delimiters('<strong style="color:red">','</strong>');
+	}
 }

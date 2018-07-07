@@ -216,23 +216,23 @@
                                                 //count($searchres) --> sementara di komen
                                                 for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
                                                     echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
-                                                        //
-                                                        // <div class="container">
-                                                        //     <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
-                                                        //     <div class="middle">
-                                                        //         <div class="text">Edit</div> &nbsp
-                                                        //         <div class="text">Delete</div>
-                                                        //     </div>
-                                                        // </div>
+                                                        //hover delete edit
+                                                        // echo '<div class="post-prev-img">';
+                                                        //     echo "<a href='shop-single.html'><img class='imageN' style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
+                                                        //     echo '<div class="middleN">';
+                                                        //         echo '<div class="textN">Edit</div> &nbsp';
+                                                        //         echo '<div class="textN">Delete</div>';
+                                                        //     echo '</div>';
+                                                        // echo '</div>';
                                                         echo '<div class="post-prev-img">';
-                                                            echo "<a href='shop-single.html'><img style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
+                                                            echo "<a href='shop-single.html'><img class='image' style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
                                                         echo '</div>';
 
                                                         //NAMA BUKU
                                                         echo '<div class="post-prev-title font-alt align-center">';
                                                             $teks = "...";
                                                             if (strlen($searchres[$i]->title) > 30) {
-                                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,1,30).$teks.'</a>';
+                                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
                                                             }
                                                             else {
                                                                 echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';

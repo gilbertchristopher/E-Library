@@ -14,10 +14,33 @@ class LDB extends CI_Model{
 
     //Function ini digunakan untuk mengambil semua data dari tabel buku
     public function displayAllBooks(){
-        //$condition = "title LIKE '%" .$keys ."%' OR author LIKE '%" .$keys ."%' OR genre LIKE '%" .$keys ."%' OR ASIN LIKE '%" .$keys ."%'";
         $this->db->select('ASIN, title, author, genreid, genre, imgUrl');
         $this->db->from('buku');
-        //$this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    //Function ini digunakan untuk mengambil data dari tabel buku sesuai filter yang dipilih
+    public function displayFilteredBooks($keyword){
+        // if($keyword){
+
+        // }
+        // else {
+            
+        // }
+        $condition = "genre LIKE '%".$keyword."%'";
+        $this->db->select('ASIN, title, author, genreid, genre, imgUrl');
+        $this->db->from('buku');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function generateGenre(){
+        $this->db->distinct();
+        $this->db->select('genre');
+        $this->db->from('buku');
+        $this->db->order_by("genre", "asc");
         $query = $this->db->get();
         return $query->result();
     }

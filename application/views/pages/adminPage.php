@@ -266,12 +266,93 @@
                         <!-- End Service Item -->
                         
                         <!-- Service Item -->
-                        <div class="tab-pane fade" id="add">
+                        
+                        
+                        <div class="tab-pane fade col-md-4 col-md-offset-4" id="add">
+
+                        <?php
+                            $attributes = array(
+                                'class' => 'form contact-form',
+                                'id' => 'contact_form'
+                            );
+                            echo form_open('MainController/actionAdd', $attributes);
+                        ?>
+                        
+                        <!--ASIN-->
+                            <div class="form-group">
+                                            <?php
+                                                $data = array(
+                                                    'name'          => 'ASIN',
+                                                    'id'            => 'ASIN',
+                                                    'class'         => 'input-md round form-control',
+                                                    'placeholder'   => 'ASIN',
+                                                    'pattern'       => '.{3,100}'
+                                                );
+                                                echo form_input($data);
+                                                echo form_error('asin');
+                                            ?>
+                            </div>
                             
-                        <form id="form1" runat="server">
-                            <img id="blah" src="#" alt="your image" />
-                            <input type='file' onchange="readURL(this);" />   
-                        </form>
+                            <div class="form-group">
+                                            <?php
+                                                $data = array(
+                                                    'name'          => 'title',
+                                                    'id'            => 'title',
+                                                    'class'         => 'input-md round form-control',
+                                                    'placeholder'   => 'Title',
+                                                    'pattern'       => '.{3,100}'
+                                                );
+                                                echo form_input($data);
+                                                echo form_error('title');
+                                            ?>
+                            </div>
+
+                            <div class="form-group">
+                                            <?php
+                                                $data = array(
+                                                    'name'          => 'author',
+                                                    'id'            => 'author',
+                                                    'class'         => 'input-md round form-control',
+                                                    'placeholder'   => 'Author',
+                                                    'pattern'       => '.{3,100}'
+                                                );
+                                                echo form_input($data);
+                                                echo form_error('email_login');
+                                            ?>
+                            </div>
+
+                            <div class="form-group">
+                                <select class="input-md form-control" style="height: 48px;" name="search_bos">
+                                    <?php
+                                        for($i = 0; $i < count($genress); $i++){
+                                            echo "<option value=".$genress[$i]->genre.">".$genress[$i]->genre."</option>";
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+
+                            <form id="form1" runat="server">
+                                <img id="blah" src="#" alt="your image" />
+                                <input type='file' onchange="readURL(this);" />   
+                            </form>
+
+                            <div class="pt-10">
+                                        <?php
+                                            $data = array(
+                                                'id'            => 'add-btn',
+                                                'class'         => 'submit_btn btn btn-mod btn-medium btn-round btn-full',
+                                                'value'       => 'add'
+                                            );
+                                            echo form_submit($data);
+                                        ?>
+                            </div>
+                                <?php
+                                    echo form_close();
+                                ?>
+                            </div>
+                        </div>            
+                            
+                        
                             
                         </div>
                         <!-- End Service Item -->

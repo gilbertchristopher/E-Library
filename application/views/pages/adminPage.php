@@ -199,12 +199,6 @@
                                                                      
                                         </form>
                                         <!-- End Form -->
-                                        <!-- <a href="#" class="filter active" data-filter="*">All Books</a>
-                                        <a href="#genre1" class="filter" data-filter=".genre1">Genre 1</a>
-                                        <a href="#genre2" class="filter" data-filter=".genre2">Genre 2</a>
-                                        <a href="#genre3" class="filter" data-filter=".genre3">Genre 3</a>
-                                        <a href="#genre4" class="filter" data-filter=".genre4">Genre 4</a>
-                                        <a href="#genre5" class="filter" data-filter=".genre5">Genre 5</a> -->
                                     </div>
                                     <br><br>                    
                                     <!-- End Works Filter -->
@@ -222,9 +216,16 @@
                                                 //count($searchres) --> sementara di komen
                                                 for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
                                                     echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
+                                                        //
+                                                        // <div class="container">
+                                                        //     <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
+                                                        //     <div class="middle">
+                                                        //         <div class="text">Edit</div> &nbsp
+                                                        //         <div class="text">Delete</div>
+                                                        //     </div>
+                                                        // </div>
                                                         echo '<div class="post-prev-img">';
                                                             echo "<a href='shop-single.html'><img style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
-                                                            // echo var_dump($searchres[$i]);
                                                         echo '</div>';
 
                                                         //NAMA BUKU

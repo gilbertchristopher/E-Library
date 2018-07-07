@@ -51,7 +51,7 @@ class MainController extends CI_Controller {
 	//Halaman admin dengan apply filter
 	public function adminPageFilter()
 	{
-		$keyword = $this->input->post('search_keywords');
+		$keyword = $this->input->post('search_bos');
 
 		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
@@ -134,6 +134,8 @@ class MainController extends CI_Controller {
 				$this->session->set_userdata('logged_user', $sessiondata);
 
 				if($sessiondata['nim'] == '00000011461' || $sessiondata['nim'] == '00000011634' || $sessiondata['nim'] == '00000012175' || $sessiondata['nim'] == '00000012373'){
+					$data['genress'] = $this->LDB->generateGenre();
+					$data['searchres'] = $this->LDB->displayAllBooks();
 					$this->load->view('pages/adminPage', $data);
 				} else {
 					$this->load->view('pages/userPage', $data);

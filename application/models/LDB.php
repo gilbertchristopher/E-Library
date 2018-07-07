@@ -21,8 +21,14 @@ class LDB extends CI_Model{
     }
 
     //Function ini digunakan untuk mengambil data dari tabel buku sesuai filter yang dipilih
-    public function displayFilteredBooks(){
-        $condition = "genre LIKE '%'";
+    public function displayFilteredBooks($keyword){
+        // if($keyword){
+
+        // }
+        // else {
+            
+        // }
+        $condition = "genre LIKE '%".$keyword."%'";
         $this->db->select('ASIN, title, author, genreid, genre, imgUrl');
         $this->db->from('buku');
         $this->db->where($condition);

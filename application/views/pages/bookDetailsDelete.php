@@ -106,13 +106,7 @@
                                 <a href="<?php echo base_url('index.php/MainController/index'); ?>" class="mn">Home</a>    
                             </li>
                             <!-- End Item -->
-                            
-                            <!-- Item -->
-                            <li>
-                                <a href="#" class="mn">Catalog</a>
-                            </li>
-                            <!-- End Item -->
-
+                        
                             <!-- Item -->
                             <li>
                                 <a href="<?php echo base_url('index.php/MainController/aboutUsPage'); ?>" class="mn">About us</a>

@@ -58,12 +58,6 @@
                                 <a href="<?php echo base_url('index.php/MainController/index'); ?>" class="mn">Home</a>    
                             </li>
                             <!-- End Item -->
-                            
-                            <!-- Item -->
-                            <li>
-                                <a href="#" class="mn">Catalog</a>
-                            </li>
-                            <!-- End Item -->
 
                             <!-- Item -->
                             <li>
@@ -215,12 +209,8 @@
                                     </select>
                                     <br><br>
                                     
-<<<<<<< HEAD
                                     <input type="file" name="userfile" id="userfile"/> 
                                              
-=======
-                                    <input type="file" name="userfile" size='20'/>                
->>>>>>> 9171275e5833217706c1e793dee93d228bcb1f77
                                     <!--<form id="form1" runat="server">
                                         <img id="blah" src="#" alt="your image" />
                                         <input type='file' onchange="readURL(this);" />   

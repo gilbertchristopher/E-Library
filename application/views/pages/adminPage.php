@@ -183,12 +183,12 @@
                                         <!-- Form -->
                                         <form method="post" action="<?php echo base_url('index.php/MainController/adminPageFilter'); ?>" id="form" role="form" class="form">
                                             <div class="col-md-12" align="center">
-                                            <div class="mb-20 mb-md-10 col-md-6">
-                                                <!-- Search box -->
-                                                <input type="text" name="search_keywords" id="search_keywords" style="height: 48px;" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
-                                            </div>
-                                            <div class="mb-20 mb-md-10 col-md-6">
-                                                    <select class="input-md form-control" style="height: 48px;" name="search_bos">
+                                                <div class="mb-20 mb-md-10 col-md-6">
+                                                    <!-- Search box -->
+                                                    <input type="text" name="search_keywords" id="search_keywords" style="height: 36px;" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
+                                                </div>
+                                                <div class="mb-20 mb-md-10 col-md-6">
+                                                    <select class="input-md form-control" style="height: 36px;" name="search_bos">
                                                         <?php
                                                             for($i = 0; $i < count($genress); $i++){
                                                                 echo "<option value=".$genress[$i]->genre.">".$genress[$i]->genre."</option>";
@@ -196,15 +196,13 @@
                                                         ?>
                                                     </select>
                                                 </div>
-                                            <div class="mb-20 mb-md-10 col-md-6">
-                                                <input type="submit" name="search_submit" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Search">
-                                            </div>
-                                                
                                                 <div class="mb-20 mb-md-10 col-md-6">
-                                                    <input type="submit" name="search_submit" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Apply Filter"> 
+                                                    <input type="submit" name="search" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Search">
                                                 </div>
-                                            </div>    
-                                                                     
+                                                <div class="mb-20 mb-md-10 col-md-6">
+                                                    <input type="submit" name="filter" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Apply Filter"> 
+                                                </div>
+                                            </div>                        
                                         </form>
                                         <!-- End Form -->
                                     </div>
@@ -221,41 +219,91 @@
                                                 
                                                 <!-- Work Item (Lightbox) -->
                                                 <?php
-                                                //count($searchres) --> sementara di komen
-                                                for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
-                                                    echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
-                                                        echo '<div class="post-prev-img">';
-                                                            echo '<a href="'.$searchres[$i]->imgUrl.'" class="lightbox-gallery-3 mfp-image"><img src="'.$searchres[$i]->imgUrl.'" alt="" style="width: 350px; height: 365px;"/></a>';
-                                                            //echo "<a href='shop-single.html'><img class='image' style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
-                                                        echo '</div>';
-                                                        
+                                                if($this->input->post('search')){
+                                                    $no = $this->uri->segment('3') + 1;
+                                                    $tes = 0;
+                                                    foreach($user as $u){ 
+                                                        if (count($user) == $tes){
+                                                            break;
+                                                        }
+                                                        echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
+                                                            //Gambar Cover Buku
+                                                            echo '<div class="post-prev-img">';
+                                                            echo '<a href="'.$user[$tes]->imgUrl.'" class="lightbox-gallery-3 mfp-image"><img src="'.$user[$tes]->imgUrl.'" alt="" style="width: 350px; height: 365px;"/></a>';
+                                                            echo '</div>';
+
                                                 ?>
-                                                    <!-- Form Button delete edit -->
-                                                    <form method="POST" action="<?php echo base_url('index.php/MainController/adminEditOrDelete'); ?>" id="form" role="form" class="form">
-                                                        <input type="hidden" name="asin" value="<?php echo $searchres[$i]->ASIN; ?>"> 
-                                                        <div class="intro-label">
-                                                            <button name="btnEditBook" id="btnEditBook" class="btn btn-success" type="submit">
-                                                                <i class="fa fa-pencil" style="color: black;"></i>
-                                                            </button>
-                                                            <button name="btnDeleteBook" id="btnDeleteBook" class="btn btn-danger" type="submit">
-                                                                <i class="fa fa-close" style="color: black;"></i>
-                                                            </button>
-                                                        </div>                           
-                                                    </form>
-                                                    <!-- End Form -->  
+
+                                                        <!-- Form Button delete edit -->
+                                                        <form method="POST" action="<?php echo base_url('index.php/MainController/adminEditOrDelete'); ?>" id="form" role="form" class="form">
+                                                            <input type="hidden" name="asin" value="<?php echo $user[$tes]->ASIN; ?>"> 
+                                                            <div class="intro-label">
+                                                                <button name="btnEditBook" id="btnEditBook" class="btn btn-success" type="submit">
+                                                                    <i class="fa fa-pencil" style="color: black;"></i>
+                                                                </button>
+                                                                <button name="btnDeleteBook" id="btnDeleteBook" class="btn btn-danger" type="submit">
+                                                                    <i class="fa fa-close" style="color: black;"></i>
+                                                                </button>
+                                                            </div>                           
+                                                        </form>
+                                                        <!-- End Form -->
 
                                                 <?php
-                                                        //NAMA BUKU
-                                                        echo '<div class="post-prev-title font-alt align-center">';
-                                                            $teks = "...";
-                                                            if (strlen($searchres[$i]->title) > 30) {
-                                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
-                                                            }
-                                                            else {
-                                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
-                                                            }
+                                                            
+                                                            //Nama buku
+                                                            echo '<div class="post-prev-title font-alt align-center">';
+                                                                $teks = "...";
+                                                                if (strlen($user[$tes]->title) > 30) {
+                                                                    echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.substr($user[$tes]->title,0,30).$teks.'</a>';
+                                                                }
+                                                                else {
+                                                                    echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.$user[$tes]->title.$teks.'</a>';
+                                                                }
+                                                            echo '</div>';
+                                                        echo '</div>';      
+                                                        
+                                                        $tes++;
+                                                        
+                                                    }
+                                                    
+                                                }
+                                                else {
+                                                    //count($searchres) --> sementara di komen
+                                                    for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
+                                                        echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
+                                                            echo '<div class="post-prev-img">';
+                                                                echo '<a href="'.$searchres[$i]->imgUrl.'" class="lightbox-gallery-3 mfp-image"><img src="'.$searchres[$i]->imgUrl.'" alt="" style="width: 350px; height: 365px;"/></a>';
+                                                                //echo "<a href='shop-single.html'><img class='image' style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
+                                                            echo '</div>';
+                                                        
+                                                ?>
+                                                        <!-- Form Button delete edit -->
+                                                        <form method="POST" action="<?php echo base_url('index.php/MainController/adminEditOrDelete'); ?>" id="form" role="form" class="form">
+                                                            <input type="hidden" name="asin" value="<?php echo $searchres[$i]->ASIN; ?>"> 
+                                                            <div class="intro-label">
+                                                                <button name="btnEditBook" id="btnEditBook" class="btn btn-success" type="submit">
+                                                                    <i class="fa fa-pencil" style="color: black;"></i>
+                                                                </button>
+                                                                <button name="btnDeleteBook" id="btnDeleteBook" class="btn btn-danger" type="submit">
+                                                                    <i class="fa fa-close" style="color: black;"></i>
+                                                                </button>
+                                                            </div>                           
+                                                        </form>
+                                                        <!-- End Form -->  
+
+                                                <?php
+                                                            //NAMA BUKU
+                                                            echo '<div class="post-prev-title font-alt align-center">';
+                                                                $teks = "...";
+                                                                if (strlen($searchres[$i]->title) > 30) {
+                                                                    echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
+                                                                }
+                                                                else {
+                                                                    echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
+                                                                }
+                                                            echo '</div>';
                                                         echo '</div>';
-                                                    echo '</div>';
+                                                    }
                                                 }
                                                 ?>
                                                 <!-- End Work Item -->

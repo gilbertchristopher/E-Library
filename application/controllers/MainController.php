@@ -107,15 +107,41 @@ class MainController extends CI_Controller {
 	//Halaman admin dengan apply filter
 	public function adminPageFilter()
 	{
-		$keyword = $this->input->post('search_bos');
+		if($this->input->post('filter')){
+			$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
+			$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
 
-		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
-		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
+			$keyword = $this->input->post('search_bos');
 
-		$data['searchres'] = $this->LDB->displayFilteredBooks($keyword);
-		$data['genress'] = $this->LDB->generateGenre();
+			$data['searchres'] = $this->LDB->displayFilteredBooks($keyword);
+			$data['genress'] = $this->LDB->generateGenre();
 
-		$this->load->view('pages/adminPage.php', $data);
+			$this->load->view('pages/adminPage.php', $data);
+		}
+		else if($this->input->post('search')){
+			$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
+			$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
+				
+			$keyword = $this->input->post('search_keywords');
+			$keyword_clean = $this->security->xss_clean($keyword);
+			$keyword_clean = strip_tags($keyword_clean);
+
+			$this->load->library('pagination');
+			
+			$jumlah_data = $this->LDB->countDataByKeyword($keyword_clean);
+			
+			$config['base_url']=base_url().'index.php/MainController/searchMainpage';
+			$config['total_rows'] = $jumlah_data;
+			$config['per_page']= 20;
+			$config['num_links']= 4;
+			$config['use_page_numbers'] = TRUE;
+			$from = $this->uri->segment(3);
+			$this->pagination->initialize($config);
+			$data['user'] = $this->LDB->searchByKey($keyword_clean, $config['per_page'], $from);
+			$data['genress'] = $this->LDB->generateGenre();
+			
+			$this->load->view('pages/adminPage.php', $data);
+		}
 	}
 
 	//Function untuk pindah halaman ke edit atau delete
@@ -148,7 +174,14 @@ class MainController extends CI_Controller {
 			$this->load->view('pages/adminPage.php', $data);
 		}
 		else if($this->input->post('edit')){
-			
+			$data = array('upload_data' => $this->upload->data());
+			$asin = $this->input->post('asin');
+			$title = $this->input->post('title');
+			$author = $this->input->post('author');
+			$genre = $this->input->post('genre');
+			$imgUrl = $data['upload_data']['full_path'];
+			$this->LDB->editBook($asin, $title, $author, $genre, $imgUrl);
+			$this->load->view('pages/adminPage.php', $data);
 			echo '<script>location.replace("'.base_url("index.php/MainController/adminPage").'")</script>';
 		}
 	}
@@ -412,4 +445,29 @@ class MainController extends CI_Controller {
 			echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 		}
 	}
+
+	public function do_upload()
+        {
+                $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                //$config['max_size']             = 100;
+                //$config['max_width']            = 1024;
+                //$config['max_height']           = 768;
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('userfile'))
+                {
+						//$error = array('error' => $this->upload->display_errors());
+						
+						echo $data['upload_data']['full_path'];
+                        //$this->load->view('upload_form', $error);
+                }
+                else
+                {
+                        //$data = array('upload_data' => $this->upload->data());
+
+                        //$this->load->view('upload_success', $data);
+                }
+        }
 }

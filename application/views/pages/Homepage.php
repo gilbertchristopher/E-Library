@@ -34,7 +34,7 @@
                 <div class="full-wrapper relative clearfix">
                     <!-- Logo ( * your text or image into link tag *) -->
                     <div class="nav-logo-wrap local-scroll">
-                        <a href="index" class="logo">
+                        <a href="<?php echo base_url('index.php/MainController/index'); ?>" class="logo">
                             <img src="<?php echo base_url('assets/images/logo-footer.png'); ?>" alt="" />
                         </a>
                     </div>

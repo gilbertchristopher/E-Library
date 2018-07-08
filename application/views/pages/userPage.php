@@ -22,7 +22,7 @@
                 $email = ($this->session->userdata['logged_user']['email']);
                 $salt = ($this->session->userdata['logged_user']['nim']);
             }
-        ?>      
+        ?>   
         
     </head>
     <body class="appear-animate">

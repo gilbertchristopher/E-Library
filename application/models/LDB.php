@@ -5,7 +5,7 @@ class LDB extends CI_Model{
     //Function ini digunakan untuk mengambil data dari tabel buku sesuai dengan kata kunci yang diberikan
     public function searchByKey($keys){
         $condition = "title LIKE '%" .$keys ."%' OR author LIKE '%" .$keys ."%' OR genre LIKE '%" .$keys ."%' OR ASIN LIKE '%" .$keys ."%'";
-        $this->db->select('ASIN, title, author, genreid, genre, imgUrl');
+        $this->db->select('ASIN, title, author, genreId, genre, imgUrl');
         $this->db->from('buku');
         $this->db->where($condition);
         $this->db->order_by("title", "asc");
@@ -15,7 +15,7 @@ class LDB extends CI_Model{
 
     //Function ini digunakan untuk mengambil semua data dari tabel buku
     public function displayAllBooks(){
-        $this->db->select('ASIN, title, author, genreid, genre, imgUrl');
+        $this->db->select('ASIN, title, author, genreId, genre, imgUrl');
         $this->db->from('buku');
         $query = $this->db->get();
         return $query->result();
@@ -23,25 +23,30 @@ class LDB extends CI_Model{
 
     //Function ini digunakan untuk mengambil data dari tabel buku sesuai filter yang dipilih
     public function displayFilteredBooks($keyword){
-        // if($keyword){
-
-        // }
-        // else {
-            
-        // }
         $condition = "genre LIKE '%".$keyword."%'";
-        $this->db->select('ASIN, title, author, genreid, genre, imgUrl');
+        $this->db->select('ASIN, title, author, genreId, genre, imgUrl');
         $this->db->from('buku');
         $this->db->where($condition);
         $query = $this->db->get();
         return $query->result();
     }
 
+    //function ini untuk generate genre di select box
     public function generateGenre(){
         $this->db->distinct();
         $this->db->select('genre');
         $this->db->from('buku');
         $this->db->order_by("genre", "asc");
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    //function ini untuk mengambil data spesifik yg dipilih untuk diedit atau delete
+    public function selectedBooks($asin){
+        $condition = "ASIN = '$asin'";
+        $this->db->select('ASIN, title, author, genreId, genre, imgUrl');
+        $this->db->from('buku');
+        $this->db->where($condition);
         $query = $this->db->get();
         return $query->result();
     }

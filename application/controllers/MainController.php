@@ -67,7 +67,16 @@ class MainController extends CI_Controller {
 		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
 
-		$this->load->view('pages/bookDetails.php', $data);
+		$asin = $this->input->post('asin');
+		$data['buku'] = $this->LDB->selectedBooks($asin);
+
+		if(isset($_POST['btnDeleteBook'])){
+			$this->load->view('pages/bookDetailsDelete.php', $data);
+		}
+		else if(isset($_POST['btnEditBook'])){
+			$this->load->view('pages/bookDetailsEdit.php', $data);
+			
+		}
 	}
 
 	//Halaman about us

@@ -31,11 +31,22 @@ class LDB extends CI_Model{
         return $query->result();
     }
 
+    //function ini untuk generate genre di select box
     public function generateGenre(){
         $this->db->distinct();
         $this->db->select('genre');
         $this->db->from('buku');
         $this->db->order_by("genre", "asc");
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    //function ini untuk mengambil data spesifik yg dipilih untuk diedit atau delete
+    public function selectedBooks($asin){
+        $condition = "ASIN = '$asin'";
+        $this->db->select('ASIN, title, author, genreId, genre, imgUrl');
+        $this->db->from('buku');
+        $this->db->where($condition);
         $query = $this->db->get();
         return $query->result();
     }

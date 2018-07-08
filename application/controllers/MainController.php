@@ -275,6 +275,9 @@ class MainController extends CI_Controller {
 		} 
 		else 
 		{
+			$email = $this->input->post('');
+			$nim = $this->input->post('');
+			$password = $this->input->post('');
 			$this->load->view('pages/userPage', $data);
 		}
 	}

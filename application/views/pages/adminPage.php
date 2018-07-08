@@ -22,7 +22,11 @@
                 $email = ($this->session->userdata['logged_user']['email']);
                 $salt = ($this->session->userdata['logged_user']['nim']);
             }
-        ?>       
+
+            if($this->session->flashdata('msg')){
+                echo "<script>alert('" .$this->session->flashdata('msg') ."');</script>";
+            }
+        ?>      
         
         <script type="text/javascript">
             function readURL(input) {

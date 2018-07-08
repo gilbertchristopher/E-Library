@@ -8,12 +8,8 @@ class LDB extends CI_Model{
         $this->db->select('ASIN, title, author, genreId, genre, imgUrl');
         $this->db->from('buku');
         $this->db->where($condition);
-<<<<<<< HEAD
-        //$this->db->order_by("title", "asc");
-=======
         $this->db->limit($limit,$offset);
         $this->db->order_by("title", "asc");
->>>>>>> 98803f9644d320f6bdd0147b5ab2a97afd08415e
         $query = $this->db->get();
         return $query->result();
     }
@@ -73,8 +69,9 @@ class LDB extends CI_Model{
     }
 
     //function ini untuk mengedit buku yang telah dipilih sebelumnya
-    public function editBook($title, $author, $genre, $imgUrl){
-        
+    public function editBook($asin, $title, $author, $genre, $imgUrl){
+        $condition = "ASIN = '$asin'";
+        //query buat edit beloman ni
     }
 
     //Function ini digunakan untuk login ke dalam sistem

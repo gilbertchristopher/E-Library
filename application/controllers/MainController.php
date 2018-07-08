@@ -108,7 +108,19 @@ class MainController extends CI_Controller {
 
 	//function untuk eksekusi edit record di databes
 	public function actionEditBook(){
+		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
 
+		$data['searchres'] = $this->LDB->displayAllBooks();
+		$data['genress'] = $this->LDB->generateGenre();
+
+		if($this->input->post('cancel')){
+			$this->load->view('pages/adminPage.php', $data);
+		}
+		else if($this->input->post('edit')){
+			
+			echo '<script>location.replace("'.base_url("index.php/MainController/adminPage").'")</script>';
+		}
 	}
 
 	//function untuk eksekusi delete record dr databes

@@ -313,7 +313,7 @@ class MainController extends CI_Controller {
 						'required' => 'You must provide a valid %s'
 						)
 					);
-		$this->form_validation->set_rules('password','Password','trim|required|min_length[6]|max_length[12]', 
+		$this->form_validation->set_rules('password','Password','trim|required|min_length[6]|max_length[12]|alpha_numeric', 
 					array('required' => 'You must provide a %s'));
 		$this->form_validation->set_rules('re-password','Retype Password','trim|required|matches[password]',
 					array('required' => "You must provide a %s"));

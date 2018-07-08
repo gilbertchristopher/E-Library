@@ -232,7 +232,7 @@
                                             echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
                                                 //Gambar Cover Buku
                                                 echo '<div class="post-prev-img">';
-                                                    echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$user[$tes]->imgUrl."' alt='' /></a>";
+                                                    echo "<a href='<?php echo base_url('".index.php/MainController/detailBookUser."'); ?>'><img style='width: 370px; height: 385px;' src='".$user[$tes]->imgUrl."' alt='' /></a>";
                                                 echo '</div>';
                                                 
                                                 //Nama buku
@@ -302,6 +302,28 @@
                         </div>
                         <!-- End Content Wait List-->
                         
+                    </div>
+
+                    <hr class="mt-0 mb-30"/> 
+
+                    <h2 class="section-title font-alt mb-70 mb-sm-40">
+                        Waiting List
+                    </h2>
+                    
+                    <!-- Row -->
+                    <div class="row">
+
+                    </div>
+
+                    <hr class="mt-0 mb-30"/> 
+
+                    <h2 class="section-title font-alt mb-70 mb-sm-40">
+                        Borrowed Book
+                    </h2>
+                    
+                    <!-- Row -->
+                    <div class="row">
+
                     </div>
                     
                 </div>

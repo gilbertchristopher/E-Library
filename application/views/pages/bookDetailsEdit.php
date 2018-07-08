@@ -209,7 +209,7 @@
                                     </select>
                                     <br><br>
                                     
-                                    <input type="file" name="userfile" id="userfile"/> 
+                                    <input type="file" name="userfile" id="userfile" value="<?php echo $buku[0]->imgUrl; ?>" /> 
                                              
                                     <!--<form id="form1" runat="server">
                                         <img id="blah" src="#" alt="your image" />

@@ -363,14 +363,36 @@ class MainController extends CI_Controller {
 		$data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
 
-		$this->form_validation->set_rules('title','Title','trim|required|xss_clean',
+		$this->form_validation->set_rules('ASIN','ASIN','trim|required',
 					array(
 						'required' => 'You must provide a %s'
 						)
 					);
-		$this->form_validation->set_rules('password_login','Password','trim|required|xss_clean', 
+		$this->form_validation->set_rules('title','Title','trim|required', 
+					array('required' => 'You must provide a %s'));
+		$this->form_validation->set_rules('author','Author','trim|required', 
 					array('required' => 'You must provide a %s'));
 		$this->form_validation->set_error_delimiters('<strong style="color:red">','</strong>');
+
+		if($this->form_validation->run() == FALSE){
+
+		} else {
+			$ASIN = $this->input->post('ASIN');
+			$title = $this->input->post('title');
+			$author = $this->input->post('author');
+			//$genre = $this->input->post('genre');
+			$genre = "Law";
+			$imgUrl = "assets/tes.jpg";
+			$addBuku = $this->LDB->addBooks($ASIN, $imgUrl, $title, $author, $genre);
+			if($addBuku){
+				$data['add_buku_result'] = "Success to add new book!";
+				$this->load->view('pages/adminPage', $data);
+			} else {
+				$data['add_buku_result'] = "Failed to add book! Books already registered!";
+				$this->load->view('pages/adminPage', $data);
+			}
+
+		}
 
 		$this->load->view('pages/adminPage', $data);
 	}

@@ -335,7 +335,10 @@
                                 'class' => 'form contact-form',
                                 'id' => 'contact_form'
                             );
-                            echo form_open('MainController/addBooks', $attributes);
+                            if(isset($add_buku_result)){
+                                echo "<p><strong style='color:red'> $add_buku_result </strong></p>";
+                            }
+                            echo form_open('MainController/actionAdd', $attributes);
                         ?>
                         
                         <!--ASIN-->
@@ -349,7 +352,7 @@
                                                     'pattern'       => '.{3,100}'
                                                 );
                                                 echo form_input($data);
-                                                echo form_error('asin');
+                                                echo form_error('ASIN');
                                             ?>
                             </div>
                             
@@ -377,7 +380,7 @@
                                                     'pattern'       => '.{3,100}'
                                                 );
                                                 echo form_input($data);
-                                                echo form_error('email_login');
+                                                echo form_error('author');
                                             ?>
                             </div>
 
@@ -389,6 +392,7 @@
                                         }
                                     ?>
                                 </select>
+                                <?php echo form_error('genre'); ?>
                             </div>
 
                             <form id="form1" runat="server">
@@ -401,7 +405,8 @@
                                             $data = array(
                                                 'id'            => 'add-btn',
                                                 'class'         => 'submit_btn btn btn-mod btn-medium btn-round btn-full',
-                                                'value'       => 'add'
+                                                'value'       => 'add',
+                                                'name' => 'btnAdd'
                                             );
                                             echo form_submit($data);
                                         ?>

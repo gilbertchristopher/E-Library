@@ -88,13 +88,14 @@ class MainController extends CI_Controller {
 		$this->load->view('pages/adminPage.php', $data);
 	}
 
-	//Function untuk eksekusi edit atau delete pada halaman admin
+	//Function untuk pindah halaman ke edit atau delete
 	public function adminEditOrDelete(){
 		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
 
 		$asin = $this->input->post('asin');
 		$data['buku'] = $this->LDB->selectedBooks($asin);
+		$data['genress'] = $this->LDB->generateGenre();
 
 		if(isset($_POST['btnDeleteBook'])){
 			$this->load->view('pages/bookDetailsDelete.php', $data);
@@ -103,6 +104,16 @@ class MainController extends CI_Controller {
 			$this->load->view('pages/bookDetailsEdit.php', $data);
 			
 		}
+	}
+
+	//function untuk eksekusi edit record di databes
+	public function actionEditBook(){
+
+	}
+
+	//function untuk eksekusi delete record dr databes
+	public function actionDeleteBook(){
+
 	}
 
 	//Halaman about us

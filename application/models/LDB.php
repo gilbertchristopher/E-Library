@@ -107,7 +107,9 @@ class LDB extends CI_Model{
     public function registerNewUser($email, $password, $nim){
         $salt = $this->randomStringGenerator();
         $saltedPass = $password .$salt;
-        $hashedPass = 
+        $hashedPass = md5($saltedPass);
+
+        $
 
         $this->db->insert('');
     }
@@ -118,7 +120,7 @@ class LDB extends CI_Model{
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomstring = '';
-        for($i = 0; $i < 5; $i++){
+        for($i = 0; $i < 3; $i++){
             $randomstring .= $characters[rand(0, $charactersLength - 1)];
         }
 

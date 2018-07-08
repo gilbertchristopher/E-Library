@@ -252,34 +252,16 @@
                                             </div>
                                                 
                                         </div>
-                                        
-                                        <div class="clearfix">
-                                            
-                                            <div class="cf-left-col">
-                                                
-                                                <!-- Inform Tip -->                                        
-                                                <div class="form-tip pt-20">
-                                                    <a href="">Forgot Password?</a>
-                                                </div>
-                                                
-                                            </div>
-                                            
-                                            <div class="cf-right-col">
-                                                
-                                                <!-- Send Button -->
-                                                <div class="align-right pt-10">
-                                                <?php
-                                                    $data = array(
-                                                        'id'            => 'login-btn',
-                                                        'class'         => 'submit_btn btn btn-mod btn-medium btn-round',
-                                                        'value'       => 'Login'
-                                                    );
-                                                    echo form_submit($data);
-                                                ?>
-                                                </div>
-                                                
-                                            </div>
-                                            
+
+                                        <div class="pt-10">
+                                        <?php
+                                            $data = array(
+                                                'id'            => 'login-btn',
+                                                'class'         => 'submit_btn btn btn-mod btn-medium btn-round btn-full',
+                                                'value'       => 'Login'
+                                            );
+                                            echo form_submit($data);
+                                        ?>
                                         </div>
                                         
                                     <?php
@@ -410,7 +392,7 @@
                         
                         <!-- Copyright -->
                         <div class="footer-copy font-alt">
-                            <a href="http://themeforest.net/user/theme-guru/portfolio" target="_blank">&copy; Rhythm 2017</a>.
+                            <a href="http://umn.ac.id" target="_blank">&copy; E-LIBRARY 2018</a>.
                         </div>
                         <!-- End Copyright -->
                         

@@ -180,14 +180,20 @@ class MainController extends CI_Controller {
             $config['max_width']            = 1200;
             $config['max_height']           = 800;
 			//var_dump ($_FILES['userfile']);
+			
 			$file=$_FILES['userfile']['name'];                      
                   move_uploaded_file($_FILES['userfile']['tmp_name'],'assets/'.$file);
-			$imgUrl = 'assets/'.$file;
+			$imgUrl = '../../assets/'.$file.'" ';
+			//var_dump($data['searchres'] = $this->LDB->displayAllBooks());
+			$urllama = $data['searchres'];
+			
+			//var_dump($urllama);
+			//die();
 			$asin = $this->input->post('asin');
 			$title = $this->input->post('title');
 			$author = $this->input->post('author');
 			$genre = $this->input->post('genre');
-			if($_FILES['userfile'] == ""){
+			if($_FILES['userfile']['size'] == 0){
 				$imgUrl ="";
 			}
 			$this->LDB->editBook($asin, $title, $author, $genre, $imgUrl);
@@ -335,7 +341,6 @@ class MainController extends CI_Controller {
 		{
 			$data['activeLogin'] = "";
 			$data['activeRegister'] = "active";
-			//$data['error_message_register'] = $this->form_validation->error_array();
 			$this->load->view('pages/loginRegister', $data);
 		} 
 		else 
@@ -346,7 +351,13 @@ class MainController extends CI_Controller {
 
 			$success = $this->LDB->registerNewUser($email, $password, $nim);
 			if($success){
-				$this->load->view('pages/Homepage', $data);
+				$data['activeLogin'] = "";
+				$data['activeRegister'] = "active";
+				$data['error_message_register'] = "Register new account success !";
+
+				$this->testemail2($email);
+
+				$this->load->view('pages/loginRegister', $data);
 			} else {
 				$data['activeLogin'] = "";
 				$data['activeRegister'] = 'active';
@@ -416,7 +427,7 @@ class MainController extends CI_Controller {
 		exit;
 	}
 
-	public function testemail2(){
+	public function testemail2($target){
 
 		//Load Composer's autoloader
 		//require 'vendor/autoload.php';
@@ -434,12 +445,11 @@ class MainController extends CI_Controller {
 			$mail->Port = 587;                                    // TCP port to connect to
 
 			//Recipients
-			$mail->setFrom('ELibraryUMN@gmail.com', 'Mailer');
-			$mail->addAddress('nathanielsuhardiman@gmail.com', 'Joe User');     // Add a recipient
-			$mail->addAddress('ellen@example.com');               // Name is optional
-			$mail->addReplyTo('info@example.com', 'Information');
-			$mail->addCC('cc@example.com');
-			$mail->addBCC('bcc@example.com');
+			$mail->setFrom('ELibraryUMN@gmail.com', 'ELibrary');
+			$mail->addAddress($target);     // Add a recipient
+			//$mail->addReplyTo('info@example.com', 'Information');
+			//$mail->addCC('cc@example.com');
+			//$mail->addBCC('bcc@example.com');
 
 			//Attachments
 			//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -447,9 +457,9 @@ class MainController extends CI_Controller {
 
 			//Content
 			$mail->isHTML(true);                                  // Set email format to HTML
-			$mail->Subject = 'Here is the subject';
-			$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-			$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+			$mail->Subject = "New account registered!";
+			$mail->Body    = 'Thank you for joining with us';
+			//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 			$mail->send();
 			echo 'Message has been sent';
@@ -484,16 +494,5 @@ class MainController extends CI_Controller {
 
                 //         $this->load->view('upload_success', $data);
                 // }
-		}
-	
-	//function untuk menampilkan info buku, apabila quota ada, maka pinjam, jika tidak, WL
-	public function detailBookUser(){
-		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
-		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
-
-		$asin = $this->input->post('asin');
-		$data['buku'] = $this->LDB->selectedBooks($asin);
-
-		$this->load->view('pages/bookDetailsUser.php', $data);
-	}
+        }
 }

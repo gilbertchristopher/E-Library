@@ -229,7 +229,7 @@
                                                         echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
                                                             //Gambar Cover Buku
                                                             echo '<div class="post-prev-img">';
-                                                                echo "<a href='".$user[$tes]->imgUrl."'><img style='width: 370px; height: 385px;' src='".$user[$tes]->imgUrl."' alt='' /></a>";
+                                                                echo "<a href='".$user[$tes]->imgUrl."'><img style='width: 350px; height: 365px;' src='".$user[$tes]->imgUrl."' alt='' /></a>";
                                                             echo '</div>';
 
                                                 ?>

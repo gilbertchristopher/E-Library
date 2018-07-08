@@ -174,43 +174,22 @@ class MainController extends CI_Controller {
 			$this->load->view('pages/adminPage.php', $data);
 		}
 		else if($this->input->post('edit')){
-			$config['upload_path']          = './assets/uploads/profiles/';
+			$config['upload_path']          = './assets/';
             $config['allowed_types']        = 'jpg|png|jpeg';
             $config['max_size']             = 1024;
             $config['max_width']            = 1200;
             $config['max_height']           = 800;
-
-            $this->load->library('upload', $config);
-			$this->upload->do_upload('userfile');
-			if ( ! $this->upload->do_upload('userfile'))
-                {
-                        
-                    $this->form_validation->set_error_delimiters('<p class="error">', '</p>');
-
-                    $error = array('error' => $this->upload->display_errors());
-
-                    //$this->load->view('upload', $error);
-                }
-                else
-                {
-                    $data = array('upload_data' => $this->upload->data());
-
-                    //$this->load->view('success', $data);
-                }
-			//$data = array('upload_data' => $this->upload->data());	
-            //$upload_data = $this->upload->data();
-            //$imgUrl = $upload_data['full_path'];
-			//$this->upload->do_upload('userfile');
-			//$data = array('upload_data' => $this->upload->data());
+			//var_dump ($_FILES['userfile']);
+			$file=$_FILES['userfile']['name'];                      
+                  move_uploaded_file($_FILES['userfile']['tmp_name'],'assets/'.$file);
+			$imgUrl = 'assets/'.$file;
 			$asin = $this->input->post('asin');
 			$title = $this->input->post('title');
 			$author = $this->input->post('author');
 			$genre = $this->input->post('genre');
-			$imgUrl= $data;
-			//$imgUrl = $data['upload_data'];
-			//var_dump ($data);
-			//var_dump ($imgUrl);
-			//die();
+			if($_FILES['userfile'] == ""){
+				$imgUrl ="";
+			}
 			$this->LDB->editBook($asin, $title, $author, $genre, $imgUrl);
 			$this->load->view('pages/adminPage.php', $data);
 			echo '<script>location.replace("'.base_url("index.php/MainController/adminPage").'")</script>';

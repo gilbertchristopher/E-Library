@@ -190,7 +190,7 @@
                             
                             <div class="mb-30">
                             
-                                <form method="post" action="<?php echo base_url('index.php/MainController/actionEditBook'); ?>" class="form" enctype="multipart/form-data">
+                                <form method="post" action="<?php echo base_url('index.php/MainController/actionEditBook'); ?>" class="form" enctype="multipart/form-data" >
                                     <!-- <input type="number" class="input-lg round" min="1" max="100" value="1" />
                                     <a href="#" class="btn btn-mod btn-large btn-round">Add to Cart</a>  -->
                                     <label>Title</label>
@@ -215,7 +215,8 @@
                                     </select>
                                     <br><br>
                                     
-                                    <input type="file" name="userfile" id="userfile"/>                
+                                    <input type="file" name="userfile" id="userfile"/> 
+                                             
                                     <!--<form id="form1" runat="server">
                                         <img id="blah" src="#" alt="your image" />
                                         <input type='file' onchange="readURL(this);" />   
@@ -224,7 +225,7 @@
                                     
                                     <br><br>
                                     <input type="submit" style="width: 200px;" name="cancel" id="cancel" class="btn btn-mod btn-border btn-large btn-round" value="Cancel">
-                                    <input type="submit" style="width: 200px;"name="edit" id="edit" class="btn btn-mod btn-border btn-large btn-round" value="Edit">
+                                    <input type="submit" style="width: 200px;"name="edit" id="edit" class="btn btn-mod btn-border btn-large btn-round" value="Edit" action="index.php/MainController/actionEditBook/>
                                 </form>
                             </div>
 

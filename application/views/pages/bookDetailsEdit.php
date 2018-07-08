@@ -219,7 +219,7 @@
                                     
                                     <br><br>
                                     <input type="submit" style="width: 200px;" name="cancel" id="cancel" class="btn btn-mod btn-border btn-large btn-round" value="Cancel">
-                                    <input type="submit" style="width: 200px;"name="edit" id="edit" class="btn btn-mod btn-border btn-large btn-round" value="Edit" action="index.php/MainController/actionEditBook/>
+                                    <input type="submit" style="width: 200px;"name="edit" id="edit" class="btn btn-mod btn-border btn-large btn-round" value="Edit" action="index.php/MainController/actionEditBook/">
                                 </form>
                             </div>
 

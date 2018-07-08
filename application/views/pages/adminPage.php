@@ -341,7 +341,7 @@
                                 'class' => 'form contact-form',
                                 'id' => 'contact_form'
                             );
-                            echo form_open('MainController/actionAdd', $attributes);
+                            echo form_open('MainController/addBooks', $attributes);
                         ?>
                         
                         <!--ASIN-->

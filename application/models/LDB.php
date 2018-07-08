@@ -164,6 +164,14 @@ class LDB extends CI_Model{
     //Function for  adding books
     public function addBooks($ASIN, $img, $title, $author, $genre){
        // $this->db->insert('book',)
+       $data = array(
+           'ASIN' => $ASIN,
+           'title' => $title,
+           'author' => $author,
+           'genre' => $genre,
+           'imgUrl' => $img
+       );
+       $this->db->insert('buku',$data);
     }
 
 

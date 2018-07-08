@@ -290,13 +290,8 @@
                                     //NAMA BUKU
                                     echo '<div class="post-prev-title font-alt align-center">';
                                         $teks = "...";
-<<<<<<< HEAD
                                         if (strlen($user[$tes]->title) > 40) {
                                             echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.substr($user[$tes]->title,1,40).$teks.'</a>';
-=======
-                                        if (strlen($searchres[$no]->title) > 30) {
-                                            echo '<a title="'.$searchres[$no]->title.'" href="shop-single.html">'.substr($searchres[$no]->title,0,30).$teks.'</a>';
->>>>>>> 1e0952fa5162a6ce7b1f06168605e02fd2894990
                                         }
                                         else {
                                             echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.$user[$tes]->title.$teks.'</a>';

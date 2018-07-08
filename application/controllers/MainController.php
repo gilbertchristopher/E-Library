@@ -134,7 +134,6 @@ class MainController extends CI_Controller {
 
 		$keyword_clean = strip_tags($keyword_clean);
 
-<<<<<<< HEAD
 		$data['searchres'] = $this->LDB->searchByKey($keyword_clean);
 		$this->load->library('pagination');
 		
@@ -153,24 +152,6 @@ class MainController extends CI_Controller {
 		
 		$this->load->view('pages/display_search_result', $data);
 		
-=======
-			$data['searchres'] = $this->LDB->searchByKey($keyword_clean);
-			$this->load->library('pagination');
-			$jumlah_data = count($data['searchres']);
-			$config['base_url']=base_url().'index.php/MainController/searchMainpage/';
-			$config['total_rows'] = $jumlah_data;
-			$config['per_page']= 20;
-			$config['num_links']= 4;
-			//$config['uri_segment'] = 3;
-			$config['use_page_numbers'] = TRUE;
-			$data['baris']=$jumlah_data;
-			$from = $this->uri->segment(3);
-			$this->pagination->initialize($config);
-			$data['user'] = $this->LDB->subset($config['per_page'],$from);
-			
-			$this->load->view('pages/display_search_result', $data);
-		}
->>>>>>> 1e0952fa5162a6ce7b1f06168605e02fd2894990
 	}	
 
 	//Script php untuk login

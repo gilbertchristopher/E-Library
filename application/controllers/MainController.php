@@ -282,12 +282,12 @@ class MainController extends CI_Controller {
 		$data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
 
-		$this->form_validation->set_rules('email_login','Email','trim|required|xss_clean',
+		$this->form_validation->set_rules('email_login','Email','trim|required|min_length[5]|max_length[40]',
 					array(
 						'required' => 'You must provide a %s'
 						)
 					);
-		$this->form_validation->set_rules('password_login','Password','trim|required|xss_clean', 
+		$this->form_validation->set_rules('password_login','Password','trim|required|min_length[6]|max_length[12]', 
 					array('required' => 'You must provide a %s'));
 		$this->form_validation->set_error_delimiters('<strong style="color:red">','</strong>');
 		
@@ -314,14 +314,6 @@ class MainController extends CI_Controller {
 
 				$this->session->set_userdata('logged_user', $sessiondata);
 
-				// if($sessiondata['nim'] == '00000011461' || $sessiondata['nim'] == '00000011634' || $sessiondata['nim'] == '00000012175' || $sessiondata['nim'] == '00000012373'){
-				// 	$data['genress'] = $this->LDB->generateGenre();
-				// 	$data['searchres'] = $this->LDB->displayAllBooks();
-				// 	$this->load->view('pages/adminPage', $data);
-				// } else {
-				// 	$this->load->view('pages/userPage', $data);
-				// }
-
 				$this->displayUserPage();
 			} else {
 				$data['activeLogin'] = "active";
@@ -347,16 +339,16 @@ class MainController extends CI_Controller {
         $data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
 
-		$this->form_validation->set_rules('email','Email','trim|required|valid_email|xss_clean',
+		$this->form_validation->set_rules('email','Email','trim|required|valid_email|min_length[5]|max_length[40]',
 					array(
 						'required' => 'You must provide a valid %s'
 						)
 					);
-		$this->form_validation->set_rules('password','Password','trim|required|xss_clean', 
+		$this->form_validation->set_rules('password','Password','trim|required|min_length[6]|max_length[12]|alpha_numeric', 
 					array('required' => 'You must provide a %s'));
-		$this->form_validation->set_rules('re-password','Retype Password','trim|required|xss_clean|matches[password]',
+		$this->form_validation->set_rules('re-password','Retype Password','trim|required|matches[password]',
 					array('required' => "You must provide a %s"));
-		$this->form_validation->set_rules('nim','NIM','trim|required|xss_clean',
+		$this->form_validation->set_rules('nim','NIM','trim|required|min_length[11]|max_length[11]',
 					array('required' => "You must provide a %s"));
 		$this->form_validation->set_error_delimiters('<strong style="color:red">','</strong>');
 					
@@ -369,6 +361,9 @@ class MainController extends CI_Controller {
 		} 
 		else 
 		{
+			$email = $this->input->post('email');
+			$nim = $this->input->post('nim');
+			$password = $this->input->post('password');
 			$this->load->view('pages/userPage', $data);
 		}
 	}

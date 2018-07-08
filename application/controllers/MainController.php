@@ -27,6 +27,26 @@ class MainController extends CI_Controller {
 		$data['activeRegister'] = "";
 		$this->load->view('pages/loginRegister.php', $data);
 	}
+
+	//Menampilkan userpage
+	public function displayUserPage(){
+		$sessiondata = $this->session->userdata('logged_user');
+
+		$data['js'] = $this->load->view('include/jsLoginRegister.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssLoginRegister.php', NULL, TRUE);
+
+		$msg = "Selamat datang " .$sessiondata['nim'];
+
+		if($sessiondata['nim'] == '00000011461' || $sessiondata['nim'] == '00000011634' || $sessiondata['nim'] == '00000012175' || $sessiondata['nim'] == '00000012373'){
+			$data['genress'] = $this->LDB->generateGenre();
+			$data['searchres'] = $this->LDB->displayAllBooks();
+			$this->session->set_flashdata('msg',$msg);
+			$this->load->view('pages/adminPage', $data);
+		} else {
+			$this->session->set_flashdata('msg',$msg);
+			$this->load->view('pages/userPage', $data);
+		}
+	}
 	
 	//Halaman user
 	public function userPage()
@@ -157,13 +177,15 @@ class MainController extends CI_Controller {
 
 				$this->session->set_userdata('logged_user', $sessiondata);
 
-				if($sessiondata['nim'] == '00000011461' || $sessiondata['nim'] == '00000011634' || $sessiondata['nim'] == '00000012175' || $sessiondata['nim'] == '00000012373'){
-					$data['genress'] = $this->LDB->generateGenre();
-					$data['searchres'] = $this->LDB->displayAllBooks();
-					$this->load->view('pages/adminPage', $data);
-				} else {
-					$this->load->view('pages/userPage', $data);
-				}
+				// if($sessiondata['nim'] == '00000011461' || $sessiondata['nim'] == '00000011634' || $sessiondata['nim'] == '00000012175' || $sessiondata['nim'] == '00000012373'){
+				// 	$data['genress'] = $this->LDB->generateGenre();
+				// 	$data['searchres'] = $this->LDB->displayAllBooks();
+				// 	$this->load->view('pages/adminPage', $data);
+				// } else {
+				// 	$this->load->view('pages/userPage', $data);
+				// }
+
+				$this->displayUserPage();
 			} else {
 				$data['activeLogin'] = "active";
 				$data['activeRegister'] = "";

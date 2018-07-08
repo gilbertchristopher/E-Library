@@ -87,29 +87,65 @@ class LDB extends CI_Model{
     //Apabila berhasil, maka function akan mengembalikkan data-data berdasarkan email dan password pengguna
     //Apabila gagal, maka function akan mengembalikkan nilai false yang menandakan data tidak ditemukan atau pengguna tidak terdaftar
     public function login($email, $password){
-        $this->db->select('*');
-        $this->db->from('user');
-        $this->db->where('email', $email);
-        $this->db->where('password', $password);
-        $this->db->limit(1);
-        $query = $this->db->get();
-        
-        if($query->num_rows() == 1){
-            return $query->result();
+        $adagak = $this->db->query("SELECT email FROM user WHERE email = '$email' LIMIT 1");
+        if($adagak->num_rows() == 1) {
+            $getSalt = $this->db->query("SELECT salt FROM user WHERE email = '$email'")->result();
+            $saltedPass = $password .$getSalt[0]->salt;
+            $hashedPass = md5($saltedPass);
+
+            $this->db->select('*');
+            $this->db->from('user');
+            $this->db->where('email', $email);
+            $this->db->where('password', $hashedPass);
+            $this->db->limit(1);
+            $query = $this->db->get();
+            
+            if($query->num_rows() == 1){
+                return $query->result();
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
+
+        // $this->db->select('*');
+        // $this->db->from('user');
+        // $this->db->where('email', $email);
+        // $this->db->where('password', $password);
+        // $this->db->limit(1);
+        // $query = $this->db->get();
+        
+        // if($query->num_rows() == 1){
+        //     return $query->result();
+        // } else {
+        //     return false;
+        // }
     }
 
     //Function ini digunakan untuk mendaftarkan pengguna baru
     //Apabila berhasil, maka function akan mengembalikkan nilai TRUE
     //bila gagal, maka function akan mengembalikkan nilai FALSE
     public function registerNewUser($email, $password, $nim){
+        $adagak = $this->db->query("SELECT nim FROM user WHERE nim = '$nim' LIMIT 1");
+        if($adagak->num_rows() == 1){
+            return FALSE;
+        }
         $salt = $this->randomStringGenerator();
         $saltedPass = $password .$salt;
-        $hashedPass = 
+        $hashedPass = md5($saltedPass);
 
-        $this->db->insert('');
+        $data = array(
+            'nim' => $nim,
+            'email' => $email,
+            'password' => $hashedPass,
+            'salt' => $salt
+        );
+
+        $query = $this->db->insert('user', $data);
+
+        if($query) return TRUE;
+        else return FALSE;
     }
 
 
@@ -118,7 +154,7 @@ class LDB extends CI_Model{
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomstring = '';
-        for($i = 0; $i < 5; $i++){
+        for($i = 0; $i < 3; $i++){
             $randomstring .= $characters[rand(0, $charactersLength - 1)];
         }
 

@@ -108,11 +108,11 @@ class LDB extends CI_Model{
     }
 
 
-    function subset($number,$offset){
+    public function subset($number,$offset){
 		return $query = $this->db->get('buku',$number,$offset)->result();		
 	}
  
-	function jumlah_data(){
+	public function jumlah_data(){
         
         return $this->db->count_all('buku');
 	}

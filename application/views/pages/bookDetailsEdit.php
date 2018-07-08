@@ -156,7 +156,7 @@
                             
                             <div class="post-prev-img">
                             
-                                <a href="<?php echo base_url('assets/images/shop/shop-prev-1.jpg'); ?>" class="lightbox-gallery-3 mfp-image"><img src="<?php echo base_url('assets/images/shop/shop-prev-1.jpg'); ?>" alt="" /></a>
+                                <a href="<?php echo $buku[0]->imgUrl; ?>" class="lightbox-gallery-3 mfp-image"><img src="<?php echo $buku[0]->imgUrl; ?>" alt="" /></a>
                                 <!-- <div class="intro-label">
                                     <span class="label label-danger bg-red">Sale</span>
                                 </div> -->
@@ -186,47 +186,38 @@
                             
                             <h3 class="mt-0"><?php echo $buku[0]->title; ?></h3>
                             
-                            <hr class="mt-0 mb-30"/>
-                            
-                            <div class="row">
-                                <div class="col-xs-6 lead mt-0 mb-20">
-                                    
-                                    <del class="section-text">$50.00</del>
-                                    <strong>$25.99</strong>
-                            
-                                </div>
-                                <div class="col-xs-6 align-right section-text">
-                                    <!-- <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    &nbsp;(3 reviews) -->
-                                </div>
-                            </div>
-                            
-                            <hr class="mt-0 mb-30"/> 
-                            
-                            <div class="section-text mb-30">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et dui id dui suscipit pharetra vitae quis urna. Ut scelerisque quam quis erat tincidunt, vel vehicula turpis bibendum.
-                            </div>
-                            
                             <hr class="mt-0 mb-30"/> 
                             
                             <div class="mb-30">
-                                <form method="post" action="#" class="form">
-                                    <input type="number" class="input-lg round" min="1" max="100" value="1" />
-                                    <a href="#" class="btn btn-mod btn-large btn-round">Add to Cart</a> 
+                                <form method="post" action="<?php echo base_url('index.php/MainController/actionEditBook'); ?>" class="form">
+                                    <!-- <input type="number" class="input-lg round" min="1" max="100" value="1" />
+                                    <a href="#" class="btn btn-mod btn-large btn-round">Add to Cart</a>  -->
+                                    <label>Title</label>
+                                    <input type="text" class="form-control input-lg" id="title" name="title" value="<?php echo $buku[0]->title; ?>" placeholder="Title">
+                                    <br><br>
+                                    <label>Author</label>
+                                    <input type="text" class="form-control input-lg" id="author" name="author" value="<?php echo $buku[0]->author; ?>" placeholder="Author">
+                                    <br><br>
+                                    <label>Genre</label>
+                                    <select class="input-md form-control" style="height: 48px;" name="genre">
+                                        <?php
+                                            for($i = 0; $i < count($genress); $i++){
+                                                if($buku[0]->author == $genress[$i]->genre){
+                                                    echo "<option selected='selected' value=".$genress[$i]->genre.">".$genress[$i]->genre."</option>";
+                                                }
+                                                else{
+                                                    echo "<option value=".$genress[$i]->genre.">".$genress[$i]->genre."</option>";
+                                                }
+                                            }
+                                        ?>
+                                    </select>
+                                    <br><br>
+                                    <input type="submit" style="width: 200px;" name="cancel" id="cancel" class="btn btn-mod btn-border btn-large btn-round" value="Cancel">
+                                    <input type="submit" style="width: 200px;"name="edit" id="edit" class="btn btn-mod btn-border btn-large btn-round" value="Edit">
                                 </form>
                             </div>
-                            
+
                             <hr class="mt-0 mb-30"/> 
-                            
-                            <div class="section-text small">
-                                <div>SKU: 2134</div>
-                                <div>Category: <a href=""> Polo shirts</a></div>
-                                <div>Tags: <a href="">polo shirt</a>, <a href="">men</a></div>
-                            </div>
                             
                         </div>
                         <!-- End Product Description -->

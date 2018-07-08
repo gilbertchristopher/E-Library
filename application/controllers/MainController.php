@@ -1,4 +1,10 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'assets/PHPMailer-master/src/Exception.php';
+require 'assets/PHPMailer-master/src/PHPMailer.php';
+require 'assets/PHPMailer-master/src/SMTP.php';
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MainController extends CI_Controller {
@@ -82,13 +88,14 @@ class MainController extends CI_Controller {
 		$this->load->view('pages/adminPage.php', $data);
 	}
 
-	//Function untuk eksekusi edit atau delete pada halaman admin
+	//Function untuk pindah halaman ke edit atau delete
 	public function adminEditOrDelete(){
 		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
 
 		$asin = $this->input->post('asin');
 		$data['buku'] = $this->LDB->selectedBooks($asin);
+		$data['genress'] = $this->LDB->generateGenre();
 
 		if(isset($_POST['btnDeleteBook'])){
 			$this->load->view('pages/bookDetailsDelete.php', $data);
@@ -97,6 +104,16 @@ class MainController extends CI_Controller {
 			$this->load->view('pages/bookDetailsEdit.php', $data);
 			
 		}
+	}
+
+	//function untuk eksekusi edit record di databes
+	public function actionEditBook(){
+
+	}
+
+	//function untuk eksekusi delete record dr databes
+	public function actionDeleteBook(){
+
 	}
 
 	//Halaman about us
@@ -117,6 +134,7 @@ class MainController extends CI_Controller {
 
 		$keyword_clean = strip_tags($keyword_clean);
 
+<<<<<<< HEAD
 		$data['searchres'] = $this->LDB->searchByKey($keyword_clean);
 		$this->load->library('pagination');
 		
@@ -135,6 +153,24 @@ class MainController extends CI_Controller {
 		
 		$this->load->view('pages/display_search_result', $data);
 		
+=======
+			$data['searchres'] = $this->LDB->searchByKey($keyword_clean);
+			$this->load->library('pagination');
+			$jumlah_data = count($data['searchres']);
+			$config['base_url']=base_url().'index.php/MainController/searchMainpage/';
+			$config['total_rows'] = $jumlah_data;
+			$config['per_page']= 20;
+			$config['num_links']= 4;
+			//$config['uri_segment'] = 3;
+			$config['use_page_numbers'] = TRUE;
+			$data['baris']=$jumlah_data;
+			$from = $this->uri->segment(3);
+			$this->pagination->initialize($config);
+			$data['user'] = $this->LDB->subset($config['per_page'],$from);
+			
+			$this->load->view('pages/display_search_result', $data);
+		}
+>>>>>>> 1e0952fa5162a6ce7b1f06168605e02fd2894990
 	}	
 
 	//Script php untuk login
@@ -250,5 +286,88 @@ class MainController extends CI_Controller {
 		$this->form_validation->set_error_delimiters('<strong style="color:red">','</strong>');
 
 		$this->load->view('pages/adminPage', $data);
+	}
+
+	public function testemail(){
+		$this->load->library('email');
+
+		$subject = 'This is a test';
+		$message = '<p>This message has been sent for testing purposes.</p>';
+
+		// Get full html:
+		$body = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=' . strtolower(config_item('charset')) . '" />
+			<title>' . html_escape($subject) . '</title>
+			<style type="text/css">
+				body {
+					font-family: Arial, Verdana, Helvetica, sans-serif;
+					font-size: 16px;
+				}
+			</style>
+		</head>
+		<body>
+		' . $message . '
+		</body>
+		</html>';
+		// Also, for getting full html you may use the following internal method:
+		//$body = $this->email->full_html($subject, $message);
+
+		$result = $this->email
+			->from('ELibraryUMN@gmail.com')
+			//->reply_to('yoursecondemail@somedomain.com')    // Optional, an account where a human being reads.
+			->to('nathanielsuhardiman@gmail.com')
+			->subject($subject)
+			->message($body)
+			->send();
+
+		var_dump($result);
+		echo '<br />';
+		echo $this->email->print_debugger();
+
+		exit;
+	}
+
+	public function testemail2(){
+
+		//Load Composer's autoloader
+		//require 'vendor/autoload.php';
+
+		$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+		try {
+			//Server settings
+			$mail->SMTPDebug = 2;                                 // Enable verbose debug output
+			$mail->isSMTP();                                      // Set mailer to use SMTP
+			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+			$mail->Username = 'ELibraryUMN@gmail.com';                 // SMTP username
+			$mail->Password = 'burunggede';                           // SMTP password
+			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+			$mail->Port = 587;                                    // TCP port to connect to
+
+			//Recipients
+			$mail->setFrom('ELibraryUMN@gmail.com', 'Mailer');
+			$mail->addAddress('nathanielsuhardiman@gmail.com', 'Joe User');     // Add a recipient
+			$mail->addAddress('ellen@example.com');               // Name is optional
+			$mail->addReplyTo('info@example.com', 'Information');
+			$mail->addCC('cc@example.com');
+			$mail->addBCC('bcc@example.com');
+
+			//Attachments
+			//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+			//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+			//Content
+			$mail->isHTML(true);                                  // Set email format to HTML
+			$mail->Subject = 'Here is the subject';
+			$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+			$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+			$mail->send();
+			echo 'Message has been sent';
+		} catch (Exception $e) {
+			echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+		}
 	}
 }

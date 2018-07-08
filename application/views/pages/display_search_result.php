@@ -213,7 +213,7 @@
                                 
                                 <div class="left section-text mt-10">
                                     <!-- tar ini otomtis dari DB di count dr hasil select -->
-                                    Showing 1–4 of 23 results
+                                    Showing 1–<?php if(count($searchres) <= 20){echo count($searchres);} else{echo 20;}?> of <?php echo count($searchres); ?> results
                                 </div>
                                 
                                 <div class="right">
@@ -275,26 +275,34 @@
                             //     }
                             // }
                             $no = $this->uri->segment('3') + 1;
+                            $tes = 0;
                             foreach($user as $u){ 
+                                if (count($searchres) == $tes){
+                                    //echo $tes;
+                                    break;
+                                }
                                 echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
                                     echo '<div class="post-prev-img">';
-                                        echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$no]->imgUrl."' alt='' /></a>";
+                                        echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$tes]->imgUrl."' alt='' /></a>";
                                     echo '</div>';
-
+                                    
+                                    //echo $u->title;
                                     //NAMA BUKU
                                     echo '<div class="post-prev-title font-alt align-center">';
                                         $teks = "...";
-                                        if (strlen($searchres[$no]->title) > 40) {
-                                            echo '<a title="'.$searchres[$no]->title.'" href="shop-single.html">'.substr($searchres[$no]->title,1,40).$teks.'</a>';
+                                        if (strlen($searchres[$tes]->title) > 40) {
+                                            echo '<a title="'.$searchres[$tes]->title.'" href="shop-single.html">'.substr($searchres[$tes]->title,1,40).$teks.'</a>';
                                         }
                                         else {
-                                            echo '<a title="'.$searchres[$no]->title.'" href="shop-single.html">'.$searchres[$no]->title.$teks.'</a>';
+                                            echo '<a title="'.$searchres[$tes]->title.'" href="shop-single.html">'.$searchres[$tes]->title.$teks.'</a>';
                                         }
                                     echo '</div>';
                                 echo '</div>';
-                                $no++;
+                                
+                                $tes++;
+                                
                             }
-                            echo $this->pagination->create_links();
+                            //echo $this->pagination->create_links();
                             ?>
                             <!-- End Shop Item -->  
 

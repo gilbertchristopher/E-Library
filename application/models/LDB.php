@@ -8,6 +8,7 @@ class LDB extends CI_Model{
         $this->db->select('ASIN, title, author, genreid, genre, imgUrl');
         $this->db->from('buku');
         $this->db->where($condition);
+        $this->db->order_by("title", "asc");
         $query = $this->db->get();
         return $query->result();
     }
@@ -93,12 +94,13 @@ class LDB extends CI_Model{
     }
 
 
-    function data($number,$offset){
+    function subset($number,$offset){
 		return $query = $this->db->get('buku',$number,$offset)->result();		
 	}
  
 	function jumlah_data(){
-		return $this->db->get('buku')->num_rows();
+        
+        return $this->db->count_all('buku');
 	}
 }
 

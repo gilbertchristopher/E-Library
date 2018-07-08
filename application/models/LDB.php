@@ -8,7 +8,7 @@ class LDB extends CI_Model{
         $this->db->select('ASIN, title, author, genreId, genre, imgUrl');
         $this->db->from('buku');
         $this->db->where($condition);
-        $this->db->order_by("title", "asc");
+        //$this->db->order_by("title", "asc");
         $query = $this->db->get();
         return $query->result();
     }

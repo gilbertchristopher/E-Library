@@ -217,7 +217,11 @@
                                                 for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
                                                     echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
                                                         echo '<div class="post-prev-img">';
-                                                            echo "<a href='shop-single.html'><img class='image' style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
+                                                        ?>
+                                                        
+                                                        <a href="<?php echo $searchres[$i]->imgUrl; ?>" class="lightbox-gallery-3 mfp-image"><img src="<?php echo $searchres[$i]->imgUrl; ?>" alt="" /></a>
+                                                            <?php
+                                                            //echo '<a href="$searchres[$i]->imgUrl;"><img class="lightbox-gallery-3 mfp-image" style="width: 350px; height: 365px;" src=".$searchres[$i]->imgUrl." alt="" /></a>';
                                                         echo '</div>';
                                                         
                                                 ?>

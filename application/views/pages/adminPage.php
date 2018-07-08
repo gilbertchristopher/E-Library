@@ -249,10 +249,10 @@
                                                         echo '<div class="post-prev-title font-alt align-center">';
                                                             $teks = "...";
                                                             if (strlen($searchres[$i]->title) > 30) {
-                                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
+                                                                echo '<p title="'.$searchres[$i]->title.'">'.substr($searchres[$i]->title,0,30).$teks.'</p>';
                                                             }
                                                             else {
-                                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
+                                                                echo '<p title="'.$searchres[$i]->title.'">'.$searchres[$i]->title.$teks.'</p>';
                                                             }
                                                         echo '</div>';
                                                     echo '</div>';

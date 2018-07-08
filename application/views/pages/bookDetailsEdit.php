@@ -213,8 +213,19 @@
                                         ?>
                                     </select>
                                     <br><br>
+                                    <!--<form id="form1" runat="server">
+                                        <img id="blah" src="#" alt="your image" />
+                                        <input type='file' onchange="readURL(this);" />   
+                                    </form>
+                                    <br><br>-->
+                                    
+                                    <br><br>
                                     <input type="submit" style="width: 200px;" name="cancel" id="cancel" class="btn btn-mod btn-border btn-large btn-round" value="Cancel">
                                     <input type="submit" style="width: 200px;"name="edit" id="edit" class="btn btn-mod btn-border btn-large btn-round" value="Edit">
+                                </form>
+                                <?php echo form_open_multipart('upload/do_upload');?>
+                                    <img id="blah" src="#" alt="Upload Your Image" />
+                                    <input type='file' onchange="readURL(this);" />
                                 </form>
                             </div>
 

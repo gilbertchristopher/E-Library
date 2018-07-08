@@ -125,7 +125,7 @@
                     <div class="row">
                         
                         <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Delete Book</h1>
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Book Details</h1>
                             <div class="hs-line-4 font-alt black">
                                 <!-- Choose the best products in our shop -->
                             </div>

@@ -209,7 +209,7 @@
                                     </select>
                                     <br><br>
                                     
-                                    <input type="file" name="userfile" id="userfile"/> 
+                                    <input type="file" name="userfile" id="userfile" value="<?php echo $buku[0]->imgUrl; ?>" /> 
                                              
                                     <!--<form id="form1" runat="server">
                                         <img id="blah" src="#" alt="your image" />
@@ -256,7 +256,7 @@
                         
                         <!-- Copyright -->
                         <div class="footer-copy font-alt">
-                            <a href="http://themeforest.net/user/theme-guru/portfolio" target="_blank">&copy; Rhythm 2017</a>.
+                            <a href="http://umn.ac.id" target="_blank">&copy; E-LIBRARY 2018</a>.
                         </div>
                         <!-- End Copyright -->
                         

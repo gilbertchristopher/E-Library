@@ -163,7 +163,10 @@ class LDB extends CI_Model{
 
     //Function for  adding books
     public function addBooks($ASIN, $img, $title, $author, $genre){
-       // $this->db->insert('book',)
+       $adagak = $this->db->query("SELECT ASIN FROM buku WHERE ASIN = '$ASIN' LIMIT 1");
+       if($adagak->num_rows() == 1){
+           return FALSE;
+       }
        $data = array(
            'ASIN' => $ASIN,
            'title' => $title,
@@ -171,7 +174,9 @@ class LDB extends CI_Model{
            'genre' => $genre,
            'imgUrl' => $img
        );
-       $this->db->insert('buku',$data);
+       $query = $this->db->insert('buku',$data);
+       if($query) return TRUE;
+       else return FALSE;
     }
 
 

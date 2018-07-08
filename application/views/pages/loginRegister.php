@@ -309,6 +309,9 @@
                                             'class' => 'form contact-form',
                                             'id' => 'contact_form'
                                         );
+                                        if(isset($error_message_register)){
+                                            echo "<p><strong style='color:red'> $error_message_register </strong></p>";
+                                        }
                                         echo form_open('MainController/actionRegister', $attributes);
                                     ?>
                                         <div class="clearfix">

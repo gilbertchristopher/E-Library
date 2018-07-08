@@ -364,7 +364,17 @@ class MainController extends CI_Controller {
 			$email = $this->input->post('email');
 			$nim = $this->input->post('nim');
 			$password = $this->input->post('password');
-			$this->load->view('pages/userPage', $data);
+
+			$success = $this->LDB->registerNewUser($email, $password, $nim);
+			if($success){
+				$this->load->view('pages/Homepage', $data);
+			} else {
+				$data['activeLogin'] = "";
+				$data['activeRegister'] = 'active';
+				$data['error_message_register'] = "New user registration failed! Account already exists.";
+				$this->load->view('pages/loginRegister', $data);
+			}
+			//$this->load->view('pages/userPage', $data);
 		}
 	}
 	

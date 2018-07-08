@@ -215,12 +215,8 @@
                                     </select>
                                     <br><br>
                                     
-<<<<<<< HEAD
                                     <input type="file" name="userfile" id="userfile"/> 
                                              
-=======
-                                    <input type="file" name="userfile" size='20'/>                
->>>>>>> 9171275e5833217706c1e793dee93d228bcb1f77
                                     <!--<form id="form1" runat="server">
                                         <img id="blah" src="#" alt="your image" />
                                         <input type='file' onchange="readURL(this);" />   
@@ -229,7 +225,7 @@
                                     
                                     <br><br>
                                     <input type="submit" style="width: 200px;" name="cancel" id="cancel" class="btn btn-mod btn-border btn-large btn-round" value="Cancel">
-                                    <input type="submit" style="width: 200px;"name="edit" id="edit" class="btn btn-mod btn-border btn-large btn-round" value="Edit" action="index.php/MainController/actionEditBook/>
+                                    <input type="submit" style="width: 200px;"name="edit" id="edit" class="btn btn-mod btn-border btn-large btn-round" value="Edit" action="index.php/MainController/actionEditBook/">
                                 </form>
                             </div>
 

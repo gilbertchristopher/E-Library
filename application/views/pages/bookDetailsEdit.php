@@ -215,7 +215,7 @@
                                     </select>
                                     <br><br>
                                     
-                                    <input type="file" name="userfile" id="userfile"/>                
+                                    <input type="file" name="userfile" size='20'/>                
                                     <!--<form id="form1" runat="server">
                                         <img id="blah" src="#" alt="your image" />
                                         <input type='file' onchange="readURL(this);" />   

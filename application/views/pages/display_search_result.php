@@ -245,7 +245,7 @@
                             //             echo '<div class="post-prev-title font-alt align-center">';
                             //                 $teks = "...";
                             //                 if (strlen($searchres[$i]->title) > 30) {
-                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,1,30).$teks.'</a>';
+                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
                             //                 }
                             //                 else {
                             //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
@@ -264,8 +264,8 @@
                             //             //NAMA BUKU
                             //             echo '<div class="post-prev-title font-alt align-center">';
                             //                 $teks = "...";
-                            //                 if (strlen($searchres[$i]->title) > 40) {
-                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,1,40).$teks.'</a>';
+                            //                 if (strlen($searchres[$i]->title) > 30) {
+                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
                             //                 }
                             //                 else {
                             //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';

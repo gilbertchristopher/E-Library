@@ -227,7 +227,23 @@
                                                         echo '<div class="post-prev-img">';
                                                             echo "<a href='shop-single.html'><img class='image' style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
                                                         echo '</div>';
+                                                        
+                                                ?>
+                                                    <!-- Form Button delete edit -->
+                                                    <form method="post" action="<?php echo base_url('index.php/MainController/adminEditOrDelete'); ?>" id="form" role="form" class="form">
+                                                        <input type="hidden" name="asin" value="<?php echo $searchres[$i]->ASIN; ?>"> 
+                                                        <div class="intro-label">
+                                                            <button name="btnEdit" class="btn btn-success" type="submit">
+                                                                <i class="fa fa-pencil" style="color: black;"></i>
+                                                            </button>
+                                                            <button name="btnDelete" class="btn btn-danger" type="submit">
+                                                                <i class="fa fa-close" style="color: black;"></i>
+                                                            </button>
+                                                        </div>                           
+                                                    </form>
+                                                    <!-- End Form -->  
 
+                                                <?php
                                                         //NAMA BUKU
                                                         echo '<div class="post-prev-title font-alt align-center">';
                                                             $teks = "...";
@@ -251,8 +267,8 @@
                             </section>
                             <!-- End Portfolio Section -->
 
-                             <!-- Pagination -->
-                             <div class="pagination">
+                            <!-- Pagination -->
+                            <div class="pagination">
                                 <a href=""><i class="fa fa-angle-left"></i></a>
                                 <a href="" class="active">1</a>
                                 <a href="">2</a>

@@ -183,11 +183,15 @@ class MainController extends CI_Controller {
 			$file=$_FILES['userfile']['name'];                      
                   move_uploaded_file($_FILES['userfile']['tmp_name'],'assets/'.$file);
 			$imgUrl = 'assets/'.$file;
+			//var_dump($data['searchres'] = $this->LDB->displayAllBooks());
+			$urllama = $data['searchres'];
+			var_dump($urllama);
+			die();
 			$asin = $this->input->post('asin');
 			$title = $this->input->post('title');
 			$author = $this->input->post('author');
 			$genre = $this->input->post('genre');
-			if($_FILES['userfile'] == ""){
+			if($_FILES['userfile']['size'] == 0){
 				$imgUrl ="";
 			}
 			$this->LDB->editBook($asin, $title, $author, $genre, $imgUrl);

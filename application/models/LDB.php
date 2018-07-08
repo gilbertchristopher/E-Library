@@ -71,10 +71,12 @@ class LDB extends CI_Model{
     //function ini untuk mengedit buku yang telah dipilih sebelumnya
     public function editBook($asin, $title, $author, $genre, $imgUrl){
         $condition = "ASIN = '$asin'";
+
         $data = array(
             'title' => $title,
             'author' => $author,
-            'genre' => $genre
+            'genre' => $genre,
+            'imgUrl' => $imgUrl
         );
         $this->db->where($condition);
         $this->db->update('buku', $data);

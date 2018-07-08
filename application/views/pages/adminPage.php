@@ -292,17 +292,6 @@
                                                         <!-- End Form -->  
 
                                                 <?php
-<<<<<<< HEAD
-                                                        //NAMA BUKU
-                                                        echo '<div class="post-prev-title font-alt align-center">';
-                                                            $teks = "...";
-                                                            if (strlen($searchres[$i]->title) > 30) {
-                                                                echo '<p title="'.$searchres[$i]->title.'">'.substr($searchres[$i]->title,0,30).$teks.'</p>';
-                                                            }
-                                                            else {
-                                                                echo '<p title="'.$searchres[$i]->title.'">'.$searchres[$i]->title.$teks.'</p>';
-                                                            }
-=======
                                                             //NAMA BUKU
                                                             echo '<div class="post-prev-title font-alt align-center">';
                                                                 $teks = "...";
@@ -313,7 +302,6 @@
                                                                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
                                                                 }
                                                             echo '</div>';
->>>>>>> ed8b110446ee1d9c1d3cc8a761aa96d4b3de3d7d
                                                         echo '</div>';
                                                     }
                                                 }

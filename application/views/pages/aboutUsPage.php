@@ -198,10 +198,10 @@
                                     
                                     <div class="team-item-detail">
                                         
-                                        <h4 class="font-alt normal">Hello & Welcome!</h4>
+                                        <h4 class="font-alt normal">Andy Santoso</h4>
                                         
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam. 
+                                            00000012373 
                                         </p>
                                         
                                         <div class="team-social-links">
@@ -213,7 +213,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="team-item-descr font-alt">
+                                <!-- <div class="team-item-descr font-alt">
                                     
                                     <div class="team-item-name">
                                         Andy Santoso
@@ -223,7 +223,7 @@
                                         00000012373
                                     </div>
                                     
-                                </div>
+                                </div> -->
                                 
                             </div>
                         </div>
@@ -239,10 +239,10 @@
                                     
                                     <div class="team-item-detail">
                                         
-                                        <h4 class="font-alt normal">Nice to meet!</h4>
+                                        <h4 class="font-alt normal">Gilbert Christopher</h4>
                                         
                                         <p>
-                                            Curabitur augue, nec finibus mauris pretium eu. Duis placerat ex gravida nibh tristique porta.
+                                            00000012175
                                         </p>
                                         
                                         <div class="team-social-links">
@@ -254,7 +254,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="team-item-descr font-alt">
+                                <!-- <div class="team-item-descr font-alt">
                                     
                                     <div class="team-item-name">
                                         Gilbert Christopher
@@ -264,7 +264,7 @@
                                         00000012175
                                     </div>
                                     
-                                </div>
+                                </div> -->
                                 
                             </div>
                         </div>
@@ -280,10 +280,10 @@
                                     
                                     <div class="team-item-detail">
                                         
-                                        <h4 class="font-alt normal">Whats Up!</h4>
+                                        <h4 class="font-alt normal">Nathaniel</h4>
                                         
                                         <p>
-                                            Adipiscing elit curabitur eu&nbsp;adipiscing lacus eu&nbsp;adipiscing lacus, a&nbsp;iaculis diam. 
+                                            00000011634
                                         </p>
                                         
                                         <div class="team-social-links">
@@ -295,7 +295,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="team-item-descr font-alt">
+                                <!-- <div class="team-item-descr font-alt">
                                     
                                     <div class="team-item-name">
                                         Nathaniel
@@ -305,7 +305,7 @@
                                         00000011634
                                     </div>
                                     
-                                </div>
+                                </div> -->
                                 
                             </div>
                         </div>
@@ -321,10 +321,10 @@
                                     
                                     <div class="team-item-detail">
                                         
-                                        <h4 class="font-alt normal">Hi to all!</h4>
+                                        <h4 class="font-alt normal">Yohandy Chiawanda</h4>
                                         
                                         <p>
-                                            Adipiscing elit curabitur eu&nbsp;adipiscing lacus eu&nbsp;adipiscing lacus, a&nbsp;iaculis diam. 
+                                            00000011461
                                         </p>
                                         
                                         <div class="team-social-links">
@@ -336,7 +336,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="team-item-descr font-alt">
+                                <!-- <div class="team-item-descr font-alt">
                                     
                                     <div class="team-item-name">
                                         Yohandy Chiawanda
@@ -346,7 +346,7 @@
                                         00000011461
                                     </div>
                                     
-                                </div>
+                                </div> -->
                                 
                             </div>
                         </div>

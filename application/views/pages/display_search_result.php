@@ -213,7 +213,7 @@
                                 
                                 <div class="left section-text mt-10">
                                     <!-- tar ini otomtis dari DB di count dr hasil select -->
-                                    Showing 1–<?php if(count($searchres) <= 20){echo count($searchres);} else{echo 20;}?> of <?php echo count($searchres); ?> results
+                                    Showing 1–<?php if(count($user) <= 20){echo count($user);} else{echo 20;}?> of <?php echo count($user); ?> results
                                 </div>
                                 
                                 <div class="right">
@@ -233,76 +233,33 @@
                         
                             <!-- Shop Item -->
                             <?php
-                            //if sementara sblm ada pagination buat cek kalau data yg d search kurang dari 20
-                            // if (count($searchres) < 20) {
-                            //     for($i = 0;$i < count($searchres);$i++){ //sementara maks tampil 20, pagination blm jalan soale
-                            //         echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
-                            //             echo '<div class="post-prev-img">';
-                            //                 echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
-                            //             echo '</div>';
-    
-                            //             //NAMA BUKU
-                            //             echo '<div class="post-prev-title font-alt align-center">';
-                            //                 $teks = "...";
-                            //                 if (strlen($searchres[$i]->title) > 30) {
-                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
-                            //                 }
-                            //                 else {
-                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
-                            //                 }
-                            //             echo '</div>';
-                            //         echo '</div>';
-                            //     }
-                            // }
-                            // else {
-                            //     for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
-                            //         echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
-                            //             echo '<div class="post-prev-img">';
-                            //                 echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
-                            //             echo '</div>';
-    
-                            //             //NAMA BUKU
-                            //             echo '<div class="post-prev-title font-alt align-center">';
-                            //                 $teks = "...";
-                            //                 if (strlen($searchres[$i]->title) > 30) {
-                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
-                            //                 }
-                            //                 else {
-                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
-                            //                 }
-                            //             echo '</div>';
-                            //         echo '</div>';
-                            //     }
-                            // }
-                            $no = $this->uri->segment('3') + 1;
-                            $tes = 0;
-                            foreach($user as $u){ 
-                                if (count($user) == $tes){
-                                    //echo $tes;
-                                    break;
-                                }
-                                echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
-                                    echo '<div class="post-prev-img">';
-                                        echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$user[$tes]->imgUrl."' alt='' /></a>";
-                                    echo '</div>';
+                                $no = $this->uri->segment('3') + 1;
+                                $tes = 0;
+                                foreach($user as $u){ 
+                                    if (count($user) == $tes){
+                                        break;
+                                    }
+                                    echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
+                                        //Gambar Cover Buku
+                                        echo '<div class="post-prev-img">';
+                                            echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$user[$tes]->imgUrl."' alt='' /></a>";
+                                        echo '</div>';
+                                        
+                                        //Nama buku
+                                        echo '<div class="post-prev-title font-alt align-center">';
+                                            $teks = "...";
+                                            if (strlen($user[$tes]->title) > 40) {
+                                                echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.substr($user[$tes]->title,1,40).$teks.'</a>';
+                                            }
+                                            else {
+                                                echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.$user[$tes]->title.$teks.'</a>';
+                                            }
+                                        echo '</div>';
+                                    echo '</div>';      
                                     
-                                    //echo $u->title;
-                                    //NAMA BUKU
-                                    echo '<div class="post-prev-title font-alt align-center">';
-                                        $teks = "...";
-                                        if (strlen($user[$tes]->title) > 40) {
-                                            echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.substr($user[$tes]->title,1,40).$teks.'</a>';
-                                        }
-                                        else {
-                                            echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.$user[$tes]->title.$teks.'</a>';
-                                        }
-                                    echo '</div>';
-                                echo '</div>';      
-                                
-                                $tes++;
-                                
-                            }
-                            //echo $this->pagination->create_links();
+                                    $tes++;
+                                    
+                                }
                             ?>
                             <!-- End Shop Item -->  
 

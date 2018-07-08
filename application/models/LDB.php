@@ -3,11 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class LDB extends CI_Model{
     //Function ini digunakan untuk mengambil data dari tabel buku sesuai dengan kata kunci yang diberikan
-    public function searchByKey($keys){
+    public function searchByKey($keys, $limit, $offset){
         $condition = "title LIKE '%" .$keys ."%' OR author LIKE '%" .$keys ."%' OR genre LIKE '%" .$keys ."%' OR ASIN LIKE '%" .$keys ."%'";
         $this->db->select('ASIN, title, author, genreId, genre, imgUrl');
         $this->db->from('buku');
         $this->db->where($condition);
+        $this->db->limit($limit,$offset);
         $this->db->order_by("title", "asc");
         $query = $this->db->get();
         return $query->result();

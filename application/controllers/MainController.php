@@ -134,10 +134,11 @@ class MainController extends CI_Controller {
 
 		$keyword_clean = strip_tags($keyword_clean);
 
-		$data['searchres'] = $this->LDB->searchByKey($keyword_clean);
+		//$data['searchres'] = $this->LDB->searchByKey($keyword_clean);
 		$this->load->library('pagination');
 		
-		$jumlah_data = count($data['searchres']);
+		//$jumlah_data = count($data['searchres']);
+		$jumlah_data = $this->LDB->countDataByKeyword($keyword_clean);
 		
 		$config['base_url']=base_url().'index.php/MainController/searchMainpage';
 		$config['total_rows'] = $jumlah_data;
@@ -145,10 +146,11 @@ class MainController extends CI_Controller {
 		$config['num_links']= 4;
 		//$config['uri_segment'] = 3;
 		$config['use_page_numbers'] = TRUE;
-		$data['baris']=$jumlah_data;
+		//$data['baris']=$jumlah_data;
 		$from = $this->uri->segment(3);
 		$this->pagination->initialize($config);
-		$data['user'] = $this->LDB->subset($config['per_page'],$from);
+		//$data['user'] = $this->LDB->subset($config['per_page'],$from);
+		$data['user'] = $this->LDB->searchByKey($keyword_clean, $config['per_page'], $from);
 		
 		$this->load->view('pages/display_search_result', $data);
 		

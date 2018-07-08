@@ -49,6 +49,7 @@ class MainController extends CI_Controller {
 			$this->session->set_flashdata('msg',$msg);
 			$this->load->view('pages/adminPage', $data);
 		} else {
+			$data['searchres'] = $this->LDB->displayAllBooks();
 			$this->session->set_flashdata('msg',$msg);
 			$this->load->view('pages/userPage', $data);
 		}
@@ -59,8 +60,37 @@ class MainController extends CI_Controller {
 	{
 		$data['js'] = $this->load->view('include/jsUserPage.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssUserPage.php', NULL, TRUE);
+
+		$data['searchres'] = $this->LDB->displayAllBooks();
+
 		$this->load->view('pages/userPage.php', $data);
 	}
+
+	//Function untuk mencari sesuai keyword di userpage
+	public function searchUserPage()
+	{
+		$data['js'] = $this->load->view('include/jsLandingPage.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssLandingPage.php', NULL, TRUE);
+			
+		$keyword = $this->input->post('search_keywords');
+		$keyword_clean = $this->security->xss_clean($keyword);
+		$keyword_clean = strip_tags($keyword_clean);
+
+		$this->load->library('pagination');
+		
+		$jumlah_data = $this->LDB->countDataByKeyword($keyword_clean);
+		
+		$config['base_url']=base_url().'index.php/MainController/searchUserPage';
+		$config['total_rows'] = $jumlah_data;
+		$config['per_page']= 20;
+		$config['num_links']= 4;
+		$config['use_page_numbers'] = TRUE;
+		$from = $this->uri->segment(3);
+		$this->pagination->initialize($config);
+		$data['user'] = $this->LDB->searchByKey($keyword_clean, $config['per_page'], $from);
+		
+		$this->load->view('pages/userPage.php', $data);
+	}	
 
 	//Halaman admin
 	public function adminPage()

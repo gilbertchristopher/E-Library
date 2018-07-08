@@ -245,7 +245,7 @@
                             //             echo '<div class="post-prev-title font-alt align-center">';
                             //                 $teks = "...";
                             //                 if (strlen($searchres[$i]->title) > 30) {
-                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,1,30).$teks.'</a>';
+                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
                             //                 }
                             //                 else {
                             //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
@@ -264,8 +264,8 @@
                             //             //NAMA BUKU
                             //             echo '<div class="post-prev-title font-alt align-center">';
                             //                 $teks = "...";
-                            //                 if (strlen($searchres[$i]->title) > 40) {
-                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,1,40).$teks.'</a>';
+                            //                 if (strlen($searchres[$i]->title) > 30) {
+                            //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
                             //                 }
                             //                 else {
                             //                     echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
@@ -290,8 +290,13 @@
                                     //NAMA BUKU
                                     echo '<div class="post-prev-title font-alt align-center">';
                                         $teks = "...";
+<<<<<<< HEAD
                                         if (strlen($searchres[$tes]->title) > 40) {
                                             echo '<a title="'.$searchres[$tes]->title.'" href="shop-single.html">'.substr($searchres[$tes]->title,1,40).$teks.'</a>';
+=======
+                                        if (strlen($searchres[$no]->title) > 30) {
+                                            echo '<a title="'.$searchres[$no]->title.'" href="shop-single.html">'.substr($searchres[$no]->title,0,30).$teks.'</a>';
+>>>>>>> 541d931c545c3ed769fccfa6067073bc3c1c4140
                                         }
                                         else {
                                             echo '<a title="'.$searchres[$tes]->title.'" href="shop-single.html">'.$searchres[$tes]->title.$teks.'</a>';

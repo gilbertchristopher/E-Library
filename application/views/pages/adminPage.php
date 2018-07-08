@@ -219,7 +219,7 @@
                                                         echo '<div class="post-prev-img">';
                                                         ?>
                                                         
-                                                        <a href="<?php echo $searchres[$i]->imgUrl; ?>" class="lightbox-gallery-3 mfp-image"><img src="<?php echo $searchres[$i]->imgUrl; ?>" alt="" /></a>
+                                                        <a href="<?php echo $searchres[$i]->imgUrl; ?>" class="lightbox-gallery-3 mfp-image"><img style="width: 350px; height: 365px" src="<?php echo $searchres[$i]->imgUrl; ?>" alt="" /></a>
                                                             <?php
                                                             //echo '<a href="$searchres[$i]->imgUrl;"><img class="lightbox-gallery-3 mfp-image" style="width: 350px; height: 365px;" src=".$searchres[$i]->imgUrl." alt="" /></a>';
                                                         echo '</div>';

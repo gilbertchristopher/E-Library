@@ -3,12 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class LDB extends CI_Model{
     //Function ini digunakan untuk mengambil data dari tabel buku sesuai dengan kata kunci yang diberikan
-    public function searchByKey($keys){
+    public function searchByKey($keys, $limit, $offset){
         $condition = "title LIKE '%" .$keys ."%' OR author LIKE '%" .$keys ."%' OR genre LIKE '%" .$keys ."%' OR ASIN LIKE '%" .$keys ."%'";
         $this->db->select('ASIN, title, author, genreId, genre, imgUrl');
         $this->db->from('buku');
         $this->db->where($condition);
+<<<<<<< HEAD
         //$this->db->order_by("title", "asc");
+=======
+        $this->db->limit($limit,$offset);
+        $this->db->order_by("title", "asc");
+>>>>>>> 98803f9644d320f6bdd0147b5ab2a97afd08415e
         $query = $this->db->get();
         return $query->result();
     }
@@ -58,6 +63,18 @@ class LDB extends CI_Model{
         $this->db->where($condition);
         $query = $this->db->get();
         return $query->result();
+    }
+
+    //function ini untuk menghapus buku yang telah dipilih sblmnya
+    public function deleteBook($asin){
+        $condition = "ASIN = '$asin'";
+        $this->db->where($condition);
+        $this->db->delete('buku');
+    }
+
+    //function ini untuk mengedit buku yang telah dipilih sebelumnya
+    public function editBook($title, $author, $genre, $imgUrl){
+        
     }
 
     //Function ini digunakan untuk login ke dalam sistem

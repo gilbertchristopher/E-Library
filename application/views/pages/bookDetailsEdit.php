@@ -125,7 +125,7 @@
                     <div class="row">
                         
                         <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Book Details</h1>
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Edit Book</h1>
                             <div class="hs-line-4 font-alt black">
                                 <!-- Choose the best products in our shop -->
                             </div>
@@ -184,7 +184,7 @@
                         <!-- Product Description -->
                         <div class="col-sm-8 col-md-8 mb-xs-40">
                             
-                            <h3 class="mt-0">Religion Jersey Polo Shirt</h3>
+                            <h3 class="mt-0"><?php echo $buku[0]->title; ?></h3>
                             
                             <hr class="mt-0 mb-30"/>
                             

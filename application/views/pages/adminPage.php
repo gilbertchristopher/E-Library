@@ -216,27 +216,19 @@
                                                 //count($searchres) --> sementara di komen
                                                 for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
                                                     echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
-                                                        //hover delete edit
-                                                        // echo '<div class="post-prev-img">';
-                                                        //     echo "<a href='shop-single.html'><img class='imageN' style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
-                                                        //     echo '<div class="middleN">';
-                                                        //         echo '<div class="textN">Edit</div> &nbsp';
-                                                        //         echo '<div class="textN">Delete</div>';
-                                                        //     echo '</div>';
-                                                        // echo '</div>';
                                                         echo '<div class="post-prev-img">';
                                                             echo "<a href='shop-single.html'><img class='image' style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
                                                         echo '</div>';
                                                         
                                                 ?>
                                                     <!-- Form Button delete edit -->
-                                                    <form method="post" action="<?php echo base_url('index.php/MainController/adminEditOrDelete'); ?>" id="form" role="form" class="form">
+                                                    <form method="POST" action="<?php echo base_url('index.php/MainController/adminEditOrDelete'); ?>" id="form" role="form" class="form">
                                                         <input type="hidden" name="asin" value="<?php echo $searchres[$i]->ASIN; ?>"> 
                                                         <div class="intro-label">
-                                                            <button name="btnEdit" class="btn btn-success" type="submit">
+                                                            <button name="btnEditBook" id="btnEditBook" class="btn btn-success" type="submit">
                                                                 <i class="fa fa-pencil" style="color: black;"></i>
                                                             </button>
-                                                            <button name="btnDelete" class="btn btn-danger" type="submit">
+                                                            <button name="btnDeleteBook" id="btnDeleteBook" class="btn btn-danger" type="submit">
                                                                 <i class="fa fa-close" style="color: black;"></i>
                                                             </button>
                                                         </div>                           

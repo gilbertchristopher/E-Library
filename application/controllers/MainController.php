@@ -113,7 +113,20 @@ class MainController extends CI_Controller {
 
 	//function untuk eksekusi delete record dr databes
 	public function actionDeleteBook(){
+		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
 
+		$data['searchres'] = $this->LDB->displayAllBooks();
+		$data['genress'] = $this->LDB->generateGenre();
+
+		if($this->input->post('cancel')){
+			$this->load->view('pages/adminPage.php', $data);
+		}
+		else if($this->input->post('delete')){
+			$asin = $this->input->post('asin');
+			$this->LDB->deleteBook($asin);
+			$this->load->view('pages/adminPage.php', $data);
+		}
 	}
 
 	//Halaman about us

@@ -61,6 +61,18 @@ class LDB extends CI_Model{
         return $query->result();
     }
 
+    //function ini untuk menghapus buku yang telah dipilih sblmnya
+    public function deleteBook($asin){
+        $condition = "ASIN = '$asin'";
+        $this->db->where($condition);
+        $this->db->delete('buku');
+    }
+
+    //function ini untuk mengedit buku yang telah dipilih sebelumnya
+    public function editBook($title, $author, $genre, $imgUrl){
+        
+    }
+
     //Function ini digunakan untuk login ke dalam sistem
     //Apabila berhasil, maka function akan mengembalikkan data-data berdasarkan email dan password pengguna
     //Apabila gagal, maka function akan mengembalikkan nilai false yang menandakan data tidak ditemukan atau pengguna tidak terdaftar

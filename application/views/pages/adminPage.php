@@ -396,7 +396,7 @@
                             </div>
 
                             <form id="form1" runat="server">
-                                <img id="blah" src="#" alt="your image" />
+                                <!-- <img id="blah" src="#" alt="your image" /> -->
                                 <input type='file' onchange="readURL(this);" />   
                             </form>
 

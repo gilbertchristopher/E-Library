@@ -84,7 +84,10 @@ class MainController extends CI_Controller {
 
 	//Function untuk eksekusi edit atau delete pada halaman admin
 	public function adminEditOrDelete(){
+		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
 
+		$this->load->view('pages/bookDetails.php', $data);
 	}
 
 	//Halaman about us

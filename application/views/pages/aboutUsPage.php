@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
         
         <!-- Favicons -->
-        <link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.png'); ?>">
+        <link rel="shortcut icon" href="images/favicon.png">
 
         <!-- CSS -->
         <?php
@@ -22,7 +22,7 @@
                 $email = ($this->session->userdata['logged_user']['email']);
                 $salt = ($this->session->userdata['logged_user']['nim']);
             }
-        ?>     
+        ?>       
         
     </head>
     <body class="appear-animate">
@@ -49,8 +49,8 @@
                         <i class="fa fa-bars"></i>
                     </div>
                     
-                    <!-- Main Menu -->
-                    <div class="inner-nav desktop-nav">
+                   <!-- Main Menu -->
+                   <div class="inner-nav desktop-nav">
                         <ul class="clearlist">
                             
                             <!-- Item -->
@@ -143,17 +143,24 @@
             
             
             <!-- Head Section -->
-            <section class="small-section bg-gray-lighter">
+            <section class="small-section bg-gray-lighter team-banner">
                 <div class="relative container align-left">
                     
                     <div class="row">
                         
                         <div class="col-md-8">
-                            <h1 class="hs-line-11 no-transp font-alt mb-20 mb-xs-0">About Us</h1>
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0 white">Team</h1>
+                            <!-- <div class="hs-line-4 font-alt black">
+                                Extraordinary web developer &&nbsp;creative minimalism lovers
+                            </div> -->
                         </div>
                         
-                        <div class="col-md-4 mt-30">
-                        </div>
+                        <!-- <div class="col-md-4 mt-30">
+                            <div class="mod-breadcrumbs font-alt align-right">
+                                <a href="#">Home</a>&nbsp;/&nbsp;<a href="#">Pages</a>&nbsp;/&nbsp;<span>Team</span>
+                            </div>
+                            
+                        </div> -->
                     </div>
                     
                 </div>
@@ -161,287 +168,23 @@
             <!-- End Head Section -->
             
             
-            <!-- About Section -->
+            <!-- Section -->
             <section class="page-section" id="about">
                 <div class="container relative">
                     
-                    <div class="section-text mb-60 mb-sm-40">
-                        <div class="row">
-                            
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In maximus ligula semper metus pellentesque mattis. Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur fermentum nibh volutpat, accumsan purus. 
-                            </div>
-                            
-                            <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                                Etiam sit amet fringilla lacus. Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus. Praesent sed nisi eleifend, fermentum orci amet, iaculis libero. Donec vel ultricies purus. Nam dictum sem, eu aliquam.
-                            </div>
-                            
-                            <div class="col-md-4 col-sm-12 mb-sm-50 mb-xs-30">
-                                 
-                                <!-- Bar Item -->
-                                <div class="progress tpl-progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                                        Branding, % <span>90</span>
-                                    </div>
-                                </div>
-                                <!-- End Bar Item -->
-                                
-                                <!-- Bar Item -->
-                                <div class="progress tpl-progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                        Design, % <span>80</span>
-                                    </div>
-                                </div>
-                                <!-- End Bar Item -->
-                                
-                                <!-- Bar Item -->
-                                <div class="progress tpl-progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        Development, % <span>85</span>
-                                    </div>
-                                </div>
-                                <!-- End Bar Item -->
-                                 
-                            </div>
-                            
-                        </div>
-                    </div>
+                    <h1 class="section-title font-alt mb-70 mb-sm-40">
+                        Meet our creative team
+                    </h1>
                     
                     
-                    <!-- Counters -->
-                    <div class="count-wrapper">
-                        <div class="row">
-                            
-                            <!-- Counter Item -->
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="count-number">
-                                    320
-                                </div>
-                                <div class="count-descr font-alt">
-                                    <i class="fa fa-briefcase"></i>
-                                    <span class="count-title">Projects Done</span>
-                                </div>
-                            </div>
-                            <!-- End Counter Item -->
-                            
-                            <!-- Counter Item -->
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="count-number">
-                                    150
-                                </div>
-                                <div class="count-descr font-alt">
-                                    <i class="fa fa-heart"></i>
-                                    <span class="count-title">Happy Clients</span>
-                                </div>
-                            </div>
-                            <!-- End Counter Item -->
-                            
-                            <!-- Counter Item -->
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="count-number">
-                                    933
-                                </div>
-                                <div class="count-descr font-alt">
-                                    <i class="fa fa-coffee"></i>
-                                    <span class="count-title">Coffee Cups</span>
-                                </div>
-                            </div>
-                            <!-- End Counter Item -->
-                            
-                            <!-- Counter Item -->
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="count-number">
-                                    975
-                                </div>
-                                <div class="count-descr font-alt">
-                                    <i class="fa fa-lightbulb-o"></i>
-                                    <span class="count-title">Great Ideas</span>
-                                </div>
-                            </div>
-                            <!-- End Counter Item -->
-                            
-                        </div>
-                    </div>
-                    <!-- End Counters -->
-                    
-                </div>
-            </section>
-            <!-- End About Section -->
-            
-            
-            <!-- Testimonials Section -->
-            <section class="page-section bg-dark bg-dark-alfa-90 fullwidth-slider" data-background="images/full-width-images/section-bg-3.jpg">
-                
-                <!-- Slide Item -->
-                <div>
-                    <div class="container relative">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 align-center">
-                                <!-- Section Icon -->
-                                <div class="section-icon">
-                                    <span class="icon-quote"></span>
-                                </div>
-                                <!-- Section Title --><h3 class="small-title font-alt">What people say?</h3>
-                                <blockquote class="testimonial white">
-                                    <p>
-                                        Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                                        risus utaliquam dapibus. Thanks!
-                                    </p>
-                                    <footer class="testimonial-author">
-                                        John Doe, doodle inc.
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Slide Item -->
-                
-                <!-- Slide Item -->
-                <div>
-                    <div class="container relative">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 align-center">
-                                <!-- Section Icon -->
-                                <div class="section-icon">
-                                    <span class="icon-quote"></span>
-                                </div>
-                                <!-- Section Title --><h3 class="small-title font-alt">What people say?</h3>
-                                <blockquote class="testimonial white">
-                                    <p>
-                                        Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                                        risus utaliquam dapibus. Thanks!
-                                    </p>
-                                    <footer class="testimonial-author">
-                                        John Doe, doodle inc.
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Slide Item -->
-                
-                <!-- Slide Item -->
-                <div>
-                    <div class="container relative">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 align-center">
-                                <!-- Section Icon -->
-                                <div class="section-icon">
-                                    <span class="icon-quote"></span>
-                                </div>
-                                <!-- Section Title --><h3 class="small-title font-alt">What people say?</h3>
-                                <blockquote class="testimonial white">
-                                    <p>
-                                        Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                                        risus utaliquam dapibus. Thanks!
-                                    </p>
-                                    <footer class="testimonial-author">
-                                        John Doe, doodle inc.
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Slide Item -->
-                
-            </section>
-            <!-- End Testimonials Section -->
-            
-            
-            <!-- Logotypes Section -->
-            <section class="small-section pt-20 pb-20">
-                <div class="container relative">
-                    
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            
-                            <div class="small-item-carousel black owl-carousel mb-0 animate-init" data-anim-type="fade-in-right-large" data-anim-delay="100">
-                                
-                                <!-- Logo Item -->
-                                <div class="logo-item">
-                                
-                                    <img src="<?php echo base_url('assets/images/clients-logos/client-1.png'); ?>" width="67" height="67" alt="" />
-                                </div>
-                                <!-- End Logo Item -->
-                                
-                                <!-- Logo Item -->
-                                <div class="logo-item">
-                                    <img src="<?php echo base_url('assets/images/clients-logos/client-2.png'); ?>" width="67" height="67" alt="" />
-                                </div>
-                                <!-- End Logo Item -->
-                                
-                                <!-- Logo Item -->
-                                <div class="logo-item">
-                                    <img src="<?php echo base_url('assets/images/clients-logos/client-3.png'); ?>" width="67" height="67" alt="" />
-                                </div>
-                                <!-- End Logo Item -->
-                                
-                                <!-- Logo Item -->
-                                <div class="logo-item">
-                                    <img src="<?php echo base_url('assets/images/clients-logos/client-4.png'); ?>" width="67" height="67" alt="" />
-                                </div>
-                                <!-- End Logo Item -->
-                                
-                                <!-- Logo Item -->
-                                <div class="logo-item">
-                                    <img src="<?php echo base_url('assets/images/clients-logos/client-5.png'); ?>" width="67" height="67" alt="" />
-                                </div>
-                                <!-- End Logo Item -->
-                                
-                                <!-- Logo Item -->
-                                <div class="logo-item">
-                                    <img src="<?php echo base_url('assets/images/clients-logos/client-6.png'); ?>" width="67" height="67" alt="" />
-                                </div>
-                                <!-- End Logo Item -->
-                                
-                                <!-- Logo Item -->
-                                <div class="logo-item">
-                                    <img src="<?php echo base_url('assets/images/clients-logos/client-1.png'); ?>" width="67" height="67" alt="" />
-                                </div>
-                                <!-- End Logo Item -->
-                                
-                                <!-- Logo Item -->
-                                <div class="logo-item">
-                                    <img src="<?php echo base_url('assets/images/clients-logos/client-2.png'); ?>" width="67" height="67" alt="" />
-                                </div>
-                                <!-- End Logo Item -->
-                                
-                            </div>
-                                
-                         </div>
-                     </div>
-                    
-                 </div>
-            </section>
-            <!-- End Logotypes -->
-            
-            
-            <!-- Divider -->
-            <hr class="mt-0 mb-0 "/>
-            <!-- End Divider -->
-            
-            
-            <!-- Team Section -->
-            <section class="page-section">
-                <div class="container relative">
-                    
-                    <h2 class="section-title font-alt mb-70 mb-sm-40">
-                        Our Team
-                    </h2>
-                    
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="section-text align-center mb-70 mb-xs-40">
-                                In&nbsp;auctor ex&nbsp;id&nbsp;urna faucibus porttitor. Lorem ipsum dolor sit amet, 
-                                consectetur adipiscing elit. In&nbsp;maximus ligula semper metus pellentesque mattis.  
-                                Maecenas volutpat, diam enim sagittis quam, id&nbsp;porta quam. Sed id&nbsp;dolor 
-                                consectetur fermentum nibh volutpat, accumsan purus.
+                                Curabitur eu adipiscing lacus, a iaculis diam. Nullam placerat blandit auctor. Nulla accumsan ipsum et nibh rhoncus, eget tempus sapien ultricies. Donec mollis lorem vehicula.
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+                   
                     
                     <div class="row multi-columns-row">
                         
@@ -451,7 +194,7 @@
                                 
                                 <div class="team-item-image">
                                     
-                                    <img src="<?php echo base_url('assets/images/team/team-1.jpg'); ?>" alt="" />
+                                    <img src="<?php echo base_url('assets/images/Andy.png'); ?>" alt="" />
                                     
                                     <div class="team-item-detail">
                                         
@@ -473,11 +216,11 @@
                                 <div class="team-item-descr font-alt">
                                     
                                     <div class="team-item-name">
-                                        Thomas Rhythm 
+                                        Andy Santoso
                                     </div>
                                     
                                     <div class="team-item-role">
-                                        Art Director
+                                        00000012373
                                     </div>
                                     
                                 </div>
@@ -492,7 +235,7 @@
                                 
                                 <div class="team-item-image">
                                     
-                                    <img src="<?php echo base_url('assets/images/team/team-2.jpg'); ?>" alt="" />
+                                    <img src="<?php echo base_url('assets/images/Gilbert.png'); ?>" alt="" />
                                     
                                     <div class="team-item-detail">
                                         
@@ -514,11 +257,11 @@
                                 <div class="team-item-descr font-alt">
                                     
                                     <div class="team-item-name">
-                                        Marta Laning
+                                        Gilbert Christopher
                                     </div>
                                     
                                     <div class="team-item-role">
-                                        Web engineer
+                                        00000012175
                                     </div>
                                     
                                 </div>
@@ -533,7 +276,7 @@
                                 
                                 <div class="team-item-image">
                                     
-                                    <img src="<?php echo base_url('assets/images/team/team-3.jpg'); ?>" alt="" />
+                                    <img src="<?php echo base_url('assets/images/Nathaniel.png'); ?>" alt="" />
                                     
                                     <div class="team-item-detail">
                                         
@@ -555,11 +298,11 @@
                                 <div class="team-item-descr font-alt">
                                     
                                     <div class="team-item-name">
-                                        Steve ANDERS
+                                        Nathaniel
                                     </div>
                                     
                                     <div class="team-item-role">
-                                        Developer
+                                        00000011634
                                     </div>
                                     
                                 </div>
@@ -574,7 +317,7 @@
                                 
                                 <div class="team-item-image">
                                     
-                                    <img src="<?php echo base_url('assets/images/team/team-4.jpg'); ?>" alt="" />
+                                    <img src="<?php echo base_url('assets/images/Yohandy.png'); ?>" alt="" />
                                     
                                     <div class="team-item-detail">
                                         
@@ -596,11 +339,11 @@
                                 <div class="team-item-descr font-alt">
                                     
                                     <div class="team-item-name">
-                                        Emma Connor
+                                        Yohandy Chiawanda
                                     </div>
                                     
                                     <div class="team-item-role">
-                                        Creative Director
+                                        00000011461
                                     </div>
                                     
                                 </div>
@@ -610,14 +353,14 @@
                         <!-- End Team Item -->
                         
                     </div>
-                        
+                    
                 </div>
             </section>
-            <!-- End Team Section -->
+            <!-- End Section -->
             
             
             <!-- Divider -->
-            <hr class="mt-0 mb-0 "/>
+            <hr class="mt-0 mb-0"/>
             <!-- End Divider -->
             
             
@@ -688,24 +431,24 @@
             <!-- End Features Section -->
             
             
-            <!-- Call Action Section -->
+            <!-- Call Action Section 
             <section class="small-section bg-dark">
                 <div class="container relative">
                     
                     <div class="align-center">
-                        <h3 class="banner-heading font-alt">Want to discuss your new project?</h3>
+                        <h3 class="banner-heading font-alt">Want to work with us?</h3>
                         <div>
-                            <a href="" class="btn btn-mod btn-w btn-medium btn-round">Lets tallk</a>
+                            <a href="#" class="btn btn-mod btn-w btn-medium btn-round">Join Now</a>
                         </div>
                     </div>
                     
                 </div>
             </section>
-            <!-- End Call Action Section -->
+             End Call Action Section -->
             
             
-            <!-- Footer -->
-            <footer class="page-section bg-gray-lighter footer pb-60">
+           <!-- Footer -->
+           <footer class="page-section bg-gray-lighter footer pb-60">
                 <div class="container">
 
                     <!-- Footer Logo -->

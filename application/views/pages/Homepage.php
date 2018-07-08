@@ -95,36 +95,6 @@
                             <!-- Divider -->
                             <li><a>&nbsp;</a></li>
                             <!-- End Divider -->
-                            
-                            <!-- Search -->
-                            <!-- <li>
-                                <a href="#" class="mn-has-sub"><i class="fa fa-search"></i> Search</a>
-                                
-                                <ul class="mn-sub">
-                                    
-                                    <li>
-                                        <div class="mn-wrap">
-                                            <form method="post" class="form">
-                                                <div class="search-wrap">
-                                                    <button class="search-button animate" type="submit" title="Start Search">
-                                                        <i class="fa fa-search"></i>
-                                                    </button>
-                                                    <input type="text" class="form-control search-field" placeholder="Search...">
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </li>
-                                    
-                                </ul>
-                                
-                            </li> -->
-                            <!-- End Search -->
-                            
-                            <!-- Cart -->
-                            <!-- <li>
-                                <a href="#"><i class="fa fa-shopping-cart"></i> Cart(0)</a>
-                            </li> -->
-                            <!-- End Cart -->
                         </ul>
                     </div>
                     <!-- End Main Menu -->
@@ -133,24 +103,6 @@
                 </div>
             </nav>
             <!-- End Navigation panel -->
-            
-            
-            <!-- Head Section -->
-            <!-- <section class="page-section bg-dark-alfa-30 parallax-3" data-background="assets/images/full-width-images/section-bg-23.jpg">
-                <div class="relative container align-left">
-                    
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">E-Library</h1>
-                            <div class="hs-line-4 font-alt">
-                                Search, Book, and get notified
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </section> -->
-            <!-- End Head Section -->
 
             <!-- Head Section -->
             <section class="small-section bg-gray-lighter image-banner">

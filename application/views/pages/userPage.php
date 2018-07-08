@@ -153,28 +153,32 @@
                             <!-- Kosongin aja --> 
                         </div>
                         <!-- End Col -->
-                        
-                        <!-- Col -->   
-                        <div class="col-sm-8 mb-40">
-                            
-                            <!-- Form -->
-                            <form method="post" action="#" id="form" role="form" class="form">
 
+                        <!-- Form -->
+                        <form method="post" action="<?php echo base_url('index.php/MainController/searchUserPage'); ?>" id="form" role="form" class="form">
+                        
+                            <!-- Col -->   
+                            <div class="col-sm-6 mb-40">
+                            
                                 <div class="mb-20 mb-md-10">
                                     <!-- Search box -->
-                                    <input type="text" name="searchBookList" id="searchBookList" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
+                                    <input type="text" name="searchBookList" id="searchBookList" style="height: 48px;" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
                                 </div>
-                                
-                                <div class="mb-20 mb-md-10 align-center">
-                                    <input type="button" name="btnSearchBookList" id="btnSearchBookList" class="btn btn-mod btn-border btn-large btn-round" value="Search">
-                                </div>
-                                                            
-                            </form>
-							<!-- End Form -->
                             
-                        </div>
-                        <!-- End Col -->
+                            </div>
+                            <!-- End Col -->
                         
+                            <!-- Col -->
+                            <div class="col-sm-2 mb-40">  
+                                <div class="mb-20 mb-md-10 align-center">
+                                    <input type="submit" name="btnSearchBookList" id="btnSearchBookList" class="btn btn-mod btn-border btn-large btn-round" value="Search">
+                                </div>   
+                            </div>
+                            <!-- End Col -->
+
+                        </form>
+						<!-- End Form -->
+
                         <!-- Col -->
                         <div class="col-sm-2 mb-40">  
                             <!-- Kosongin aja -->   
@@ -193,11 +197,21 @@
                             <div class="clearfix mb-40">
                                 
                                 <div class="left section-text mt-10">
-                                    <!-- tar ini otomtis dari DB di count dr hasil select -->
-                                    Showing 1–4 of 23 results
+                                     <!-- tar ini otomtis dari DB di count dr hasil select -->
+                                     <?php 
+                                        if($this->input->post('btnSearchBookList')){
+                                            if(count($user) <= 20){
+                                                echo 'Showing 1–"'.count($user).'" of "'.count($user).'" results';
+                                            } 
+                                            else{
+                                                echo 'Showing 1–20 of '.count($user).'" results';
+                                            }
+                                        }
+                                     ?>
+                                     
                                 </div>
                                 
-                                <div class="right">
+                                <!-- <div class="right">
                                     <form method="post" action="#" class="form">
                                         <select class="input-md round">
                                             <option>Default sorting</option>
@@ -205,7 +219,7 @@
                                             <option>Sort by price: high to low</option>
                                         </select>
                                     </form>
-                                </div>
+                                </div> -->
                                 
                             </div>
                             <!-- End Shop options -->
@@ -213,120 +227,64 @@
                             <div class="row multi-columns-row">
                         
                                 <!-- Shop Item -->
-                                <div class="col-md-3 col-lg-3 mb-60 mb-xs-40">
-                                    
-                                    <div class="post-prev-img">
-                                        <a href="shop-single.html"><img src="<?php echo base_url('assets/images/shop/shop-prev-1.jpg'); ?>" alt="" /></a>
-                                        
-                                    </div>
-                                    <!-- nama buku  -->
-                                    <div class="post-prev-title font-alt align-center">
-                                        <a href="shop-single.html">G-Star Polo Applique Jersey</a>
-                                    </div>
-                                    
-                                </div>
-                                <!-- End Shop Item -->
-                                
-                                <!-- Shop Item -->
-                                <div class="col-md-3 col-lg-3 mb-60 mb-xs-40">
-                                    
-                                    <div class="post-prev-img">
-                                        <a href="shop-single.html"><img src="<?php echo base_url('assets/images/shop/shop-prev-2.jpg'); ?>" alt="" /></a>
-                                    </div>
-                                    
-                                    <!-- nama buku  -->
-                                    <div class="post-prev-title font-alt align-center">
-                                        <a href="shop-single.html">Only & Sons Pique Polo Shirt</a>
-                                    </div>
-                                    
-                                </div>
-                                <!-- End Shop Item -->
-                                
-                                <!-- Shop Item -->
-                                <div class="col-md-3 col-lg-3 mb-60 mb-xs-40">
-                                    
-                                    <div class="post-prev-img">
-                                        <a href="shop-single.html"><img src="<?php echo base_url('assets/images/shop/shop-prev-3.jpg'); ?>" alt="" /></a>
-                                    </div>
-                                    
-                                    <!-- ini jadi nama buku tar -->
-                                    <div class="post-prev-title font-alt align-center">
-                                        <a href="shop-single.html">Longline Long Sleeve</a>
-                                    </div>
-                                    
-                                </div>
-                                <!-- End Shop Item -->
-                                
-                                <!-- Shop Item -->
-                                <div class="col-md-3 col-lg-3 mb-60 mb-xs-40">
-                                    
-                                    <div class="post-prev-img">
-                                        <a href="shop-single.html"><img src="<?php echo base_url('assets/images/shop/shop-prev-4.jpg'); ?>" alt="" /></a>
-                                    </div>
-                                    <!-- nama buku -->
-                                    <div class="post-prev-title font-alt align-center">
-                                        <a href="shop-single.html">Polo Shirt With Floral Sleeves</a>
-                                    </div>
-                                    
-                                </div>
-                                <!-- End Shop Item -->
-                        
-                                <!-- Shop Item -->
-                                <div class="col-md-3 col-lg-3 mb-60 mb-xs-40">
-                                    
-                                    <div class="post-prev-img">
-                                        <a href="shop-single.html"><img src="<?php echo base_url('assets/images/shop/shop-prev-5.jpg'); ?>" alt="" /></a>
-                                        
-                                    </div>
-                                    <!-- nama buku  -->
-                                    <div class="post-prev-title font-alt align-center">
-                                        <a href="shop-single.html">G-Star Polo Applique Jersey</a>
-                                    </div>
-                                    
-                                </div>
-                                <!-- End Shop Item -->
-                                
-                                <!-- Shop Item -->
-                                <div class="col-md-3 col-lg-3 mb-60 mb-xs-40">
-                                    
-                                    <div class="post-prev-img">
-                                        <a href="shop-single.html"><img src="<?php echo base_url('assets/images/shop/shop-prev-6.jpg'); ?>" alt="" /></a>
-                                    </div>
-                                    
-                                    <!-- nama buku  -->
-                                    <div class="post-prev-title font-alt align-center">
-                                        <a href="shop-single.html">Only & Sons Pique Polo Shirt</a>
-                                    </div>
-                                    
-                                </div>
-                                <!-- End Shop Item -->
-                                
-                                <!-- Shop Item -->
-                                <div class="col-md-3 col-lg-3 mb-60 mb-xs-40">
-                                    
-                                    <div class="post-prev-img">
-                                        <a href="shop-single.html"><img src="<?php echo base_url('assets/images/shop/shop-prev-7.jpg'); ?>" alt="" /></a>
-                                    </div>
-                                    
-                                    <!-- ini jadi nama buku tar -->
-                                    <div class="post-prev-title font-alt align-center">
-                                        <a href="shop-single.html">Longline Long Sleeve</a>
-                                    </div>
-                                    
-                                </div>
-                                <!-- End Shop Item -->
-                                
-                                <!-- Shop Item -->
-                                <div class="col-md-3 col-lg-3 mb-60 mb-xs-40">
-                                    
-                                    <div class="post-prev-img">
-                                        <a href="shop-single.html"><img src="<?php echo base_url('assets/images/shop/shop-prev-8.jpg'); ?>" alt="" /></a>
-                                    </div>
-                                    <!-- nama buku -->
-                                    <div class="post-prev-title font-alt align-center">
-                                        <a href="shop-single.html">Polo Shirt With Floral Sleeves</a>
-                                    </div>
-                                    
+                                <?php
+                                    if($this->input->post('btnSearchBookList')){
+                                        $no = $this->uri->segment('3') + 1;
+                                        $tes = 0;
+                                        foreach($user as $u){ 
+                                            if (count($user) == $tes){
+                                                break;
+                                            }
+                                            echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
+                                                //Gambar Cover Buku
+                                                echo '<div class="post-prev-img">';
+                                                    echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$user[$tes]->imgUrl."' alt='' /></a>";
+                                                echo '</div>';
+                                                
+                                                //Nama buku
+                                                echo '<div class="post-prev-title font-alt align-center">';
+                                                    $teks = "...";
+                                                    if (strlen($user[$tes]->title) > 30) {
+                                                        echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.substr($user[$tes]->title,0,30).$teks.'</a>';
+                                                    }
+                                                    else {
+                                                        echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.$user[$tes]->title.$teks.'</a>';
+                                                    }
+                                                echo '</div>';
+                                            echo '</div>';      
+                                            
+                                            $tes++;
+                                        }
+                                    }
+                                    else {
+                                        //count($searchres) --> sementara di komen
+                                        for($i = 0;$i < 20;$i++){ //sementara maks tampil 20, pagination blm jalan soale
+                                            echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
+                                                echo '<div class="post-prev-img">';
+                                                    echo '<a href="'.$searchres[$i]->imgUrl.'" class="lightbox-gallery-3 mfp-image"><img src="'.$searchres[$i]->imgUrl.'" alt="" style="width: 350px; height: 365px;"/></a>';
+                                                    //echo "<a href='shop-single.html'><img class='image' style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
+                                                echo '</div>';
+                                                        
+                                                //Form Button delete edit
+                                                echo '<form method="POST" action="'.base_url("index.php/MainController/adminEditOrDelete").'" id="form" role="form" class="form">';
+                                                    echo '<input type="hidden" name="asin" value="'.$searchres[$i]->ASIN.'">';                         
+                                                echo '</form>';
+                                                //End Form
+
+                                                        //NAMA BUKU
+                                                        echo '<div class="post-prev-title font-alt align-center">';
+                                                            $teks = "...";
+                                                            if (strlen($searchres[$i]->title) > 30) {
+                                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.substr($searchres[$i]->title,0,30).$teks.'</a>';
+                                                            }
+                                                            else {
+                                                                echo '<a title="'.$searchres[$i]->title.'" href="shop-single.html">'.$searchres[$i]->title.$teks.'</a>';
+                                                    }
+                                                echo '</div>';
+                                            echo '</div>';
+                                        }
+                                    }
+                                ?>
                                 </div>
                                 <!-- End Shop Item -->
                                 
@@ -334,13 +292,16 @@
                             
                             <!-- Pagination -->
                             <div class="pagination">
-                                <a href=""><i class="fa fa-angle-left"></i></a>
+                                <!-- <a href=""><i class="fa fa-angle-left"></i></a>
                                 <a href="" class="active">1</a>
                                 <a href="">2</a>
                                 <a href="">3</a>
                                 <a class="no-active">...</a>
                                 <a href="">9</a>
-                                <a href=""><i class="fa fa-angle-right"></i></a>
+                                <a href=""><i class="fa fa-angle-right"></i></a> -->
+                                <?php 
+                                    echo $this->pagination->create_links();
+                                ?>
                             </div>
                             <!-- End Pagination -->
                             

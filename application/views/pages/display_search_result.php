@@ -108,24 +108,6 @@
                 </div>
             </nav>
             <!-- End Navigation panel -->
-            
-            
-            <!-- Head Section -->
-            <!-- <section class="page-section bg-dark-alfa-30 parallax-3" data-background="assets/images/full-width-images/section-bg-23.jpg">
-                <div class="relative container align-left">
-                    
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">E-Library</h1>
-                            <div class="hs-line-4 font-alt">
-                                Search, Book, and get notified
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </section> -->
-            <!-- End Head Section -->
 
             <!-- Head Section -->
             <section class="small-section bg-gray-lighter">
@@ -248,8 +230,8 @@
                                         //Nama buku
                                         echo '<div class="post-prev-title font-alt align-center">';
                                             $teks = "...";
-                                            if (strlen($user[$tes]->title) > 40) {
-                                                echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.substr($user[$tes]->title,1,40).$teks.'</a>';
+                                            if (strlen($user[$tes]->title) > 30) {
+                                                echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.substr($user[$tes]->title,0,30).$teks.'</a>';
                                             }
                                             else {
                                                 echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.$user[$tes]->title.$teks.'</a>';

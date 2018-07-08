@@ -256,7 +256,7 @@
                         
                         <!-- Copyright -->
                         <div class="footer-copy font-alt">
-                            <a href="http://themeforest.net/user/theme-guru/portfolio" target="_blank">&copy; Rhythm 2017</a>.
+                            <a href="http://umn.ac.id" target="_blank">&copy; E-LIBRARY 2018</a>.
                         </div>
                         <!-- End Copyright -->
                         

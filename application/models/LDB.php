@@ -69,8 +69,9 @@ class LDB extends CI_Model{
     }
 
     //function ini untuk mengedit buku yang telah dipilih sebelumnya
-    public function editBook($title, $author, $genre, $imgUrl){
-        
+    public function editBook($asin, $title, $author, $genre, $imgUrl){
+        $condition = "ASIN = '$asin'";
+        //query buat edit beloman ni
     }
 
     //Function ini digunakan untuk login ke dalam sistem

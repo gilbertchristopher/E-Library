@@ -236,8 +236,7 @@
                                                     'name'          => 'email_login',
                                                     'id'            => 'email_login',
                                                     'class'         => 'input-md round form-control',
-                                                    'placeholder'   => 'Email',
-                                                    'pattern'       => '.{3,100}'
+                                                    'placeholder'   => 'Email'
                                                 );
                                                 echo form_input($data);
                                                 echo form_error('email_login');
@@ -251,8 +250,7 @@
                                                     'name'          => 'password_login',
                                                     'id'            => 'password_login',
                                                     'class'         => 'input-md round form-control',
-                                                    'placeholder'   => 'Password',
-                                                    'pattern'       => '.{5,100}'
+                                                    'placeholder'   => 'Password'
                                                 );
                                                 echo form_password($data);
                                                 echo form_error('password_login');
@@ -322,8 +320,7 @@
                                                     'name'          => 'email',
                                                     'id'            => 'email',
                                                     'class'         => 'input-md round form-control',
-                                                    'placeholder'   => 'Email',
-                                                    'pattern'       => '.{3,100}'
+                                                    'placeholder'   => 'Email'
                                                 );
                                                 echo form_input($data);
                                                 echo form_error('email');
@@ -337,8 +334,7 @@
                                                     'name'          => 'nim',
                                                     'id'            => 'nim',
                                                     'class'         => 'input-md round form-control',
-                                                    'placeholder'   => 'NIM',
-                                                    'pattern'       => '.{3,100}'
+                                                    'placeholder'   => 'NIM'
                                                 );
                                                 echo form_input($data);
                                                 echo form_error('nim');
@@ -352,8 +348,7 @@
                                                     'name'          => 'password',
                                                     'id'            => 'password',
                                                     'class'         => 'input-md round form-control',
-                                                    'placeholder'   => 'Password',
-                                                    'pattern'       => '.{5,100}'
+                                                    'placeholder'   => 'Password'
                                                 );
                                                 echo form_password($data);
                                                 echo form_error('password');
@@ -367,8 +362,7 @@
                                                     'name'          => 're-password',
                                                     'id'            => 're-password',
                                                     'class'         => 'input-md round form-control',
-                                                    'placeholder'   => 'Re-enter Password',
-                                                    'pattern'       => '.{5,100}'
+                                                    'placeholder'   => 'Re-enter Password'
                                                 );
                                                 echo form_password($data);
                                                 echo form_error('re-password');

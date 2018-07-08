@@ -428,7 +428,8 @@ class MainController extends CI_Controller {
 
                 if ( ! $this->upload->do_upload('userfile'))
                 {
-                        //$error = array('error' => $this->upload->display_errors());
+						//$error = array('error' => $this->upload->display_errors());
+						
 						echo $data['upload_data']['full_path'];
                         //$this->load->view('upload_form', $error);
                 }

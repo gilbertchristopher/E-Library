@@ -110,12 +110,12 @@
             <!-- End Navigation panel -->
 
             <!-- Head Section -->
-            <section class="small-section bg-gray-lighter">
+            <section class="small-section bg-gray-lighter search-banner">
                 <div class="relative container align-left">
                     <div class="row">
                         <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Search Result</h1>
-                            <div class="hs-line-4 font-alt black">
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0 white">Search Result</h1>
+                            <div class="hs-line-4 font-alt white">
                                 Search, Book, and Notified
                             </div>
                         </div>

@@ -6349,6 +6349,10 @@ section:hover .small-item-carousel .owl-next{
     background : no-repeat center url(../images/Library-Banner.png);
     background-size: cover;
 }
+.search-banner {
+    background : no-repeat center url(../images/Search-Banner.png);
+    background-size: cover;
+}
 .image-footer {
     background: no-repeat center url(../images/logo-footer.png);
     background-size: 200px 200px;

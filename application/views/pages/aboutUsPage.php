@@ -58,12 +58,6 @@
                                 <a href="<?php echo base_url('index.php/MainController/index'); ?>" class="mn">Home</a> 
                             </li>
                             <!-- End Item -->
-                            
-                            <!-- Item -->
-                            <li>
-                                <a href="#" class="mn">Catalog</a>
-                            </li>
-                            <!-- End Item -->
 
                             <!-- Item -->
                             <li>
@@ -362,90 +356,6 @@
             <!-- Divider -->
             <hr class="mt-0 mb-0"/>
             <!-- End Divider -->
-            
-            
-            <!-- Features Section -->
-            <section class="page-section">
-                <div class="container relative">
-                    
-                    <h2 class="section-title font-alt mb-70 mb-sm-40">
-                        Why Choose Us?
-                    </h2>
-                    
-                    <!-- Features Grid -->
-                    <div class="row multi-columns-row alt-features-grid">
-                        
-                        <!-- Features Item -->
-                        <div class="col-sm-6 col-md-4 col-lg-4">
-                            <div class="alt-features-item align-center">
-                                <div class="alt-features-icon">
-                                    <span class="icon-flag"></span>
-                                </div>
-                                <h3 class="alt-features-title font-alt">We’re Creative</h3>
-                                <div class="alt-features-descr align-left">
-                                    Lorem ipsum dolor sit amet, c-r adipiscing elit. 
-                                    In maximus ligula semper metus pellentesque mattis. 
-                                    Maecenas  volutpat, diam enim.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="col-sm-6 col-md-4 col-lg-4">
-                            <div class="alt-features-item align-center">
-                                <div class="alt-features-icon">
-                                    <span class="icon-clock"></span>
-                                </div>
-                                <h3 class="alt-features-title font-alt">We’re Punctual</h3>
-                                <div class="alt-features-descr align-left">
-                                    Proin fringilla augue at maximus vestibulum. 
-                                    Nam pulvinar vitae neque et porttitor. Praesent sed 
-                                    nisi eleifend, lorem fermentum orci sit amet, iaculis libero.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                        <!-- Features Item -->
-                        <div class="col-sm-6 col-md-4 col-lg-4">
-                            <div class="alt-features-item align-center">
-                                <div class="alt-features-icon">
-                                    <span class="icon-hotairballoon"></span>
-                                </div>
-                                <h3 class="alt-features-title font-alt">We have magic</h3>
-                                <div class="alt-features-descr align-left">
-                                    Curabitur iaculis accumsan augue, nec finibus mauris pretium eu. 
-                                    Duis placerat ex gravida nibh tristique porta. Nulla facilisi. 
-                                    Suspendisse ultricies eros blandit.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Features Item -->
-                        
-                    </div>
-                    <!-- End Features Grid -->
-                        
-                </div>
-            </section>
-            <!-- End Features Section -->
-            
-            
-            <!-- Call Action Section 
-            <section class="small-section bg-dark">
-                <div class="container relative">
-                    
-                    <div class="align-center">
-                        <h3 class="banner-heading font-alt">Want to work with us?</h3>
-                        <div>
-                            <a href="#" class="btn btn-mod btn-w btn-medium btn-round">Join Now</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </section>
-             End Call Action Section -->
-            
             
            <!-- Footer -->
            <footer class="page-section bg-gray-lighter footer pb-60">

@@ -114,7 +114,7 @@
             
             <!-- Head Section -->
             
-            <section class="page-section bg-dark-alfa-30" data-background="<?php echo base_url('assets/images/full-width-images/section-bg-10.jpg'); ?>">
+            <section class="page-section bg-dark-alfa-30" data-background="<?php echo base_url('assets/images/User-banner.jpg'); ?>">
                 <div class="relative container align-left">
                     
                     <div class="row">

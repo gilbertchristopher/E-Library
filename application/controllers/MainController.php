@@ -463,6 +463,7 @@ class MainController extends CI_Controller {
 
 			$mail->send();
 			echo 'Message has been sent';
+			echo "<script>location.href='Homepage.php';</script>";
 		} catch (Exception $e) {
 			echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 		}

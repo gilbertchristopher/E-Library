@@ -126,6 +126,7 @@ class MainController extends CI_Controller {
 			$asin = $this->input->post('asin');
 			$this->LDB->deleteBook($asin);
 			$this->load->view('pages/adminPage.php', $data);
+			echo '<script>location.replace("'.base_url("index.php/MainController/adminPage").'")</script>';
 		}
 	}
 

@@ -185,10 +185,10 @@
                                             <div class="col-md-12" align="center">
                                             <div class="mb-20 mb-md-10 col-md-6">
                                                 <!-- Search box -->
-                                                <input type="text" name="search_keywords" id="search_keywords" style="height: 48px;" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
+                                                <input type="text" name="search_keywords" id="search_keywords" style="height: 36px;" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
                                             </div>
                                             <div class="mb-20 mb-md-10 col-md-6">
-                                                    <select class="input-md form-control" style="height: 48px;" name="search_bos">
+                                                    <select class="input-md form-control" style="height: 36px;" name="search_bos">
                                                         <?php
                                                             for($i = 0; $i < count($genress); $i++){
                                                                 echo "<option value=".$genress[$i]->genre.">".$genress[$i]->genre."</option>";

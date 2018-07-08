@@ -194,6 +194,7 @@
                                     <a href="#" class="btn btn-mod btn-large btn-round">Add to Cart</a>  -->
                                     <label>Title</label>
                                     <input type="text" class="form-control input-lg" id="title" name="title" value="<?php echo $buku[0]->title; ?>" placeholder="Title">
+                                    <input type="hidden" name="asin" value="<?php echo $buku[0]->ASIN; ?>">
                                     <br><br>
                                     <label>Author</label>
                                     <input type="text" class="form-control input-lg" id="author" name="author" value="<?php echo $buku[0]->author; ?>" placeholder="Author">

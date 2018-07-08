@@ -118,7 +118,13 @@ class MainController extends CI_Controller {
 			$this->load->view('pages/adminPage.php', $data);
 		}
 		else if($this->input->post('edit')){
-			
+			$asin = $this->input->post('asin');
+			$title = $this->input->post('title');
+			$author = $this->input->post('author');
+			$genre = $this->input->post('genre');
+			$imgUrl = $this->input->post('imgUrl');
+			$this->LDB->editBook($asin, $title, $author, $genre, $imgUrl);
+			$this->load->view('pages/adminPage.php', $data);
 			echo '<script>location.replace("'.base_url("index.php/MainController/adminPage").'")</script>';
 		}
 	}

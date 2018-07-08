@@ -107,15 +107,21 @@ class MainController extends CI_Controller {
 	//Halaman admin dengan apply filter
 	public function adminPageFilter()
 	{
-		$keyword = $this->input->post('search_bos');
-
 		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
 		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
 
-		$data['searchres'] = $this->LDB->displayFilteredBooks($keyword);
-		$data['genress'] = $this->LDB->generateGenre();
+		if($this->input->post('filter')){
+			$keyword = $this->input->post('search_bos');
 
-		$this->load->view('pages/adminPage.php', $data);
+			$data['searchres'] = $this->LDB->displayFilteredBooks($keyword);
+			$data['genress'] = $this->LDB->generateGenre();
+
+			$this->load->view('pages/adminPage.php', $data);
+		}
+		else if($this->input->post('search')){
+			
+		}
+		
 	}
 
 	//Function untuk pindah halaman ke edit atau delete

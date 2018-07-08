@@ -183,11 +183,11 @@
                                         <!-- Form -->
                                         <form method="post" action="<?php echo base_url('index.php/MainController/adminPageFilter'); ?>" id="form" role="form" class="form">
                                             <div class="col-md-12" align="center">
-                                            <div class="mb-20 mb-md-10 col-md-6">
-                                                <!-- Search box -->
-                                                <input type="text" name="search_keywords" id="search_keywords" style="height: 36px;" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
-                                            </div>
-                                            <div class="mb-20 mb-md-10 col-md-6">
+                                                <div class="mb-20 mb-md-10 col-md-6">
+                                                    <!-- Search box -->
+                                                    <input type="text" name="search_keywords" id="search_keywords" style="height: 36px;" class="input-md form-control" placeholder="Title / Author / Keyword" maxlength="300">
+                                                </div>
+                                                <div class="mb-20 mb-md-10 col-md-6">
                                                     <select class="input-md form-control" style="height: 36px;" name="search_bos">
                                                         <?php
                                                             for($i = 0; $i < count($genress); $i++){
@@ -196,15 +196,13 @@
                                                         ?>
                                                     </select>
                                                 </div>
-                                            <div class="mb-20 mb-md-10 col-md-6">
-                                                <input type="submit" name="search_submit" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Search">
-                                            </div>
-                                                
                                                 <div class="mb-20 mb-md-10 col-md-6">
-                                                    <input type="submit" name="search_submit" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Apply Filter"> 
+                                                    <input type="submit" name="search" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Search">
                                                 </div>
-                                            </div>    
-                                                                     
+                                                <div class="mb-20 mb-md-10 col-md-6">
+                                                    <input type="submit" name="filter" id="search_submit" class="btn btn-mod btn-border btn-large btn-round" value="Apply Filter"> 
+                                                </div>
+                                            </div>                        
                                         </form>
                                         <!-- End Form -->
                                     </div>

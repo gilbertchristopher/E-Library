@@ -58,6 +58,12 @@
                                 <a href="<?php echo base_url('index.php/MainController/index'); ?>" class="mn">Home</a>
                             </li>
                             <!-- End Item -->
+                            
+                            <!-- Item -->
+                            <li>
+                                <a href="#" class="mn">Catalog</a>
+                            </li>
+                            <!-- End Item -->
 
                             <!-- Item -->
                             <li>
@@ -205,16 +211,6 @@
                                      
                                 </div>
                                 
-                                <!-- <div class="right">
-                                    <form method="post" action="#" class="form">
-                                        <select class="input-md round">
-                                            <option>Default sorting</option>
-                                            <option>Sort by price: low to high</option>
-                                            <option>Sort by price: high to low</option>
-                                        </select>
-                                    </form>
-                                </div> -->
-                                
                             </div>
                             <!-- End Shop options -->
                             
@@ -232,8 +228,20 @@
                                             echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
                                                 //Gambar Cover Buku
                                                 echo '<div class="post-prev-img">';
-                                                    echo "<a href='<?php echo base_url('".index.php/MainController/detailBookUser."'); ?>'><img style='width: 370px; height: 385px;' src='".$user[$tes]->imgUrl."' alt='' /></a>";
+                                                    echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$user[$tes]->imgUrl."' alt='' /></a>";
                                                 echo '</div>';
+
+                                ?>
+                                                <form method="post" action="<?php echo base_url('index.php/MainController/detailBookUser'); ?>" id="form" role="form" class="form">
+                        
+                                                    <div class="mb-20 mb-md-10 align-center">
+                                                        <input type="submit" name="detail" id="detail" class="btn btn-mod btn-border btn-large btn-round" value="Detail">
+                                                    </div>
+
+                                                    <input type="hidden" name="asin" value="<?php echo $user[$tes]->ASIN; ?>">
+                                                                                
+                                                </form>
+                                <?php
                                                 
                                                 //Nama buku
                                                 echo '<div class="post-prev-title font-alt align-center">';
@@ -245,6 +253,7 @@
                                                         echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.$user[$tes]->title.$teks.'</a>';
                                                     }
                                                 echo '</div>';
+                                
                                             echo '</div>';      
                                             
                                             $tes++;
@@ -259,11 +268,17 @@
                                                     //echo "<a href='shop-single.html'><img class='image' style='width: 350px; height: 365px;' src='".$searchres[$i]->imgUrl."' alt='' /></a>";
                                                 echo '</div>';
                                                         
-                                                //Form Button delete edit
-                                                echo '<form method="POST" action="'.base_url("index.php/MainController/adminEditOrDelete").'" id="form" role="form" class="form">';
-                                                    echo '<input type="hidden" name="asin" value="'.$searchres[$i]->ASIN.'">';                         
-                                                echo '</form>';
-                                                //End Form
+                                ?>
+                                                <form method="post" action="<?php echo base_url('index.php/MainController/detailBookUser'); ?>" id="form" role="form" class="form">
+                        
+                                                    <div class="mb-20 mb-md-10 align-center">
+                                                        <input type="submit" name="detail" id="detail" class="btn btn-mod btn-border btn-large btn-round" value="Detail">
+                                                    </div>
+
+                                                    <input type="hidden" name="asin" value="<?php echo $searchres[$i]->ASIN; ?>">
+                                                                                
+                                                </form>
+                                <?php
 
                                                         //NAMA BUKU
                                                         echo '<div class="post-prev-title font-alt align-center">';
@@ -304,22 +319,22 @@
                         
                     </div>
 
-                    <hr class="mt-0 mb-30"/> 
-
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
                         Waiting List
                     </h2>
+
+                    <hr class="mt-0 mb-30"/> 
                     
                     <!-- Row -->
                     <div class="row">
 
                     </div>
 
-                    <hr class="mt-0 mb-30"/> 
-
                     <h2 class="section-title font-alt mb-70 mb-sm-40">
                         Borrowed Book
                     </h2>
+
+                    <hr class="mt-0 mb-30"/> 
                     
                     <!-- Row -->
                     <div class="row">

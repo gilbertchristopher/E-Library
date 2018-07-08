@@ -495,5 +495,15 @@ class MainController extends CI_Controller {
 
                 //         $this->load->view('upload_success', $data);
                 // }
-        }
+		}
+		
+	public function detailBookUser(){
+		$data['js'] = $this->load->view('include/jsAdminPage.php', NULL, TRUE);
+		$data['css'] = $this->load->view('include/cssAdminPage.php', NULL, TRUE);
+
+		$asin = $this->input->post('asin');
+		$data['buku'] = $this->LDB->selectedBooks($asin);
+
+		$this->load->view('pages/bookDetailsUser.php', $data);
+	}
 }

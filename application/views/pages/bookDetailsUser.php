@@ -125,7 +125,7 @@
                     <div class="row">
                         
                         <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Delete Book</h1>
+                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Book Details</h1>
                             <div class="hs-line-4 font-alt black">
                                 <!-- Choose the best products in our shop -->
                             </div>
@@ -189,7 +189,7 @@
                             <hr class="mt-0 mb-30"/>
                             
                             <div class="mb-30">
-                                <form method="post" action="<?php echo base_url('index.php/MainController/actionDeleteBook'); ?>" class="form">
+                                <form method="post" action="<?php echo base_url('index.php/MainController/userPage'); ?>" class="form">
                                     <!-- <input type="number" class="input-lg round" min="1" max="100" value="1" />
                                     <a href="#" class="btn btn-mod btn-large btn-round">Add to Cart</a>  -->
                                     <label>Title</label>
@@ -202,9 +202,9 @@
                                     <label>Genre</label>
                                     <input type="text" class="form-control input-lg" id="genre" name="genre" value="<?php echo $buku[0]->genre; ?>" placeholder="Genre" readonly>
                                     <br><br>
-                                    <input type="submit" style="width: 200px;" name="cancel" id="cancel" class="btn btn-mod btn-border btn-large btn-round" value="Cancel">
-                                    <input onclick="myFunction()" type="submit" style="width: 200px;"name="delete" id="delete" class="btn btn-mod btn-border btn-large btn-round" value="Delete">
-                                    <div id="snackbar">Deleted Successfully</div>
+                                    <input type="submit" style="width: 200px;" name="back" id="back" class="btn btn-mod btn-border btn-large btn-round" value="Back">
+                                    
+                                    
                                 </form>
                             </div>
                             

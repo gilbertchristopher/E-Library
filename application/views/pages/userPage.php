@@ -238,7 +238,7 @@
                                                         <input type="submit" name="detail" id="detail" class="btn btn-mod btn-border btn-large btn-round" value="Detail">
                                                     </div>
 
-                                                    <input type="hidden" name="asin" value="$user[$tes]->ASIN">
+                                                    <input type="hidden" name="asin" value="<?php echo $user[$tes]->ASIN; ?>">
                                                                                 
                                                 </form>
                                 <?php
@@ -275,7 +275,7 @@
                                                         <input type="submit" name="detail" id="detail" class="btn btn-mod btn-border btn-large btn-round" value="Detail">
                                                     </div>
 
-                                                    <input type="hidden" name="asin" value="$searchres[$i]->ASIN">
+                                                    <input type="hidden" name="asin" value="<?php echo $searchres[$i]->ASIN; ?>">
                                                                                 
                                                 </form>
                                 <?php

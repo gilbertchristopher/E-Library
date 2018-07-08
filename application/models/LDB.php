@@ -13,6 +13,15 @@ class LDB extends CI_Model{
         return $query->result();
     }
 
+    public function countDataByKeyword($keyword){
+        $condition = "title LIKE '%" .$keyword ."%' OR author LIKE '%" .$keyword ."%' OR genre LIKE '%" .$keyword ."%' OR ASIN LIKE '%" .$keyword ."%'";
+        $this->db->select('ASIN, title, author, genreId, genre, imgUrl');
+        $this->db->from('buku');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
     //Function ini digunakan untuk mengambil semua data dari tabel buku
     public function displayAllBooks(){
         $this->db->select('ASIN, title, author, genreId, genre, imgUrl');

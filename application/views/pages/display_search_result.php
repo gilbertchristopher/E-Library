@@ -277,32 +277,27 @@
                             $no = $this->uri->segment('3') + 1;
                             $tes = 0;
                             foreach($user as $u){ 
-                                if (count($searchres) == $tes){
+                                if (count($user) == $tes){
                                     //echo $tes;
                                     break;
                                 }
                                 echo '<div class="col-md-3 col-lg-3 mb-60 mb-xs-40">';
                                     echo '<div class="post-prev-img">';
-                                        echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$searchres[$tes]->imgUrl."' alt='' /></a>";
+                                        echo "<a href='shop-single.html'><img style='width: 370px; height: 385px;' src='".$user[$tes]->imgUrl."' alt='' /></a>";
                                     echo '</div>';
                                     
                                     //echo $u->title;
                                     //NAMA BUKU
                                     echo '<div class="post-prev-title font-alt align-center">';
                                         $teks = "...";
-<<<<<<< HEAD
-                                        if (strlen($searchres[$tes]->title) > 40) {
-                                            echo '<a title="'.$searchres[$tes]->title.'" href="shop-single.html">'.substr($searchres[$tes]->title,1,40).$teks.'</a>';
-=======
-                                        if (strlen($searchres[$no]->title) > 30) {
-                                            echo '<a title="'.$searchres[$no]->title.'" href="shop-single.html">'.substr($searchres[$no]->title,0,30).$teks.'</a>';
->>>>>>> 541d931c545c3ed769fccfa6067073bc3c1c4140
+                                        if (strlen($user[$tes]->title) > 40) {
+                                            echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.substr($user[$tes]->title,1,40).$teks.'</a>';
                                         }
                                         else {
-                                            echo '<a title="'.$searchres[$tes]->title.'" href="shop-single.html">'.$searchres[$tes]->title.$teks.'</a>';
+                                            echo '<a title="'.$user[$tes]->title.'" href="shop-single.html">'.$user[$tes]->title.$teks.'</a>';
                                         }
                                     echo '</div>';
-                                echo '</div>';
+                                echo '</div>';      
                                 
                                 $tes++;
                                 

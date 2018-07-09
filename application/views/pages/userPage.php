@@ -313,28 +313,6 @@
                         
                     </div>
 
-                    <h2 class="section-title font-alt mb-70 mb-sm-40">
-                        Waiting List
-                    </h2>
-
-                    <hr class="mt-0 mb-30"/> 
-                    
-                    <!-- Row -->
-                    <div class="row">
-
-                    </div>
-
-                    <h2 class="section-title font-alt mb-70 mb-sm-40">
-                        Borrowed Book
-                    </h2>
-
-                    <hr class="mt-0 mb-30"/> 
-                    
-                    <!-- Row -->
-                    <div class="row">
-
-                    </div>
-                    
                 </div>
             </section>
             <!-- End Section -->
